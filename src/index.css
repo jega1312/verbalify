@@ -1,0 +1,276 @@
+@import 'tailwindcss';
+
+/* Fonts */
+/* Font: Sora */
+@font-face {
+    font-family: 'Sora Bold';
+    src: url('assets/fonts/Sora-Bold.eot');
+    src: url('assets/fonts/Sora-Bold.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Sora-Bold.woff2') format('woff2'),
+        url('assets/fonts/Sora-Bold.woff') format('woff'),
+        url('assets/fonts/Sora-Bold.ttf') format('truetype'),
+        url('assets/fonts/Sora-Bold.svg#Sora-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sora-bold {
+  font-family: "Sora Bold", sans-serif;
+}
+
+@font-face {
+    font-family: 'Sora Extralight';
+    src: url('assets/fonts/Sora-ExtraLight.eot');
+    src: url('assets/fonts/Sora-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Sora-ExtraLight.woff2') format('woff2'),
+        url('assets/fonts/Sora-ExtraLight.woff') format('woff'),
+        url('assets/fonts/Sora-ExtraLight.ttf') format('truetype'),
+        url('assets/fonts/Sora-ExtraLight.svg#Sora-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sora-extralight {
+  font-family: "Sora Extralight", sans-serif;
+}
+
+@font-face {
+    font-family: 'Sora Extrabold';
+    src: url('assets/fonts/Sora-ExtraBold.eot');
+    src: url('assets/fonts/Sora-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Sora-ExtraBold.woff2') format('woff2'),
+        url('assets/fonts/Sora-ExtraBold.woff') format('woff'),
+        url('assets/fonts/Sora-ExtraBold.ttf') format('truetype'),
+        url('assets/fonts/Sora-ExtraBold.svg#Sora-ExtraBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sora-extrabold {
+  font-family: "Sora Extrabold", sans-serif;
+}
+
+@font-face {
+    font-family: 'Sora Light';
+    src: url('assets/fonts/Sora-Light.eot');
+    src: url('assets/fonts/Sora-Light.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Sora-Light.woff2') format('woff2'),
+        url('assets/fonts/Sora-Light.woff') format('woff'),
+        url('assets/fonts/Sora-Light.ttf') format('truetype'),
+        url('assets/fonts/Sora-Light.svg#Sora-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sora-light {
+  font-family: "Sora Light", sans-serif;
+}
+
+@font-face {
+    font-family: 'Sora Regular';
+    src: url('assets/fonts/Sora-Regular.eot');
+    src: url('assets/fonts/Sora-Regular.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Sora-Regular.woff2') format('woff2'),
+        url('assets/fonts/Sora-Regular.woff') format('woff'),
+        url('assets/fonts/Sora-Regular.ttf') format('truetype'),
+        url('assets/fonts/Sora-Regular.svg#Sora-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sora-regular {
+  font-family: "Sora Regular", sans-serif;
+}
+
+@font-face {
+    font-family: 'Sora Medium';
+    src: url('assets/fonts/Sora-Medium.eot');
+    src: url('assets/fonts/Sora-Medium.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Sora-Medium.woff2') format('woff2'),
+        url('assets/fonts/Sora-Medium.woff') format('woff'),
+        url('assets/fonts/Sora-Medium.ttf') format('truetype'),
+        url('assets/fonts/Sora-Medium.svg#Sora-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sora-medium {
+  font-family: "Sora Medium", sans-serif;
+}
+
+@font-face {
+    font-family: 'Sora Semibold';
+    src: url('assets/fonts/Sora-SemiBold.eot');
+    src: url('assets/fonts/Sora-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Sora-SemiBold.woff2') format('woff2'),
+        url('assets/fonts/Sora-SemiBold.woff') format('woff'),
+        url('assets/fonts/Sora-SemiBold.ttf') format('truetype'),
+        url('assets/fonts/Sora-SemiBold.svg#Sora-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sora-semibold {
+  font-family: "Sora Semibold", sans-serif;
+}
+
+@font-face {
+    font-family: 'Sora Thin';
+    src: url('assets/fonts/Sora-Thin.eot');
+    src: url('assets/fonts/Sora-Thin.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Sora-Thin.woff2') format('woff2'),
+        url('assets/fonts/Sora-Thin.woff') format('woff'),
+        url('assets/fonts/Sora-Thin.ttf') format('truetype'),
+        url('assets/fonts/Sora-Thin.svg#Sora-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+.sora-thin {
+  font-family: "Sora Thin", sans-serif;
+}
+
+/* Font: DM Sans */
+@font-face {
+    font-family: 'DM Sans Bold';
+    src:  url('assets/fonts/DMSans-Bold.eot');
+    src:  url('assets/fonts/DMSans-Bold.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/DMSans-Bold.woff2') format('woff2'),
+         url('assets/fonts/DMSans-Bold.woff') format('woff'),
+         url('assets/fonts/DMSans-Bold.ttf') format('truetype'),
+         url('assets/fonts/DMSans-Bold.svg#DMSans-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dm-bold {
+  font-family: "DM Sans Bold", sans-serif;
+}
+
+@font-face {
+    font-family: 'DM Sans Extralight';
+    src:  url('assets/fonts/DMSans-ExtraLight.eot');
+    src:  url('assets/fonts/DMSans-ExtraLight.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/DMSans-ExtraLight.woff2') format('woff2'),
+         url('assets/fonts/DMSans-ExtraLight.woff') format('woff'),
+         url('assets/fonts/DMSans-ExtraLight.ttf') format('truetype'),
+         url('assets/fonts/DMSans-ExtraLight.svg#DMSans-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dm-extralight {
+  font-family: "DM Sans Extralight", sans-serif;
+}
+
+@font-face {
+    font-family: 'DM Sans Extrabold';
+    src:  url('assets/fonts/DMSans-ExtraBold.eot');
+    src:  url('assets/fonts/DMSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/DMSans-ExtraBold.woff2') format('woff2'),
+         url('assets/fonts/DMSans-ExtraBold.woff') format('woff'),
+         url('assets/fonts/DMSans-ExtraBold.ttf') format('truetype'),
+         url('assets/fonts/DMSans-ExtraBold.svg#DMSans-ExtraBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dm-extrabold {
+  font-family: "DM Sans Extrabold", sans-serif;
+}
+
+@font-face {
+    font-family: 'DM Sans Light';
+    src:  url('assets/fonts/DMSans-Light.eot');
+    src:  url('assets/fonts/DMSans-Light.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/DMSans-Light.woff2') format('woff2'),
+         url('assets/fonts/DMSans-Light.woff') format('woff'),
+         url('assets/fonts/DMSans-Light.ttf') format('truetype'),
+         url('assets/fonts/DMSans-Light.svg#DMSans-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dm-light {
+  font-family: "DM Sans Light", sans-serif;
+}
+
+@font-face {
+    font-family: 'DM Sans Medium';
+    src:  url('assets/fonts/DMSans-Medium.eot');
+    src:  url('assets/fonts/DMSans-Medium.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/DMSans-Medium.woff2') format('woff2'),
+         url('assets/fonts/DMSans-Medium.woff') format('woff'),
+         url('assets/fonts/DMSans-Medium.ttf') format('truetype'),
+         url('assets/fonts/DMSans-Medium.svg#DMSans-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dm-medium {
+  font-family: "DM Sans Medium", sans-serif;
+}
+
+@font-face {
+    font-family: 'DM Sans Regular';
+    src:  url('assets/fonts/DMSans-Regular.eot');
+    src:  url('assets/fonts/DMSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/DMSans-Regular.woff2') format('woff2'),
+         url('assets/fonts/DMSans-Regular.woff') format('woff'),
+         url('assets/fonts/DMSans-Regular.ttf') format('truetype'),
+         url('assets/fonts/DMSans-Regular.svg#DMSans-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dm-regular {
+  font-family: "DM Sans Regular", sans-serif;
+}
+
+@font-face {
+    font-family: 'DM Sans Semibold';
+    src:  url('assets/fonts/DMSans-SemiBold.eot');
+    src:  url('assets/fonts/DMSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/DMSans-SemiBold.woff2') format('woff2'),
+         url('assets/fonts/DMSans-SemiBold.woff') format('woff'),
+         url('assets/fonts/DMSans-SemiBold.ttf') format('truetype'),
+         url('assets/fonts/DMSans-SemiBold.svg#DMSans-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dm-semibold {
+  font-family: "DM Sans Semibold", sans-serif;
+}
+
+@font-face {
+    font-family: 'DM Sans Thin';
+    src:  url('assets/fonts/DMSans-Thin.eot');
+    src:  url('assets/fonts/DMSans-Thin.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/DMSans-Thin.woff2') format('woff2'),
+         url('assets/fonts/DMSans-Thin.woff') format('woff'),
+         url('assets/fonts/DMSans-Thin.ttf') format('truetype'),
+         url('assets/fonts/DMSans-Thin.svg#DMSans-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dm-thin {
+  font-family: "DM Sans Thin", sans-serif;
+}
