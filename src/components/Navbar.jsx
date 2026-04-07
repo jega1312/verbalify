@@ -58,8 +58,8 @@ const Navbar = () => {
       <nav className="fixed w-full top-0 flex justify-between flex-wrap items-center py-6 px-8 lg:px-10  z-50 border-b transition duration-300 ease-in-out bg-white border-gray-200">
         {/* Logo Container */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <NavLink
@@ -118,8 +118,8 @@ const Navbar = () => {
           {/* Get Started Mobile Button */}
           <motion.div
             type="button"
-            initial={{ opacity: 0 }}
-            animate={hasOpened ? { opacity: 1 } : { opacity: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={hasOpened ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
             onClick={() => setMenuOpen(false)}
             className="py-2.5 px-4 sora-regular bg-green-500 text-white text-lg rounded-sm transition duration-300 ease-in-out relative hover:bg-green-500/80 hover:cursor-pointer"
@@ -153,9 +153,9 @@ const Navbar = () => {
         {/* Get Started Desktop Button */}
         <motion.div
           type="button"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="hidden lg:block py-2 px-4 sora-regular bg-green-500 text-white rounded-sm transition duration-300 ease-in-out relative hover:bg-green-500/80 hover:cursor-pointer"
         >
           <NavLink to="/contact">Get Started</NavLink>
