@@ -46,7 +46,7 @@ const Home = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm dm-medium hover:bg-green-500/85 hover:text-black hover:shadow-md hover:cursor-pointer"
+              className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm shadow-xl dm-medium hover:bg-green-500/85 hover:text-black hover:cursor-pointer"
             >
               <NavLink to="/contact">Get Started</NavLink>
             </motion.div>
@@ -59,11 +59,11 @@ const Home = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl"
+              className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
               <div className="flex flex-col w-full h-auto gap-5 p-5 bg-white rounded-2xl">
                 {/* Daily Lesson */}
-                <div className="flex items-start px-3 py-2 text-sm bg-green-300 rounded-full dm-medium w-fit">
+                <div className="flex items-start px-3 py-2 text-sm bg-green-300 rounded-full shadow dm-semibold w-fit">
                   <h2>Daily Lesson</h2>
                 </div>
 
@@ -76,7 +76,7 @@ const Home = () => {
                     {chatMessages.map((chat) => (
                       <li
                         key={chat.id}
-                        className="p-3 text-base bg-gray-200 rounded-2xl dm-semibold hover:bg-green-200"
+                        className="p-3 text-base transition duration-300 ease-in-out bg-gray-200 shadow rounded-2xl dm-semibold hover:bg-green-200"
                       >
                         {chat.message}
                       </li>
