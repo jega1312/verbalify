@@ -54,7 +54,7 @@ const Navbar = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="fixed top-0 z-50 flex flex-wrap items-center justify-between w-full px-8 py-6 transition duration-300 ease-in-out bg-white border-b border-gray-200 lg:px-10">
+    <nav className="fixed top-0 z-50 flex flex-wrap items-center justify-between w-full px-8 py-6 transition duration-300 ease-in-out bg-white shadow lg:px-10">
       {/* Logo Container */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
