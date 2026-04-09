@@ -40,7 +40,6 @@ const Home = () => {
             </motion.p>
 
             {/* Get Started Button */}
-            {/* Get Started Desktop Button */}
             <motion.div
               type="button"
               initial={{ opacity: 0 }}
