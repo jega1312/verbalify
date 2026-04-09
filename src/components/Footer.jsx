@@ -87,14 +87,14 @@ const Footer = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <footer className="w-full border-t border-gray-200 bg-white flex flex-col gap-10 items-center">
+    <footer className="relative z-50 flex flex-col items-center w-full gap-10 bg-white border-t border-gray-200">
       <div className="w-[90%] mx-auto py-3">
         {/* Link Container */}
-        <div className="grid grid-cols-1 gap-7 lg:gap-0 lg:grid-cols-4 place-items-start py-14">
+        <div className="grid grid-cols-1 py-12 gap-7 lg:gap-0 lg:grid-cols-4 place-items-start">
           {/* Logo Container */}
-          <div className="flex flex-col gap-3 items-start">
+          <div className="flex flex-col items-start gap-3">
             <NavLink
-              className="flex gap-2 items-center hover:cursor-pointer"
+              className="flex items-center gap-2 hover:cursor-pointer"
               to="/"
             >
               <motion.span
@@ -102,7 +102,7 @@ const Footer = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="text-2xl dm-bold text-green-500 w-full"
+                className="w-full text-2xl text-green-500 dm-bold"
               >
                 Verbalify
               </motion.span>
@@ -129,7 +129,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="sora-medium text-lg text-black"
+              className="text-lg text-black sora-medium"
             >
               Product
             </motion.h3>
@@ -166,7 +166,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="sora-medium text-lg text-black"
+              className="text-lg text-black sora-medium"
             >
               Company
             </motion.h3>
@@ -191,13 +191,13 @@ const Footer = () => {
           </motion.div>
 
           {/* Social Buttons */}
-          <div className="flex flex-col gap-3 items-start">
+          <div className="flex flex-col items-start gap-3">
             <motion.h3
               ref={ref}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="sora-medium text-lg text-black"
+              className="text-lg text-black sora-medium"
             >
               Follow Us
             </motion.h3>
@@ -215,9 +215,9 @@ const Footer = () => {
                   target={social.target}
                   rel={social.rel}
                   variants={socialItemVariants}
-                  className="bg-transparent rounded-lg flex justify-center items-center transition duration-300 ease-in-out"
+                  className="flex items-center justify-center transition duration-300 ease-in-out bg-transparent rounded-lg"
                 >
-                  <span className="text-black hover:text-green-500 transition duration-300 ease-in-out">
+                  <span className="text-black transition duration-300 ease-in-out hover:text-green-500">
                     {social.icon}
                   </span>
                 </motion.a>
@@ -227,7 +227,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Below */}
-        <div className="w-full border-t border-gray-200 flex flex-col gap-7 lg:gap-0 lg:flex-row justify-center items-center py-10">
+        <div className="flex flex-col items-center justify-center w-full py-10 border-t border-gray-200 gap-7 lg:gap-0 lg:flex-row">
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
