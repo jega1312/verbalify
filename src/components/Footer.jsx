@@ -113,7 +113,7 @@ const Footer = () => {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
               className="text-sm text-black sora-medium text-balance"
             >
-              Language learning, beautifully simplified.
+              Language learning, beautifully simplified
             </motion.p>
           </div>
           {/* Product Links Container */}
