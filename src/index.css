@@ -1,5 +1,23 @@
 @import 'tailwindcss';
 
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    background-color: #fff;
+  }
+}
+
+
 /* Fonts */
 /* Font: Sora */
 @font-face {
