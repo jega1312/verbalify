@@ -1,8 +1,28 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, useInView } from "motion/react";
 motion;
 
+// Mapped Elements Animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+// Hero Section Content
 const chatMessages = [
   {
     id: 1,
@@ -14,6 +34,7 @@ const chatMessages = [
   },
 ];
 
+// About Section Content
 const cardContents = [
   {
     id: 1,
@@ -78,24 +99,86 @@ const cardContents = [
   },
 ];
 
-// Mapped Elements Animation
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.4,
-    },
+// How It Works Content
+const stepContents = [
+  {
+    id: 1,
+    numbering: "1",
+    heading: "Choose Your Languages",
+    description: "Select from 20+ languages and set your learning goals",
   },
-};
+  {
+    id: 2,
+    numbering: "2",
+    heading: "Learn Every Day",
+    description: "Complete bite-sized lessons that fit your schedule",
+  },
+  {
+    id: 3,
+    numbering: "3",
+    heading: "Track Your Progress",
+    description:
+      "Watch your skills grow with detailed analytics and achievements",
+  },
+];
 
-const itemVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
+// Testimonials User Details
+const testimonials = [
+  {
+    id: 1,
+    lang: "🇺🇸 United States",
+    review:
+      `"Verbalify made learning Spanish so much easier! The lessons are engaging and I can practice anywhere."`,
   },
-};
+  {
+    id: 2,
+    lang: "🇩🇪 Germany",
+    review:
+      `"I've tried many apps, but Verbalify's AI-powered approach actually works. Highly recommend!"`,
+  },
+  {
+    id: 3,
+    lang: "🇯🇵 Japan",
+    review:
+      `"Beautiful design and effective learning. I'm now conversational in French after just 3 months!"`,
+  },
+  {
+    id: 4,
+    lang: "🇬🇧 United Kingdom",
+    review:
+      `"The daily streak feature keeps me motivated. My Italian has improved more in 2 months than years of classes!"`,
+  },
+  {
+    id: 5,
+    lang: "🇨🇦 Canada",
+    review:
+     `"Verbalify's bite-sized lessons fit perfectly into my busy schedule. Learning Mandarin has never felt this manageable."`,
+  },
+  {
+    id: 6,
+    lang: "🇯🇵 Japan",
+    review:
+     `"As a native Japanese speaker learning English, Verbalify's pronunciation feedback is incredibly accurate and helpful."`,
+  },
+  {
+    id: 7,
+    lang: "🇧🇷 Brazil",
+    review:
+      `"I use Verbalify every morning before work. My German colleagues are genuinely impressed by my progress!"`,
+  },
+  {
+    id: 8,
+    lang: "🇮🇳 India",
+    review:
+      `"The AI conversation practice feels so natural. I finally have the confidence to speak French with native speakers."`,
+  },
+  {
+    id: 9,
+    lang: "🇦🇺 Australia",
+    review:
+      `"Switched from a competitor app and never looked back. Verbalify's structured path makes progress so visible!"`,
+  },
+];
 
 const Home = () => {
   // Start Animation When Visible
@@ -104,6 +187,16 @@ const Home = () => {
 
   const headingInView = useInView(headingRef, { once: true, amount: 0.3 });
   const cardsInView = useInView(cardsRef, { once: true, amount: 0.3 });
+
+  const [users, setUsers] = useState([]);
+
+  // API for Users Profile Picture
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=9&seed=verbalify")
+      .then((response) => response.json())
+      .then((data) => setUsers(data.results))
+      .catch((error) => console.error("Failed to fetch users:", error));
+  }, []);
 
   return (
     <>
@@ -190,7 +283,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={headingInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="bg-transparent hover:bg-green-500 border border-green-500 rounded-full w-fit py-2 px-4 group transition duration-300 ease-in-out hover:scale-105"
+            className="bg-transparent hover:bg-green-500 hover:shadow-lg border border-green-500 rounded-full w-fit py-2 px-4 group transition duration-300 ease-in-out hover:scale-105"
           >
             <h1 className="dm-bold text-green-500 text-sm group-hover:text-white transition duration-300 ease-in-out">
               Why Verbalify
@@ -221,7 +314,7 @@ const Home = () => {
               <motion.div
                 key={content.id}
                 variants={itemVariants}
-                className={`flex flex-col justify-between ${content.colspan} rounded-2xl ${content.bgcolor} p-10 shadow-md border-2 ${content.bordercolor} transition duration-300 ease-in-out`}
+                className={`flex flex-col justify-between ${content.colspan} rounded-2xl ${content.bgcolor} p-10 shadow-md hover:shadow-xl border-2 ${content.bordercolor} transition duration-300 ease-in-out`}
               >
                 <div className="flex flex-col justify-between items-start gap-10 h-full">
                   <div className="flex flex-col  items-start gap-5">
@@ -255,6 +348,135 @@ const Home = () => {
         </div>
       </section>
       {/* About Section Ends */}
+
+      {/* Steps Section Starts */}
+      <section className="bg-gray-100 py-20 w-full">
+        {/* Section Heading */}
+        <div className="w-full flex flex-col gap-5 items-center mb-12 md:mb-14">
+          <motion.h1
+            ref={headingRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl text-black dm-bold text-balance"
+          >
+            Steps
+          </motion.h1>
+          <motion.p
+            ref={headingRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="text-base text-center text-gray-600 sora-regular text-balance"
+          >
+            Start speaking a new language in just three simple steps
+          </motion.p>
+        </div>
+
+        {/* Grid Section */}
+        <motion.div
+          ref={cardsRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={cardsInView ? "visible" : "hidden"}
+          className="grid grid-cols-1 lg:grid-cols-3 w-[90%] mx-auto gap-10"
+        >
+          {/* Content Mapping */}
+          {stepContents.map((step) => (
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col items-center gap-5"
+            >
+              {/* Numbering Container */}
+              <div className="bg-green-500 p-5 size-16 flex justify-center items-center rounded-full shadow-lg">
+                <p className="text-white sora-bold text-3xl">
+                  {step.numbering}
+                </p>
+              </div>
+
+              {/* Heading Title */}
+              <div className="flex flex-col items-center gap-2">
+                <h3 className="dm-bold text-center text-black text-xl">
+                  {step.heading}
+                </h3>
+                <p className="text-base text-center text-gray-600 sora-regular w-[80%] mx-auto">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+      {/* Steps Section Ends */}
+
+      {/* Testimonials Section Starts */}
+      <section className="bg-white py-20 w-full">
+        {/* Section Heading */}
+        <div className="w-full flex flex-col gap-5 items-center mb-12 md:mb-14">
+          <motion.h1
+            ref={headingRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl text-black dm-bold text-balance"
+          >
+            Testimonials
+          </motion.h1>
+          <motion.p
+            ref={headingRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="text-base text-center text-gray-600 sora-regular text-balance"
+          >
+            Loved by learners worldwide
+          </motion.p>
+        </div>
+
+        {/* Grid Section */}
+        <motion.div
+          ref={cardsRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={cardsInView ? "visible" : "hidden"}
+          className="grid grid-cols-1 lg:grid-cols-3 w-[90%] mx-auto gap-10"
+        >
+          {/* Content Mapping */}
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.id}
+              variants={itemVariants}
+              className="flex flex-col gap-5 bg-green-500 rounded-2xl p-7"
+            >
+              {/* User Details Container */}
+              <div className="flex items-center gap-5 w-full">
+                {/* User Profile Picture Container */}
+                <img
+                  src={users[index]?.picture.large}
+                  alt="Profile Picture"
+                  className="size-16 flex justify-center items-center rounded-full shadow-lg"
+                />
+
+                {/* User Details Container */}
+                <div className="flex flex-col items-start gap-2">
+                  <h3 className="dm-bold text-white text-xl">
+                    {users[index]?.name.first} {users[index]?.name.last}
+                  </h3>
+                  <p className="text-xs text-black sora-medium bg-white rounded py-1 px-2">
+                    {testimonial.lang}
+                  </p>
+                </div>
+              </div>
+
+              {/* User Comments Container */}
+              <p className="text-white sora-regular text-base">
+                {testimonial.review}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+      {/* Testimonials Section Ends */}
     </>
   );
 };
