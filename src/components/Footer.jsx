@@ -87,7 +87,7 @@ const Footer = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <footer className="relative z-40 flex flex-col items-center w-full gap-10 bg-white shadow">
+    <footer className="relative z-50 flex flex-col items-center w-full gap-10 bg-white border-t border-gray-200">
       <div className="w-[90%] mx-auto py-3">
         {/* Link Container */}
         <div className="grid grid-cols-1 py-12 gap-7 lg:gap-0 lg:grid-cols-4 place-items-start">
