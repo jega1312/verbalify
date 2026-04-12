@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, useInView } from "motion/react";
 motion;
+import { IoCheckmark } from "react-icons/io5";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -62,7 +63,7 @@ const cardContents = [
     colspan: "col-span-1",
     bgcolor: "bg-white",
     headingcolor: "text-black",
-    descriptioncolor: "text-gray-500",
+    descriptioncolor: "text-gray-600",
     bordercolor: "border-gray-200 hover:border-green-500",
     heading: "5-minute daily habits",
     description:
@@ -75,7 +76,7 @@ const cardContents = [
     colspan: "col-span-1",
     bgcolor: "bg-white",
     headingcolor: "text-black",
-    descriptioncolor: "text-gray-500",
+    descriptioncolor: "text-gray-600",
     bordercolor: "border-gray-200 hover:border-green-500",
     heading: "Built on memory science",
     description:
@@ -177,13 +178,84 @@ const testimonials = [
   },
 ];
 
-const Home = () => {
-  // Start Animation When Visible
-  const headingRef = useRef(null);
-  const cardsRef = useRef(null);
+// Pricing Card Content
+const plans = [
+  {
+    id: 1,
+    showBadge: false,
+    cardbordercolor: "border-gray-300 hover:border-green-500",
+    buttonbgcolor: "bg-white hover:bg-green-500",
+    buttontextcolor: "text-green-500 hover:text-white",
+    buttonbordercolor: "border-green-500",
+    label: "Free",
+    price: "RM 0",
+    benefits: ["Basic lessons", "Single language", "Limited practice"],
+    buttontext: "Get Started",
+  },
+  {
+    id: 2,
+    showBadge: true,
+    cardbordercolor: "border-green-500",
+    buttonbgcolor: "bg-green-500 hover:bg-green-500/85",
+    buttontextcolor: "text-white hover:text-black",
+    buttonbordercolor: "border-green-500 hover:border-transparent",
+    label: "Pro",
+    price: "RM 19",
+    benefits: [
+      "Unlimited lessons",
+      "All languages",
+      "Offline access",
+      "Priority support",
+    ],
+    buttontext: "Start Free Trial",
+  },
+  {
+    id: 3,
+    showBadge: false,
+    cardbordercolor: "border-gray-300 hover:border-green-500",
+    buttonbgcolor: "bg-white hover:bg-green-500",
+    buttontextcolor: "text-green-500 hover:text-white",
+    buttonbordercolor: "border-green-500",
+    label: "Teams",
+    price: "RM 99",
+    benefits: [
+      "Everything in Pro",
+      "Up to 10 users",
+      "Team analytics",
+      "Dedicated support",
+    ],
+    buttontext: "Contact Sales",
+  },
+];
 
-  const headingInView = useInView(headingRef, { once: true, amount: 0.3 });
-  const cardsInView = useInView(cardsRef, { once: true, amount: 0.3 });
+const Home = () => {
+  // Animation when visible
+  // About
+  const aboutRef = useRef(null);
+  const aboutInView = useInView(aboutRef, { once: true, amount: 0.3 });
+
+  // Steps
+  const stepsRef = useRef(null);
+  const stepsInView = useInView(stepsRef, { once: true, amount: 0.3 });
+
+  // Testimonials
+  const testimonialsRef = useRef(null);
+  const testimonialsInView = useInView(testimonialsRef, {
+    once: true,
+    amount: 0.3,
+  });
+
+  // Plans
+  const plansRef = useRef(null);
+  const plansInView = useInView(plansRef, { once: true, amount: 0.3 });
+
+  // // FAQ
+  // const faqRef = useRef(null);
+  // const faqInView = useInView(faqRef, { once: true, amount: 0.3 });
+
+  // // CTA
+  // const ctaRef = useRef(null);
+  // const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
 
   const [users, setUsers] = useState([]);
 
@@ -216,7 +288,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-gray-500 sora-regular text-balance"
+              className="text-base text-gray-600 sora-regular text-balance"
             >
               Master any language with AI-powered lessons, interactive
               exercises, and real-world conversations. Start your journey today.
@@ -252,7 +324,7 @@ const Home = () => {
                 <div className="flex flex-col gap-32">
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl dm-extrabold ">¿Cómo estás?</h3>
-                    <p className="text-gray-500 dm-regular">How are you?</p>
+                    <p className="text-gray-600 dm-regular">How are you?</p>
                   </div>
                   <ul className="flex flex-col w-full gap-4">
                     {chatMessages.map((chat) => (
@@ -278,9 +350,9 @@ const Home = () => {
         <div className="flex flex-col mx-auto gap-5 w-[90%] ">
           {/* Why Verbalify */}
           <motion.div
-            ref={headingRef}
+            ref={aboutRef}
             initial={{ opacity: 0 }}
-            animate={headingInView ? { opacity: 1 } : {}}
+            animate={aboutInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             className="bg-transparent hover:bg-green-500 hover:shadow-lg border border-green-500 rounded-full w-fit py-2 px-4 group transition duration-300 ease-in-out hover:scale-105"
           >
@@ -291,9 +363,9 @@ const Home = () => {
 
           {/* Section Description */}
           <motion.h2
-            ref={headingRef}
+            ref={aboutRef}
             initial={{ opacity: 0 }}
-            animate={headingInView ? { opacity: 1 } : {}}
+            animate={aboutInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             className="text-black text-3xl md:text-4xl lg:text-5xl dm-bold text-balance mb-10"
           >
@@ -302,10 +374,10 @@ const Home = () => {
 
           {/* Grid Section */}
           <motion.div
-            ref={cardsRef}
+            ref={aboutRef}
             variants={containerVariants}
             initial="hidden"
-            animate={cardsInView ? "visible" : "hidden"}
+            animate={aboutInView ? "visible" : "hidden"}
             className="grid grid-cols-1 lg:grid-cols-3 gap-10"
           >
             {/* First Card */}
@@ -353,18 +425,18 @@ const Home = () => {
         {/* Section Heading */}
         <div className="w-full flex flex-col gap-5 items-center mb-12 md:mb-14">
           <motion.h1
-            ref={headingRef}
+            ref={stepsRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            animate={stepsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl text-black dm-bold text-balance"
           >
             Steps
           </motion.h1>
           <motion.p
-            ref={headingRef}
+            ref={stepsRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            animate={stepsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
             className="text-base text-center text-gray-600 sora-regular text-balance"
           >
@@ -374,10 +446,10 @@ const Home = () => {
 
         {/* Grid Section */}
         <motion.div
-          ref={cardsRef}
+          ref={stepsRef}
           variants={containerVariants}
           initial="hidden"
-          animate={cardsInView ? "visible" : "hidden"}
+          animate={stepsInView ? "visible" : "hidden"}
           className="grid grid-cols-1 lg:grid-cols-3 w-[90%] mx-auto gap-10"
         >
           {/* Content Mapping */}
@@ -387,8 +459,8 @@ const Home = () => {
               className="flex flex-col items-center gap-5"
             >
               {/* Numbering Container */}
-              <div className="bg-green-500 p-5 size-16 flex justify-center items-center rounded-full shadow-lg">
-                <p className="text-white sora-bold text-3xl">
+              <div className="bg-green-500 group p-5 size-16 flex justify-center items-center rounded-full shadow-lg">
+                <p className="text-white sora-bold text-3xl group-hover:text-black transition duration-300 ease-in-out">
                   {step.numbering}
                 </p>
               </div>
@@ -413,18 +485,18 @@ const Home = () => {
         {/* Section Heading */}
         <div className="w-full flex flex-col gap-5 items-center mb-12 md:mb-14">
           <motion.h1
-            ref={headingRef}
+            ref={testimonialsRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl text-black dm-bold text-balance"
           >
             Testimonials
           </motion.h1>
           <motion.p
-            ref={headingRef}
+            ref={testimonialsRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
             className="text-base text-center text-gray-600 sora-regular text-balance"
           >
@@ -434,10 +506,10 @@ const Home = () => {
 
         {/* Grid Section */}
         <motion.div
-          ref={cardsRef}
+          ref={testimonialsRef}
           variants={containerVariants}
           initial="hidden"
-          animate={cardsInView ? "visible" : "hidden"}
+          animate={testimonialsInView ? "visible" : "hidden"}
           className="w-[90%] mx-auto"
         >
           <Swiper
@@ -506,6 +578,87 @@ const Home = () => {
         </motion.div>
       </section>
       {/* Testimonials Section Ends */}
+
+      {/* Pricing Section Starts */}
+      <section className="bg-gray-100 py-20 w-full">
+        {/* Section Heading */}
+        <div className="w-full flex flex-col gap-5 items-center mb-12 md:mb-14">
+          <motion.h1
+            ref={plansRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={plansInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl text-black dm-bold text-balance"
+          >
+            Choose your plan
+          </motion.h1>
+          <motion.p
+            ref={plansRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={plansInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="text-base text-center text-gray-600 sora-regular text-balance"
+          >
+            Start free, upgrade when you're ready
+          </motion.p>
+        </div>
+
+        {/* Plans Card Container */}
+        <motion.div
+          ref={plansRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={plansInView ? "visible" : "hidden"}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-10 w-[90%] mx-auto"
+        >
+          {plans.map((plan) => (
+            <motion.div
+              key={plan.id}
+              variants={containerVariants}
+              className={`relative p-10 bg-white border-2 ${plan.cardbordercolor}  h-full rounded-2xl shadow flex flex-col gap-10 hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out hover:cursor-pointer`}
+            >
+              {/* Badge Container */}
+              {plan.showBadge && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 py-2 px-4 bg-green-300 rounded-full w-fit">
+                  <p className="text-center text-xs dm-semibold">
+                    Most Popular
+                  </p>
+                </div>
+              )}
+
+              <div className="flex flex-col gap-2">
+                <div className="text-2xl text-black sora-bold text-balance">
+                  {plan.label}
+                </div>
+                <div className="text-3xl text-black sora-bold text-balance">
+                  {plan.price}
+                  <span className="text-base text-gray-600 sora-regular">
+                    /month
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-start items-start gap-2 flex-1">
+                {plan.benefits.map((benefit, index) => (
+                  <div key={index} className="flex gap-2 items-center">
+                    <IoCheckmark size={25} className="text-green-600" />
+                    <h3 className="text-base text-gray-600 sora-regular ">
+                      {benefit}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                className={`relative w-full border-2 ${plan.buttonbgcolor} border-green-500 rounded-lg ${plan.buttontextcolor} ${plan.buttonbordercolor} dm-bold py-3 transition duration-300 ease-in-out hover:cursor-pointer shadow-md`}
+              >
+                {plan.buttontext}
+              </button>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+      {/* Pricing Section Ends */}
     </>
   );
 };
