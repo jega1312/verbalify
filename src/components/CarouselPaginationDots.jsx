@@ -9,7 +9,7 @@ const CarouselPaginationDots = ( {total, activeIndex} ) => {
   };
 
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex items-center gap-2">
       {Array.from({ length: total }).map((_, index) => (
         <button
           key={index}

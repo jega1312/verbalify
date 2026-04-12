@@ -272,7 +272,7 @@ const Home = () => {
   return (
     <>
       {/* Hero Section Starts */}
-      <section className="min-h-screen w-full pb-16 bg-green-200 lg:pb-0 lg:h-screen pt-36 lg:pt-24">
+      <section className="w-full min-h-screen pb-16 bg-green-200 lg:pb-0 lg:h-screen pt-36 lg:pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-0 h-full w-[90%] mx-auto">
           {/* Left Content */}
           <div className="flex flex-col items-start justify-center gap-5">
@@ -345,7 +345,7 @@ const Home = () => {
       {/* Hero Section Ends */}
 
       {/* About Section Starts */}
-      <section className="bg-white w-full py-20">
+      <section className="w-full py-20 bg-white">
         {/* Description Section */}
         <div className="flex flex-col mx-auto gap-5 w-[90%] ">
           {/* Why Verbalify */}
@@ -354,9 +354,9 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={aboutInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="bg-transparent hover:bg-green-500 hover:shadow-lg border border-green-500 rounded-full w-fit py-2 px-4 group transition duration-300 ease-in-out hover:scale-105"
+            className="px-4 py-2 transition duration-300 ease-in-out bg-transparent border border-green-500 rounded-full hover:bg-green-500 hover:shadow-lg w-fit group hover:scale-105"
           >
-            <h1 className="dm-bold text-green-500 text-sm group-hover:text-white transition duration-300 ease-in-out">
+            <h1 className="text-sm text-green-500 transition duration-300 ease-in-out dm-bold group-hover:text-white">
               Why Verbalify
             </h1>
           </motion.div>
@@ -367,7 +367,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={aboutInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-black text-3xl md:text-4xl lg:text-5xl dm-bold text-balance mb-10"
+            className="mb-10 text-3xl text-black md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Learn naturally, not mechanically
           </motion.h2>
@@ -378,7 +378,7 @@ const Home = () => {
             variants={containerVariants}
             initial="hidden"
             animate={aboutInView ? "visible" : "hidden"}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-10"
+            className="grid grid-cols-1 gap-10 lg:grid-cols-3"
           >
             {/* First Card */}
             {cardContents.map((content) => (
@@ -387,8 +387,8 @@ const Home = () => {
                 variants={itemVariants}
                 className={`flex flex-col justify-between ${content.colspan} rounded-2xl ${content.bgcolor} p-10 shadow-md hover:shadow-xl border-2 ${content.bordercolor} transition duration-300 ease-in-out`}
               >
-                <div className="flex flex-col justify-between items-start gap-10 h-full">
-                  <div className="flex flex-col  items-start gap-5">
+                <div className="flex flex-col items-start justify-between h-full gap-10">
+                  <div className="flex flex-col items-start gap-5">
                     <h2
                       className={`dm-semibold text-2xl text-balance ${content.headingcolor}`}
                     >
@@ -421,15 +421,15 @@ const Home = () => {
       {/* About Section Ends */}
 
       {/* Steps Section Starts */}
-      <section className="bg-gray-100 py-20 w-full">
+      <section className="w-full py-20 bg-gray-100">
         {/* Section Heading */}
-        <div className="w-full flex flex-col gap-5 items-center mb-12 md:mb-14">
+        <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
             ref={stepsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={stepsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl text-black dm-bold text-balance"
+            className="text-3xl text-black md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Steps
           </motion.h1>
@@ -459,15 +459,15 @@ const Home = () => {
               className="flex flex-col items-center gap-5"
             >
               {/* Numbering Container */}
-              <div className="bg-green-500 group p-5 size-16 flex justify-center items-center rounded-full shadow-lg">
-                <p className="text-white sora-bold text-3xl group-hover:text-black transition duration-300 ease-in-out">
+              <div className="flex items-center justify-center p-5 bg-green-500 rounded-full shadow-lg group size-16">
+                <p className="text-3xl text-white transition duration-300 ease-in-out sora-bold group-hover:text-black">
                   {step.numbering}
                 </p>
               </div>
 
               {/* Heading Title */}
               <div className="flex flex-col items-center gap-2">
-                <h3 className="dm-bold text-center text-black text-xl">
+                <h3 className="text-xl text-center text-black dm-bold">
                   {step.heading}
                 </h3>
                 <p className="text-base text-center text-gray-600 sora-regular w-[80%] mx-auto">
@@ -481,15 +481,15 @@ const Home = () => {
       {/* Steps Section Ends */}
 
       {/* Testimonials Section Starts */}
-      <section className="bg-white py-20 w-full">
+      <section className="w-full py-20 bg-white">
         {/* Section Heading */}
-        <div className="w-full flex flex-col gap-5 items-center mb-12 md:mb-14">
+        <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
             ref={testimonialsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl text-black dm-bold text-balance"
+            className="text-3xl text-black md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Testimonials
           </motion.h1>
@@ -532,42 +532,42 @@ const Home = () => {
               <SwiperSlide key={testimonial.id}>
                 <motion.div
                   variants={itemVariants}
-                  className="flex flex-col h-full gap-5 bg-green-500 rounded-2xl shadow p-7"
+                  className="flex flex-col h-full gap-5 bg-green-500 shadow rounded-2xl p-7"
                 >
                   {/* User Details Container */}
-                  <div className="flex items-center gap-5 w-full">
+                  <div className="flex items-center w-full gap-5">
                     {/* User Profile Picture Container */}
                     <img
                       src={users[index]?.picture.large}
                       alt="Profile Picture"
-                      className="size-16 flex justify-center items-center rounded-full shadow-lg"
+                      className="flex items-center justify-center rounded-full shadow-lg size-16"
                     />
 
                     {/* User Details Container */}
                     <div className="flex flex-col items-start gap-2">
-                      <h3 className="dm-bold text-white text-xl">
+                      <h3 className="text-xl text-white dm-bold">
                         {users[index]?.name.first} {users[index]?.name.last}
                       </h3>
-                      <p className="text-xs text-black sora-medium bg-white shadow rounded py-1 px-2">
+                      <p className="px-2 py-1 text-xs text-black bg-white rounded shadow sora-medium">
                         {testimonial.lang}
                       </p>
                     </div>
                   </div>
 
                   {/* User Comments Container */}
-                  <p className="text-white sora-regular text-base">
+                  <p className="text-base text-white sora-regular">
                     {testimonial.review}
                   </p>
                 </motion.div>
               </SwiperSlide>
             ))}
-            <div className="lg:hidden flex justify-between items-center w-full pt-7 lg:flex-row flex-col">
+            <div className="flex flex-col items-center justify-between w-full lg:hidden pt-7 lg:flex-row">
               <CarouselNavButtons
                 activeIndex={activeIndex}
                 total={testimonials.length}
               />
             </div>
-            <div className="hidden lg:flex justify-between items-center w-full pt-7 lg:flex-row flex-col">
+            <div className="flex-col items-center justify-between hidden w-full lg:flex pt-7 lg:flex-row">
               <CarouselPaginationDots
                 activeIndex={activeIndex}
                 total={testimonials.length}
@@ -580,15 +580,15 @@ const Home = () => {
       {/* Testimonials Section Ends */}
 
       {/* Pricing Section Starts */}
-      <section className="bg-gray-100 py-20 w-full">
+      <section className="w-full py-20 bg-gray-100">
         {/* Section Heading */}
-        <div className="w-full flex flex-col gap-5 items-center mb-12 md:mb-14">
+        <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
             ref={plansRef}
             initial={{ opacity: 0, y: 40 }}
             animate={plansInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl text-black dm-bold text-balance"
+            className="text-3xl text-black md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Choose your plan
           </motion.h1>
@@ -619,8 +619,8 @@ const Home = () => {
             >
               {/* Badge Container */}
               {plan.showBadge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 py-2 px-4 bg-green-300 rounded-full w-fit">
-                  <p className="text-center text-xs dm-semibold">
+                <div className="absolute px-4 py-2 -translate-x-1/2 bg-green-300 rounded-full -top-4 left-1/2 w-fit">
+                  <p className="text-xs text-center dm-semibold">
                     Most Popular
                   </p>
                 </div>
@@ -638,9 +638,9 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-start items-start gap-2 flex-1">
+              <div className="flex flex-col items-start justify-start flex-1 gap-2">
                 {plan.benefits.map((benefit, index) => (
-                  <div key={index} className="flex gap-2 items-center">
+                  <div key={index} className="flex items-center gap-2">
                     <IoCheckmark size={25} className="text-green-600" />
                     <h3 className="text-base text-gray-600 sora-regular ">
                       {benefit}
