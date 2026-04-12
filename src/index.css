@@ -292,3 +292,12 @@
 .dm-thin {
   font-family: "DM Sans Thin", sans-serif;
 }
+
+/* Swiper.js Styles */
+.swiper-slide {
+  height: auto !important;
+}
+
+.swiper-wrapper {
+  align-items: stretch !important;
+}

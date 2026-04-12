@@ -2,6 +2,12 @@ import { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, useInView } from "motion/react";
 motion;
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "/src/index.css";
+import CarouselNavButtons from "../components/CarouselNavButtons";
+import CarouselPaginationDots from "../components/CarouselPaginationDots";
 
 // Mapped Elements Animation
 const containerVariants = {
@@ -127,56 +133,47 @@ const testimonials = [
   {
     id: 1,
     lang: "🇺🇸 United States",
-    review:
-      `"Verbalify made learning Spanish so much easier! The lessons are engaging and I can practice anywhere."`,
+    review: `"Verbalify made learning Spanish so much easier! The lessons are engaging and I can practice anywhere."`,
   },
   {
     id: 2,
     lang: "🇩🇪 Germany",
-    review:
-      `"I've tried many apps, but Verbalify's AI-powered approach actually works. Highly recommend!"`,
+    review: `"I've tried many apps, but Verbalify's AI-powered approach actually works. Highly recommend!"`,
   },
   {
     id: 3,
     lang: "🇯🇵 Japan",
-    review:
-      `"Beautiful design and effective learning. I'm now conversational in French after just 3 months!"`,
+    review: `"Beautiful design and effective learning. I'm now conversational in French after just 3 months!"`,
   },
   {
     id: 4,
     lang: "🇬🇧 United Kingdom",
-    review:
-      `"The daily streak feature keeps me motivated. My Italian has improved more in 2 months than years of classes!"`,
+    review: `"The daily streak feature keeps me motivated. My Italian has improved more in 2 months than years of classes!"`,
   },
   {
     id: 5,
     lang: "🇨🇦 Canada",
-    review:
-     `"Verbalify's bite-sized lessons fit perfectly into my busy schedule. Learning Mandarin has never felt this manageable."`,
+    review: `"Verbalify's bite-sized lessons fit perfectly into my busy schedule. Learning Mandarin has never felt this manageable."`,
   },
   {
     id: 6,
     lang: "🇯🇵 Japan",
-    review:
-     `"As a native Japanese speaker learning English, Verbalify's pronunciation feedback is incredibly accurate and helpful."`,
+    review: `"As a native Japanese speaker learning English, Verbalify's pronunciation feedback is incredibly accurate and helpful."`,
   },
   {
     id: 7,
     lang: "🇧🇷 Brazil",
-    review:
-      `"I use Verbalify every morning before work. My German colleagues are genuinely impressed by my progress!"`,
+    review: `"I use Verbalify every morning before work. My German colleagues are genuinely impressed by my progress!"`,
   },
   {
     id: 8,
     lang: "🇮🇳 India",
-    review:
-      `"The AI conversation practice feels so natural. I finally have the confidence to speak French with native speakers."`,
+    review: `"The AI conversation practice feels so natural. I finally have the confidence to speak French with native speakers."`,
   },
   {
     id: 9,
     lang: "🇦🇺 Australia",
-    review:
-      `"Switched from a competitor app and never looked back. Verbalify's structured path makes progress so visible!"`,
+    review: `"Switched from a competitor app and never looked back. Verbalify's structured path makes progress so visible!"`,
   },
 ];
 
@@ -189,6 +186,8 @@ const Home = () => {
   const cardsInView = useInView(cardsRef, { once: true, amount: 0.3 });
 
   const [users, setUsers] = useState([]);
+
+  const [activeIndex, setActiveIndex] = useState(0);
 
   // API for Users Profile Picture
   useEffect(() => {
@@ -439,41 +438,71 @@ const Home = () => {
           variants={containerVariants}
           initial="hidden"
           animate={cardsInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-3 w-[90%] mx-auto gap-10"
+          className="w-[90%] mx-auto"
         >
-          {/* Content Mapping */}
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              variants={itemVariants}
-              className="flex flex-col gap-5 bg-green-500 rounded-2xl p-7"
-            >
-              {/* User Details Container */}
-              <div className="flex items-center gap-5 w-full">
-                {/* User Profile Picture Container */}
-                <img
-                  src={users[index]?.picture.large}
-                  alt="Profile Picture"
-                  className="size-16 flex justify-center items-center rounded-full shadow-lg"
-                />
+          <Swiper
+            speed={800}
+            modules={[Pagination, Navigation, Autoplay]}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            spaceBetween={30}
+            loop={true}
+            navigation={false}
+            pagination={false}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          >
+            {/* Content Mapping */}
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={testimonial.id}>
+                <motion.div
+                  variants={itemVariants}
+                  className="flex flex-col h-full gap-5 bg-green-500 rounded-2xl shadow p-7"
+                >
+                  {/* User Details Container */}
+                  <div className="flex items-center gap-5 w-full">
+                    {/* User Profile Picture Container */}
+                    <img
+                      src={users[index]?.picture.large}
+                      alt="Profile Picture"
+                      className="size-16 flex justify-center items-center rounded-full shadow-lg"
+                    />
 
-                {/* User Details Container */}
-                <div className="flex flex-col items-start gap-2">
-                  <h3 className="dm-bold text-white text-xl">
-                    {users[index]?.name.first} {users[index]?.name.last}
-                  </h3>
-                  <p className="text-xs text-black sora-medium bg-white rounded py-1 px-2">
-                    {testimonial.lang}
+                    {/* User Details Container */}
+                    <div className="flex flex-col items-start gap-2">
+                      <h3 className="dm-bold text-white text-xl">
+                        {users[index]?.name.first} {users[index]?.name.last}
+                      </h3>
+                      <p className="text-xs text-black sora-medium bg-white shadow rounded py-1 px-2">
+                        {testimonial.lang}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* User Comments Container */}
+                  <p className="text-white sora-regular text-base">
+                    {testimonial.review}
                   </p>
-                </div>
-              </div>
-
-              {/* User Comments Container */}
-              <p className="text-white sora-regular text-base">
-                {testimonial.review}
-              </p>
-            </motion.div>
-          ))}
+                </motion.div>
+              </SwiperSlide>
+            ))}
+            <div className="lg:hidden flex justify-between items-center w-full pt-7 lg:flex-row flex-col">
+              <CarouselNavButtons
+                activeIndex={activeIndex}
+                total={testimonials.length}
+              />
+            </div>
+            <div className="hidden lg:flex justify-between items-center w-full pt-7 lg:flex-row flex-col">
+              <CarouselPaginationDots
+                activeIndex={activeIndex}
+                total={testimonials.length}
+              />
+              <CarouselNavButtons />
+            </div>
+          </Swiper>
         </motion.div>
       </section>
       {/* Testimonials Section Ends */}
