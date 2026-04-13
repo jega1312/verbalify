@@ -232,7 +232,7 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="text-sm text-black sora-regular"
+            className="text-base text-black dm-medium"
           >
             © 2026 Verbalify. All rights reserved.
           </motion.p>

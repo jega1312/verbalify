@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { motion, useInView } from "motion/react";
 motion;
 import { IoCheckmark } from "react-icons/io5";
+import { FaChevronDown } from "react-icons/fa6";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -228,7 +229,37 @@ const plans = [
   },
 ];
 
+// FAQS Accordions Content
+const faqs = [
+  {
+    id: 1,
+    question: "How long does it take to learn a language with Verbalify?",
+    answer:
+      "Most learners reach conversational fluency in 3-6 months with daily practice. Our AI adapts to your pace, so you can progress as quickly or slowly as you need.",
+  },
+  {
+    id: 2,
+    question: "Can I switch languages?",
+    answer:
+      "Yes! Pro users can access all 20+ languages and switch between them at any time. Free users can learn one language at a time.",
+  },
+  {
+    id: 3,
+    question: "Is there a mobile app?",
+    answer:
+      "Yes, Verbalify is available on iOS and Android. Your progress syncs automatically across all devices.",
+  },
+  {
+    id: 4,
+    question: "What's your refund policy?",
+    answer:
+      "We offer a 30-day money-back guarantee on all paid plans. If you're not satisfied, contact our support team for a full refund.",
+  },
+];
+
 const Home = () => {
+  const [openId, setOpenId] = useState(null);
+
   // Animation when visible
   // About
   const aboutRef = useRef(null);
@@ -249,13 +280,13 @@ const Home = () => {
   const plansRef = useRef(null);
   const plansInView = useInView(plansRef, { once: true, amount: 0.3 });
 
-  // // FAQ
-  // const faqRef = useRef(null);
-  // const faqInView = useInView(faqRef, { once: true, amount: 0.3 });
+  // FAQS
+  const faqsRef = useRef(null);
+  const faqsInView = useInView(faqsRef, { once: true, amount: 0.3 });
 
-  // // CTA
-  // const ctaRef = useRef(null);
-  // const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
+  // CTA
+  const ctaRef = useRef(null);
+  const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
 
   const [users, setUsers] = useState([]);
 
@@ -330,7 +361,7 @@ const Home = () => {
                     {chatMessages.map((chat) => (
                       <li
                         key={chat.id}
-                        className="p-3 text-base transition duration-300 ease-in-out bg-gray-200 shadow rounded-2xl dm-semibold hover:bg-green-200"
+                        className="p-3 text-base transition duration-300 ease-in-out bg-gray-200 shadow rounded dm-semibold hover:bg-green-200"
                       >
                         {chat.message}
                       </li>
@@ -579,7 +610,7 @@ const Home = () => {
       </section>
       {/* Testimonials Section Ends */}
 
-      {/* Pricing Section Starts */}
+      {/* Plans Section Starts */}
       <section className="w-full py-20 bg-gray-100">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
@@ -658,7 +689,106 @@ const Home = () => {
           ))}
         </motion.div>
       </section>
-      {/* Pricing Section Ends */}
+      {/* Plans Section Ends */}
+
+      {/* FAQS Section Starts */}
+      <section className="w-full py-20 bg-white">
+        {/* Section Heading */}
+        <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
+          <motion.h1
+            ref={faqsRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={faqsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="text-3xl text-black text-center md:text-4xl lg:text-5xl dm-bold text-balance"
+          >
+            Frequently asked questions
+          </motion.h1>
+          <motion.p
+            ref={faqsRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={faqsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="text-base text-center text-gray-600 sora-regular text-balance"
+          >
+            Everything you need to know about Verbalify, answered.
+          </motion.p>
+        </div>
+
+        {/* FAQ Section Container */}
+        <motion.div
+          ref={faqsRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={faqsInView ? "visible" : "hidden"}
+          className="w-[80%] 2xl:w-[70%] mx-auto flex flex-col gap-4"
+        >
+          {faqs.map((faq) => (
+            <motion.div
+              key={faq.id}
+              variants={itemVariants}
+              onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
+              className={`border-2 rounded-xl p-7 flex flex-col cursor-pointer transition group duration-300 ease-in-out hover:border-green-500 shadow
+            ${openId === faq.id ? "border-green-500 bg-green-500" : "border-gray-300 bg-white"}`}
+            >
+              <div className="flex items-center justify-between w-full">
+                <h3
+                  className={`text-lg  dm-bold ${openId === faq.id ? "text-white" : "text-green-500"}`}
+                >
+                  {faq.question}
+                </h3>
+                <FaChevronDown
+                  size={20}
+                  className={`shrink-0 transition duration-300 ease-in-out
+                ${openId === faq.id ? "rotate-180 text-white" : "text-green-500"}`}
+                />
+              </div>
+
+              {/* Answer */}
+              <div className={`faq-answer ${openId === faq.id ? "open" : ""}`}>
+                <div>
+                  <p className="text-base text-black sora-regular pt-3">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+      {/* FAQS Section Ends */}
+
+      {/* CTA Section Starts */}
+      <section className="w-full py-30 bg-green-500">
+        {/* Section Heading */}
+        <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
+          <div className="flex flex-col gap-5">
+            <motion.h1
+              ref={ctaRef}
+              initial={{ opacity: 0, y: 40 }}
+              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+              className="text-3xl text-black text-center md:text-4xl lg:text-5xl dm-bold text-balance"
+            >
+              Start your language journey today
+            </motion.h1>
+            <motion.p
+              ref={ctaRef}
+              initial={{ opacity: 0, y: 40 }}
+              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+              className="text-base text-center text-white sora-regular text-balance"
+            >
+              Join thousands of learners mastering new languages with Verbalify
+            </motion.p>
+          </div>
+
+          <div>
+            <button className="bg-white rounded-lg text-green-500 p-4 dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 transition duration-300 ease-in-out shadow hover:shadow-2xl">Get Started for Free</button>
+          </div>
+        </div>
+      </section>
+      {/* CTA Section Ends */}
     </>
   );
 };
