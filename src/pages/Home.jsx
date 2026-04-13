@@ -361,7 +361,7 @@ const Home = () => {
                     {chatMessages.map((chat) => (
                       <li
                         key={chat.id}
-                        className="p-3 text-base transition duration-300 ease-in-out bg-gray-200 shadow rounded dm-semibold hover:bg-green-200"
+                        className="p-3 text-base transition duration-300 ease-in-out bg-gray-200 rounded shadow dm-semibold hover:bg-green-200"
                       >
                         {chat.message}
                       </li>
@@ -700,7 +700,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={faqsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl text-black text-center md:text-4xl lg:text-5xl dm-bold text-balance"
+            className="text-3xl text-center text-black md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Frequently asked questions
           </motion.h1>
@@ -747,7 +747,7 @@ const Home = () => {
               {/* Answer */}
               <div className={`faq-answer ${openId === faq.id ? "open" : ""}`}>
                 <div>
-                  <p className="text-base text-black sora-regular pt-3">
+                  <p className="pt-3 text-base text-black sora-regular">
                     {faq.answer}
                   </p>
                 </div>
@@ -759,7 +759,7 @@ const Home = () => {
       {/* FAQS Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="w-full py-30 bg-green-500">
+      <section className="w-full bg-green-500 py-30">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
           <div className="flex flex-col gap-5">
@@ -768,7 +768,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-              className="text-3xl text-black text-center md:text-4xl lg:text-5xl dm-bold text-balance"
+              className="text-3xl text-center text-black md:text-4xl lg:text-5xl dm-bold text-balance"
             >
               Start your language journey today
             </motion.h1>
@@ -784,7 +784,7 @@ const Home = () => {
           </div>
 
           <div>
-            <button className="bg-white rounded-lg text-green-500 p-4 dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 transition duration-300 ease-in-out shadow hover:shadow-2xl">Get Started for Free</button>
+            <button className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 hover:shadow-2xl">Get Started for Free</button>
           </div>
         </div>
       </section>
