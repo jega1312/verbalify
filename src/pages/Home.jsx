@@ -63,7 +63,7 @@ const cardContents = [
     id: 2,
     colspan: "col-span-1",
     bgcolor: "bg-white",
-    headingcolor: "text-black",
+    headingcolor: "text-slate-950",
     descriptioncolor: "text-gray-600",
     bordercolor: "border-gray-200 hover:border-green-500",
     heading: "5-minute daily habits",
@@ -76,7 +76,7 @@ const cardContents = [
     id: 3,
     colspan: "col-span-1",
     bgcolor: "bg-white",
-    headingcolor: "text-black",
+    headingcolor: "text-slate-950",
     descriptioncolor: "text-gray-600",
     bordercolor: "border-gray-200 hover:border-green-500",
     heading: "Built on memory science",
@@ -102,7 +102,7 @@ const cardContents = [
       "🇫🇷 Parisian French",
       "🇯🇵 Tokyo Japanese",
     ],
-    badgetextcolor: "text-black",
+    badgetextcolor: "text-slate-950",
     badgebgcolor: "bg-green-500",
   },
 ];
@@ -198,7 +198,7 @@ const plans = [
     showBadge: true,
     cardbordercolor: "border-green-500",
     buttonbgcolor: "bg-green-500 hover:bg-green-500/85",
-    buttontextcolor: "text-white hover:text-black",
+    buttontextcolor: "text-white hover:text-slate-950",
     buttonbordercolor: "border-green-500 hover:border-transparent",
     label: "Pro",
     price: "RM 19",
@@ -331,7 +331,7 @@ const Home = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm shadow-xl dm-medium hover:bg-green-500/85 hover:text-black hover:cursor-pointer"
+              className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm shadow-xl dm-medium hover:bg-green-500/85 hover:text-slate-950 hover:cursor-pointer"
             >
               <NavLink to="/contact">Get Started</NavLink>
             </motion.div>
@@ -398,7 +398,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={aboutInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="mb-10 text-3xl text-black md:text-4xl lg:text-5xl dm-bold text-balance"
+            className="mb-10 text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Learn naturally, not mechanically
           </motion.h2>
@@ -460,7 +460,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={stepsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl text-black md:text-4xl lg:text-5xl dm-bold text-balance"
+            className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Steps
           </motion.h1>
@@ -491,14 +491,14 @@ const Home = () => {
             >
               {/* Numbering Container */}
               <div className="flex items-center justify-center p-5 bg-green-500 rounded-full shadow-lg group size-16">
-                <p className="text-3xl text-white transition duration-300 ease-in-out sora-bold group-hover:text-black">
+                <p className="text-3xl text-white transition duration-300 ease-in-out sora-bold group-hover:text-slate-950">
                   {step.numbering}
                 </p>
               </div>
 
               {/* Heading Title */}
               <div className="flex flex-col items-center gap-2">
-                <h3 className="text-xl text-center text-black dm-bold">
+                <h3 className="text-xl text-center text-slate-950 dm-bold">
                   {step.heading}
                 </h3>
                 <p className="text-base text-center text-gray-600 sora-regular w-[80%] mx-auto">
@@ -520,7 +520,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl text-black md:text-4xl lg:text-5xl dm-bold text-balance"
+            className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Testimonials
           </motion.h1>
@@ -579,7 +579,7 @@ const Home = () => {
                       <h3 className="text-xl text-white dm-bold">
                         {users[index]?.name.first} {users[index]?.name.last}
                       </h3>
-                      <p className="px-2 py-1 text-xs text-black bg-white rounded shadow sora-medium">
+                      <p className="px-2 py-1 text-xs text-slate-950 bg-white rounded shadow sora-medium">
                         {testimonial.lang}
                       </p>
                     </div>
@@ -619,7 +619,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={plansInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl text-black md:text-4xl lg:text-5xl dm-bold text-balance"
+            className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Choose your plan
           </motion.h1>
@@ -658,10 +658,10 @@ const Home = () => {
               )}
 
               <div className="flex flex-col gap-2">
-                <div className="text-2xl text-black sora-bold text-balance">
+                <div className="text-2xl text-slate-950 sora-bold text-balance">
                   {plan.label}
                 </div>
-                <div className="text-3xl text-black sora-bold text-balance">
+                <div className="text-3xl text-slate-950 sora-bold text-balance">
                   {plan.price}
                   <span className="text-base text-gray-600 sora-regular">
                     /month
@@ -700,7 +700,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={faqsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl text-center text-black md:text-4xl lg:text-5xl dm-bold text-balance"
+            className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Frequently asked questions
           </motion.h1>
@@ -747,7 +747,7 @@ const Home = () => {
               {/* Answer */}
               <div className={`faq-answer ${openId === faq.id ? "open" : ""}`}>
                 <div>
-                  <p className="pt-3 text-base text-black sora-regular">
+                  <p className="pt-3 text-base text-slate-950 sora-regular">
                     {faq.answer}
                   </p>
                 </div>
@@ -768,7 +768,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-              className="text-3xl text-center text-black md:text-4xl lg:text-5xl dm-bold text-balance"
+              className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
             >
               Start your language journey today
             </motion.h1>
@@ -783,9 +783,15 @@ const Home = () => {
             </motion.p>
           </div>
 
-          <div>
-            <button className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 hover:shadow-2xl">Get Started for Free</button>
-          </div>
+          <motion.button
+            ref={ctaRef}
+            initial={{ opacity: 0 }}
+            animate={ctaInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 hover:shadow-2xl hover:scale-105"
+          >
+            Get Started for Free
+          </motion.button>
         </div>
       </section>
       {/* CTA Section Ends */}

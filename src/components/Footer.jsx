@@ -111,7 +111,7 @@ const Footer = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-              className="text-sm text-black sora-medium text-balance"
+              className="text-sm text-slate-950 sora-medium text-balance"
             >
               Language learning, beautifully simplified
             </motion.p>
@@ -129,7 +129,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="text-lg text-black sora-medium"
+              className="text-lg text-slate-950 sora-medium"
             >
               Product
             </motion.h3>
@@ -143,7 +143,7 @@ const Footer = () => {
                   <NavLink
                     to={product.to}
                     className={({ isActive }) =>
-                      `text-sm sora-light hover:text-green-500 transition duration-300 ease-in-out hover:cursor-pointer ${isActive ? "text-green-500" : "text-gray-500"}`
+                      `text-sm sora-regular hover:text-green-500 transition duration-300 ease-in-out hover:cursor-pointer ${isActive ? "text-green-500" : "text-gray-500"}`
                     }
                   >
                     {product.label}
@@ -166,7 +166,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="text-lg text-black sora-medium"
+              className="text-lg text-slate-950 sora-medium"
             >
               Company
             </motion.h3>
@@ -180,7 +180,7 @@ const Footer = () => {
                   <NavLink
                     to={company.to}
                     className={({ isActive }) =>
-                      `text-sm sora-light hover:text-green-500 transition duration-300 ease-in-out hover:cursor-pointer ${isActive ? "text-green-500" : "text-gray-500"}`
+                      `text-sm sora-regular hover:text-green-500 transition duration-300 ease-in-out hover:cursor-pointer ${isActive ? "text-green-500" : "text-gray-500"}`
                     }
                   >
                     {company.label}
@@ -197,7 +197,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="text-lg text-black sora-medium"
+              className="text-lg text-slate-950 sora-medium"
             >
               Follow Us
             </motion.h3>
@@ -217,7 +217,7 @@ const Footer = () => {
                   variants={socialItemVariants}
                   className="flex items-center justify-center transition duration-300 ease-in-out bg-transparent rounded-lg"
                 >
-                  <span className="text-black transition duration-300 ease-in-out hover:text-green-500">
+                  <span className="text-slate-950 transition duration-300 ease-in-out hover:text-green-500">
                     {social.icon}
                   </span>
                 </motion.a>
@@ -232,7 +232,7 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="text-base text-black dm-medium"
+            className="text-base text-slate-950 dm-medium"
           >
             © 2026 Verbalify. All rights reserved.
           </motion.p>
