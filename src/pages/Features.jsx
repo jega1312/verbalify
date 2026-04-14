@@ -84,7 +84,7 @@ const Features = () => {
   return (
     <>
       {/* Header Section Starts */}
-      <section className="w-full bg-green-200 pt-44 pb-20">
+      <section className="w-full pb-20 bg-green-200 pt-44">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
           <div className="flex flex-col gap-5">
@@ -101,7 +101,7 @@ const Features = () => {
       {/* Header Section Ends */}
 
       {/* First Section Starts */}
-      <section className="w-full py-30 bg-white">
+      <section className="w-full bg-white py-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto">
           {/* Left Content */}
           <div className="flex flex-col items-start justify-center gap-5 lg:order-first">
@@ -118,7 +118,7 @@ const Features = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-gray-600 sora-regular text-justify"
+              className="text-base text-justify text-gray-600 sora-regular"
             >
               Our advanced AI learns your strengths and weaknesses, creating a
               personalized curriculum that adapts in real-time. Focus on what
@@ -140,30 +140,30 @@ const Features = () => {
             >
               <div className="flex flex-col h-auto gap-10 p-5 bg-white rounded-2xl">
                 {/* First Row Container */}
-                <div className="w-full flex flex-col gap-5">
-                  <div className="w-full flex justify-between items-center">
-                    <p className="text-slate-950 sora-medium text-sm">
+                <div className="flex flex-col w-full gap-5">
+                  <div className="flex items-center justify-between w-full">
+                    <p className="text-sm text-slate-950 sora-medium">
                       Your Progress
                     </p>
-                    <p className="text-green-500 sora-semibold text-sm">78%</p>
+                    <p className="text-sm text-green-500 sora-semibold">78%</p>
                   </div>
 
-                  <div className="h-3 rounded-full bg-gray-200 w-full overflow-hidden">
+                  <div className="w-full h-3 overflow-hidden bg-gray-200 rounded-full">
                     <div className="h-full bg-green-500 w-[78%] rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Second Row Container */}
-                <div className="flex gap-5 w-full items-center">
+                <div className="flex items-center w-full gap-5">
                   {aiFeature.map((ai) => (
                     <div
                       key={ai.id}
-                      className="p-5 bg-gray-200 hover:bg-green-200 transition duration-300 ease-in-out rounded-2xl flex flex-col gap-1 flex-1 shadow"
+                      className="flex flex-col flex-1 gap-1 p-5 transition duration-300 ease-in-out bg-gray-200 shadow hover:bg-green-200 rounded-2xl"
                     >
-                      <p className="text-slate-950 text-2xl sora-bold">
+                      <p className="text-2xl text-slate-950 sora-bold">
                         {ai.stats}
                       </p>
-                      <p className="text-gray-600 text-sm sora-regular">
+                      <p className="text-sm text-gray-600 sora-regular">
                         {ai.description}
                       </p>
                     </div>
@@ -177,7 +177,7 @@ const Features = () => {
       {/* First Section Ends */}
 
       {/* Second Section Starts */}
-      <section className="w-full py-30 bg-gray-100">
+      <section className="w-full bg-gray-100 py-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto flex-row-reverse">
           {/* Left Content */}
 
@@ -195,7 +195,7 @@ const Features = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-gray-600 sora-regular text-justify"
+              className="text-base text-justify text-gray-600 sora-regular"
             >
               Practice speaking with AI conversation partners that respond
               naturally and provide instant feedback. Build confidence before
@@ -217,26 +217,26 @@ const Features = () => {
             >
               <div className="flex flex-col w-full h-auto gap-5 p-5 bg-white rounded-2xl">
                 {/* First Row Container */}
-                <div className="w-full flex flex-col gap-5">
-                  <div className="w-full flex gap-4 items-center">
-                    <div className="size-12 shrink-0 bg-gray-200 rounded-full flex justify-center items-center">
+                <div className="flex flex-col w-full gap-5">
+                  <div className="flex items-center w-full gap-4">
+                    <div className="flex items-center justify-center bg-gray-200 rounded-full size-12 shrink-0">
                       <FaRegUser size={22} className="text-slate-950" />
                     </div>
 
                     <div className="bg-gray-200 p-2.5 w-full rounded-e-xl rounded-bl-xl">
-                      <p className="text-slate-950 text-sm dm-medium">
+                      <p className="text-sm text-slate-950 dm-medium">
                         Hello! How are you today?
                       </p>
                     </div>
                   </div>
 
-                  <div className="w-full flex gap-4 items-center flex-row-reverse">
-                    <div className="size-12 shrink-0 bg-green-500 rounded-full flex justify-center items-center">
+                  <div className="flex flex-row-reverse items-center w-full gap-4">
+                    <div className="flex items-center justify-center bg-green-500 rounded-full size-12 shrink-0">
                       <RiRobot2Line size={25} className="text-white" />
                     </div>
 
                     <div className="bg-green-500 p-2.5 w-full rounded-s-xl rounded-br-xl">
-                      <p className="text-white text-sm dm-medium">
+                      <p className="text-sm text-white dm-medium">
                         ¡Hola! Estoy muy bien, gracias
                       </p>
                     </div>
@@ -244,13 +244,13 @@ const Features = () => {
                 </div>
 
                 {/* Second Row Container */}
-                <div className="flex gap-4 w-full items-center">
+                <div className="flex items-center w-full gap-4">
                   {chatMessages.map((chat) => (
                     <div
                       key={chat.id}
-                      className="py-3 px-4 bg-gray-200 group hover:bg-green-200 rounded-2xl flex flex-col gap-2 transition duration-300 ease-in-out shadow"
+                      className="flex flex-col gap-2 px-4 py-3 transition duration-300 ease-in-out bg-gray-200 shadow group hover:bg-green-200 rounded-2xl"
                     >
-                      <p className="text-gray-600 group-hover:text-slate-950 text-sm sora-medium transition duration-300 ease-in-out">
+                      <p className="text-sm text-gray-600 transition duration-300 ease-in-out group-hover:text-slate-950 sora-medium">
                         {chat.message}
                       </p>
                     </div>
@@ -264,7 +264,7 @@ const Features = () => {
       {/* Second Section Ends */}
 
       {/* Third Section Starts */}
-      <section className="w-full py-30 bg-white">
+      <section className="w-full bg-white py-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto">
           {/* Left Content */}
 
@@ -282,7 +282,7 @@ const Features = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-gray-600 sora-regular text-justify"
+              className="text-base text-justify text-gray-600 sora-regular"
             >
               See your improvement with detailed analytics and insights.
               Understand exactly where you're excelling and where you need more
@@ -303,22 +303,22 @@ const Features = () => {
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
               <div className="flex flex-col w-full h-auto gap-5 p-5 bg-white rounded-2xl">
-                <p className="text-slate-950 sora-bold text-lg">Week Summary</p>
+                <p className="text-lg text-slate-950 sora-bold">Week Summary</p>
 
-                <div className="gap-4 flex flex-col">
+                <div className="flex flex-col gap-4">
                   {progressContent.map((progress) => (
-                    <div className="flex justify-between items-center w-full">
-                      <p className="sora-medium text-gray-600 text-sm">
+                    <div className="flex items-center justify-between w-full">
+                      <p className="text-xs text-gray-600 sora-medium sm:text-sm">
                         {progress.goal}
                       </p>
-                      <p className="sora-medium text-green-500 text-sm">
+                      <p className="text-xs text-green-500 sora-medium sm:text-sm">
                         {progress.stat}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-2 w-full">
+                <div className="flex items-center w-full gap-2">
                   {boxes.map((item, index) => (
                     <div
                       key={index}
@@ -336,7 +336,7 @@ const Features = () => {
       {/* Third Section Ends */}
 
       {/* Fourth Section Starts */}
-      <section className="w-full py-30 bg-gray-100">
+      <section className="w-full bg-gray-100 py-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto flex-row-reverse">
           {/* Left Content */}
 
@@ -354,7 +354,7 @@ const Features = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-gray-600 sora-regular text-justify"
+              className="text-base text-justify text-gray-600 sora-regular"
             >
               Learn Spanish, French, German, Japanese, Korean, and many more.
               Each course is built by native speakers and language experts.
@@ -377,17 +377,17 @@ const Features = () => {
               <div className="flex flex-col w-full h-auto gap-8 p-5 bg-white rounded-2xl">
                 <div className="grid grid-cols-3 gap-5">
                   {languages.map((lang) => (
-                    <div className="bg-gray-200 hover:bg-green-200 transition duration-300 ease-in-out rounded py-3 flex flex-col gap-2 items-center shadow">
+                    <div className="flex flex-col items-center gap-2 p-3 transition duration-300 ease-in-out bg-gray-200 rounded shadow hover:bg-green-200 sm:py-3 sm:px-0">
                       <IoLanguage size={30} className="text-green-500" />
-                      <p className="text-slate-950 text-sm sora-medium">
+                      <p className="text-slate-950 text-[10px] sm:text-sm sora-medium">
                         {lang.language}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                <div className="rounded-full w-full ">
-                  <p className="sora-semibold text-sm text-center">
+                <div className="w-full rounded-full ">
+                  <p className="text-sm text-center sora-semibold">
                     14+ More Languages
                   </p>
                 </div>
@@ -399,7 +399,7 @@ const Features = () => {
       {/* Fourth Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="w-full flex justify-center items-center py-30">
+      <section className="flex items-center justify-center w-full py-30">
         <div className="rounded-2xl w-[90%] md:w-[80%]  lg:w-[70%] bg-green-500 py-14 mx-auto shadow-lg">
           {/* Section Heading */}
           <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
