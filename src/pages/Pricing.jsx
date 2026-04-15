@@ -1,9 +1,13 @@
-import React from 'react'
+// import { useRef } from "react";
+// import { motion, useInView } from "motion/react";
+// motion;
 
 const Pricing = () => {
   return (
-    <div>Pricing</div>
-  )
-}
+    <>
+      <div></div>
+    </>
+  );
+};
 
-export default Pricing
+export default Pricing;

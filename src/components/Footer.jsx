@@ -59,7 +59,7 @@ const itemVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 1.0, ease: "easeOut" },
   },
 };
 
@@ -77,7 +77,7 @@ const socialItemVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 1.0, ease: "easeOut" },
   },
 };
 

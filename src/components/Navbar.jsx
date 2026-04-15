@@ -59,7 +59,7 @@ const Navbar = () => {
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        transition={{ duration: 1.0, ease: "easeOut", delay: 0.2 }}
       >
         <NavLink
           to="/"
@@ -119,7 +119,7 @@ const Navbar = () => {
           type="button"
           initial={{ opacity: 0, y: 20 }}
           animate={hasOpened ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
           onClick={() => setMenuOpen(false)}
           className="py-2.5 px-4 dm-medium bg-green-500 text-white text-lg rounded-sm transition duration-300 ease-in-out relative hover:bg-green-500/85 hover:text-slate-950 hover:shadow-md hover:cursor-pointer"
         >
@@ -154,7 +154,7 @@ const Navbar = () => {
         type="button"
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 1.0, ease: "easeOut" }}
         className="relative hidden px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm lg:block dm-medium hover:bg-green-500/85 hover:text-slate-950 hover:shadow-md hover:cursor-pointer"
       >
         <NavLink to="/contact">Get Started</NavLink>

@@ -26,7 +26,7 @@ const itemVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
+    transition: { duration: 1.0, ease: "easeOut" },
   },
 };
 
@@ -310,7 +310,7 @@ const Home = () => {
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-5xl dm-bold text-slate-950 lg:leading-16 text-balance"
             >
               Language learning, beautifully simplified
@@ -318,7 +318,7 @@ const Home = () => {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
               className="text-base text-gray-600 sora-regular text-balance"
             >
               Master any language with AI-powered lessons, interactive
@@ -330,7 +330,7 @@ const Home = () => {
               type="button"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm shadow-xl dm-medium hover:bg-green-500/85 hover:text-slate-950 hover:cursor-pointer"
             >
               <NavLink to="/contact">Get Started</NavLink>
@@ -343,7 +343,7 @@ const Home = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
               <div className="flex flex-col w-full h-auto gap-5 p-5 bg-white rounded-2xl">
@@ -384,7 +384,7 @@ const Home = () => {
             ref={aboutRef}
             initial={{ opacity: 0 }}
             animate={aboutInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="px-4 py-2 transition duration-300 ease-in-out bg-transparent border border-green-500 rounded-full hover:bg-green-500 hover:shadow-lg w-fit group hover:scale-105"
           >
             <h1 className="text-sm text-green-500 transition duration-300 ease-in-out dm-bold group-hover:text-white">
@@ -397,7 +397,7 @@ const Home = () => {
             ref={aboutRef}
             initial={{ opacity: 0 }}
             animate={aboutInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="mb-10 text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Learn naturally, not mechanically
@@ -459,7 +459,7 @@ const Home = () => {
             ref={stepsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={stepsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Steps
@@ -468,7 +468,7 @@ const Home = () => {
             ref={stepsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={stepsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
             className="text-base text-center text-gray-600 sora-regular text-balance"
           >
             Start speaking a new language in just three simple steps
@@ -519,7 +519,7 @@ const Home = () => {
             ref={testimonialsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Testimonials
@@ -528,7 +528,7 @@ const Home = () => {
             ref={testimonialsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
             className="text-base text-center text-gray-600 sora-regular text-balance"
           >
             Loved by learners worldwide
@@ -618,7 +618,7 @@ const Home = () => {
             ref={plansRef}
             initial={{ opacity: 0, y: 40 }}
             animate={plansInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Choose your plan
@@ -627,7 +627,7 @@ const Home = () => {
             ref={plansRef}
             initial={{ opacity: 0, y: 40 }}
             animate={plansInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
             className="text-base text-center text-gray-600 sora-regular text-balance"
           >
             Start free, upgrade when you're ready
@@ -699,7 +699,7 @@ const Home = () => {
             ref={faqsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={faqsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Frequently asked questions
@@ -708,7 +708,7 @@ const Home = () => {
             ref={faqsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={faqsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
             className="text-base text-center text-gray-600 sora-regular text-balance"
           >
             Everything you need to know about Verbalify, answered.
@@ -767,7 +767,7 @@ const Home = () => {
               ref={ctaRef}
               initial={{ opacity: 0, y: 40 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
               className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
             >
               Start your language journey today
@@ -776,7 +776,7 @@ const Home = () => {
               ref={ctaRef}
               initial={{ opacity: 0, y: 40 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
               className="text-base text-center text-white sora-regular text-balance"
             >
               Join thousands of learners mastering new languages with Verbalify
@@ -787,7 +787,7 @@ const Home = () => {
             ref={ctaRef}
             initial={{ opacity: 0 }}
             animate={ctaInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
             className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 hover:shadow-2xl hover:scale-105"
           >
             Get Started for Free

@@ -77,6 +77,29 @@ const languages = [
 ];
 
 const Features = () => {
+  // Heading
+  const headingRef = useRef(null);
+  const headingInView = useInView(headingRef, {
+    once: true,
+    amount: 0.3,
+  });
+  
+  // First Feature
+  const firstFeatureRef = useRef(null);
+  const firstFeatureInView = useInView(firstFeatureRef, { once: true, amount: 0.3 });
+
+  // Second Feature
+  const secondFeatureRef = useRef(null);
+  const secondFeatureInView = useInView(secondFeatureRef, { once: true, amount: 0.3 });
+
+  // Third Feature
+  const thirdFeatureRef = useRef(null);
+  const thirdFeatureInView = useInView(thirdFeatureRef, { once: true, amount: 0.3 });
+
+  // Fourth Feature
+  const fourthFeatureRef = useRef(null);
+  const fourthFeatureInView = useInView(fourthFeatureRef, { once: true, amount: 0.3 });
+
   // CTA
   const ctaRef = useRef(null);
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
@@ -88,10 +111,22 @@ const Features = () => {
         {/* Section Heading */}
         <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
           <div className="flex flex-col gap-5">
-            <motion.h1 className="text-3xl text-center text-slate-950 mx-auto w-[90%] md:text-4xl lg:text-5xl dm-bold text-balance">
+            <motion.h1
+              ref={headingRef}
+              initial={{ opacity: 0, y: -20 }}
+              animate={headingInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
+              className="text-3xl text-center text-slate-950 mx-auto w-[90%] md:text-4xl lg:text-5xl dm-bold text-balance"
+            >
               Powerful features for effective learning
             </motion.h1>
-            <motion.p className="text-base text-center text-gray-600 sora-regular text-balance">
+            <motion.p
+              ref={headingRef}
+              initial={{ opacity: 0 }}
+              animate={headingInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
+              className="text-base text-center text-gray-600 sora-regular text-balance"
+            >
               Everything you need to master a new language, all in one beautiful
               platform
             </motion.p>
@@ -106,18 +141,20 @@ const Features = () => {
           {/* Left Content */}
           <div className="flex flex-col items-start justify-center gap-5 lg:order-first">
             <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              ref={firstFeatureRef}
+              initial={{ opacity: 0, y: -30}}
+              animate={firstFeatureInView ? { opacity: 1, y:0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
               AI-Powered Personalization
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              ref={firstFeatureRef}
+              initial={{ opacity: 0 }}
+              animate={firstFeatureInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
               className="text-base text-justify text-gray-600 sora-regular"
             >
               Our advanced AI learns your strengths and weaknesses, creating a
@@ -133,9 +170,10 @@ const Features = () => {
           <div className="flex items-center lg:order-last">
             {/* Container */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              ref={firstFeatureRef}
+              initial={{ opacity: 0, x: 40 }}
+              animate={firstFeatureInView ? { opacity: 1, x:0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
               <div className="flex flex-col h-auto gap-10 p-5 bg-white rounded-2xl">
@@ -183,18 +221,20 @@ const Features = () => {
 
           <div className="flex flex-col items-start justify-center gap-5 lg:order-last">
             <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              ref={secondFeatureRef}
+              initial={{ opacity: 0, y: -30 }}
+              animate={secondFeatureInView ? { opacity: 1, y:0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
               Real Conversation Practice
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              ref={secondFeatureRef}
+              initial={{ opacity: 0 }}
+              animate={secondFeatureInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
               className="text-base text-justify text-gray-600 sora-regular"
             >
               Practice speaking with AI conversation partners that respond
@@ -210,9 +250,10 @@ const Features = () => {
           <div className="flex items-center lg:order-first">
             {/* Container */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              ref={secondFeatureRef}
+              initial={{ opacity: 0, x: -40 }}
+              animate={secondFeatureInView ? { opacity: 1, x:0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
               <div className="flex flex-col w-full h-auto gap-5 p-5 bg-white rounded-2xl">
@@ -270,18 +311,20 @@ const Features = () => {
 
           <div className="flex flex-col items-start justify-center gap-5 lg:order-first">
             <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              ref={thirdFeatureRef}
+              initial={{ opacity: 0, y: -30 }}
+              animate={thirdFeatureInView ? { opacity: 1, y:0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
               Track Your Progress
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              ref={thirdFeatureRef}
+              initial={{ opacity: 0 }}
+              animate={thirdFeatureInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
               className="text-base text-justify text-gray-600 sora-regular"
             >
               See your improvement with detailed analytics and insights.
@@ -297,9 +340,10 @@ const Features = () => {
           <div className="flex items-center lg:order-last">
             {/* Container */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              ref={thirdFeatureRef}
+              initial={{ opacity: 0, x:40 }}
+              animate={thirdFeatureInView ? { opacity: 1, x:0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
               <div className="flex flex-col w-full h-auto gap-5 p-5 bg-white rounded-2xl">
@@ -342,18 +386,20 @@ const Features = () => {
 
           <div className="flex flex-col items-start justify-center gap-5 lg:order-last">
             <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              ref={fourthFeatureRef}
+              initial={{ opacity: 0, y:-30 }}
+              animate={fourthFeatureInView ? { opacity: 1, y:0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
               20+ Languages to Choose From
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              ref={fourthFeatureRef}
+              initial={{ opacity: 0 }}
+              animate={fourthFeatureInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
               className="text-base text-justify text-gray-600 sora-regular"
             >
               Learn Spanish, French, German, Japanese, Korean, and many more.
@@ -369,9 +415,10 @@ const Features = () => {
           <div className="flex items-center lg:order-first">
             {/* Container */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              ref={fourthFeatureRef}
+              initial={{ opacity: 0, x:-40 }}
+              animate={fourthFeatureInView ? { opacity: 1, x:0 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
               <div className="flex flex-col w-full h-auto gap-8 p-5 bg-white rounded-2xl">
@@ -408,7 +455,7 @@ const Features = () => {
                 ref={ctaRef}
                 initial={{ opacity: 0, y: 40 }}
                 animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+                transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
                 className="text-2xl text-center text-white md:text-4xl xl:text-5xl dm-bold text-balance"
               >
                 Ready to start learning?
@@ -417,7 +464,7 @@ const Features = () => {
                 ref={ctaRef}
                 initial={{ opacity: 0, y: 40 }}
                 animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+                transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
                 className="text-base text-center text-white sora-regular text-balance"
               >
                 Join thousands of learners and start your journey today
@@ -428,7 +475,7 @@ const Features = () => {
               ref={ctaRef}
               initial={{ opacity: 0 }}
               animate={ctaInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
               className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 hover:shadow-2xl hover:scale-105"
             >
               Get Started for Free
@@ -439,6 +486,6 @@ const Features = () => {
       {/* CTA Section Ends */}
     </>
   );
-};
+};;;;;
 
 export default Features;
