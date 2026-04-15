@@ -768,7 +768,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
-              className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
+              className="text-3xl text-center text-white md:text-4xl lg:text-5xl dm-bold text-balance"
             >
               Start your language journey today
             </motion.h1>
