@@ -142,8 +142,8 @@ const Features = () => {
           <div className="flex flex-col items-start justify-center gap-5 lg:order-first">
             <motion.h1
               ref={firstFeatureRef}
-              initial={{ opacity: 0, y: -30}}
-              animate={firstFeatureInView ? { opacity: 1, y:0 } : {}}
+              initial={{ opacity: 0, y: -30 }}
+              animate={firstFeatureInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
@@ -172,7 +172,7 @@ const Features = () => {
             <motion.div
               ref={firstFeatureRef}
               initial={{ opacity: 0, x: 40 }}
-              animate={firstFeatureInView ? { opacity: 1, x:0 } : {}}
+              animate={firstFeatureInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
@@ -223,7 +223,7 @@ const Features = () => {
             <motion.h1
               ref={secondFeatureRef}
               initial={{ opacity: 0, y: -30 }}
-              animate={secondFeatureInView ? { opacity: 1, y:0 } : {}}
+              animate={secondFeatureInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
@@ -252,7 +252,7 @@ const Features = () => {
             <motion.div
               ref={secondFeatureRef}
               initial={{ opacity: 0, x: -40 }}
-              animate={secondFeatureInView ? { opacity: 1, x:0 } : {}}
+              animate={secondFeatureInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
@@ -313,7 +313,7 @@ const Features = () => {
             <motion.h1
               ref={thirdFeatureRef}
               initial={{ opacity: 0, y: -30 }}
-              animate={thirdFeatureInView ? { opacity: 1, y:0 } : {}}
+              animate={thirdFeatureInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
@@ -341,8 +341,8 @@ const Features = () => {
             {/* Container */}
             <motion.div
               ref={thirdFeatureRef}
-              initial={{ opacity: 0, x:40 }}
-              animate={thirdFeatureInView ? { opacity: 1, x:0 } : {}}
+              initial={{ opacity: 0, x: 40 }}
+              animate={thirdFeatureInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
@@ -387,8 +387,8 @@ const Features = () => {
           <div className="flex flex-col items-start justify-center gap-5 lg:order-last">
             <motion.h1
               ref={fourthFeatureRef}
-              initial={{ opacity: 0, y:-30 }}
-              animate={fourthFeatureInView ? { opacity: 1, y:0 } : {}}
+              initial={{ opacity: 0, y: -30 }}
+              animate={fourthFeatureInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
@@ -416,8 +416,8 @@ const Features = () => {
             {/* Container */}
             <motion.div
               ref={fourthFeatureRef}
-              initial={{ opacity: 0, x:-40 }}
-              animate={fourthFeatureInView ? { opacity: 1, x:0 } : {}}
+              initial={{ opacity: 0, x: -40 }}
+              animate={fourthFeatureInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
@@ -446,8 +446,14 @@ const Features = () => {
       {/* Fourth Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="flex items-center justify-center w-full py-30">
-        <div className="rounded-2xl w-[90%] md:w-[80%]  lg:w-[70%] bg-green-500 py-14 mx-auto shadow-lg">
+      <section className="flex items-center justify-center w-full py-30 bg-white">
+        <motion.div
+          ref={ctaRef}
+          initial={{ opacity: 0 }}
+          animate={ctaInView ? { opacity: 1 } : {}}
+          transition={{ duration: 1.0, ease: "easeOut" }}
+          className="rounded-2xl w-[90%] md:w-[80%]  lg:w-[70%] bg-green-500 py-14 mx-auto shadow-lg"
+        >
           {/* Section Heading */}
           <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
             <div className="flex flex-col gap-5">
@@ -481,7 +487,7 @@ const Features = () => {
               Get Started for Free
             </motion.button>
           </div>
-        </div>
+        </motion.div>
       </section>
       {/* CTA Section Ends */}
     </>

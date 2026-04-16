@@ -197,7 +197,7 @@ const plans = [
     id: 2,
     showBadge: true,
     cardbordercolor: "border-green-500",
-    buttonbgcolor: "bg-green-500 hover:bg-green-500/85",
+    buttonbgcolor: "bg-green-500 ",
     buttontextcolor: "text-white hover:text-slate-950",
     buttonbordercolor: "border-green-500 hover:border-transparent",
     label: "Pro",
@@ -331,7 +331,7 @@ const Home = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.0, ease: "easeOut" }}
-              className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm shadow-xl dm-medium hover:bg-green-500/85 hover:text-slate-950 hover:cursor-pointer"
+              className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm shadow-xl dm-medium  hover:text-slate-950 hover:cursor-pointer"
             >
               <NavLink to="/contact">Get Started</NavLink>
             </motion.div>
@@ -650,8 +650,8 @@ const Home = () => {
             >
               {/* Badge Container */}
               {plan.showBadge && (
-                <div className="absolute px-4 py-2 -translate-x-1/2 bg-green-300 rounded-full -top-4 left-1/2 w-fit">
-                  <p className="text-xs text-center dm-semibold">
+                <div className="absolute px-4 py-2 -translate-x-1/2 bg-green-500 rounded-full -top-4 left-1/2 w-fit">
+                  <p className="text-xs text-center dm-semibold text-white">
                     Most Popular
                   </p>
                 </div>
