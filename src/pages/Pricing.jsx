@@ -368,8 +368,14 @@ const Pricing = () => {
       {/* FAQS Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="flex items-center bg-white justify-center w-full py-30">
-        <div className="rounded-2xl w-[90%] md:w-[80%]  lg:w-[70%] bg-green-500 py-14 mx-auto shadow-lg">
+      <section className="flex items-center bg-gray-100 justify-center w-full py-30">
+        <motion.div
+          ref={ctaRef}
+          initial={{ opacity: 0 }}
+          animate={ctaInView ? { opacity: 1 } : {}}
+          transition={{ duration: 1.0, ease: "easeOut" }}
+          className="rounded-2xl w-[90%] md:w-[80%]  lg:w-[70%] bg-green-500 py-14 mx-auto shadow-lg"
+        >
           {/* Section Heading */}
           <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
             <div className="flex flex-col gap-5">
@@ -403,7 +409,7 @@ const Pricing = () => {
               Get Started
             </motion.button>
           </div>
-        </div>
+        </motion.div>
       </section>
       {/* CTA Section Ends */}
     </>
