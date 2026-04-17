@@ -452,7 +452,7 @@ const Home = () => {
       {/* About Section Ends */}
 
       {/* Steps Section Starts */}
-      <section className="w-full py-20 bg-gray-100">
+      <section className="w-full py-20 bg-gray-50">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
@@ -611,7 +611,7 @@ const Home = () => {
       {/* Testimonials Section Ends */}
 
       {/* Plans Section Starts */}
-      <section className="w-full py-20 bg-gray-100">
+      <section className="w-full py-20 bg-gray-50">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1

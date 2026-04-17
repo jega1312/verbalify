@@ -83,22 +83,34 @@ const Features = () => {
     once: true,
     amount: 0.3,
   });
-  
+
   // First Feature
   const firstFeatureRef = useRef(null);
-  const firstFeatureInView = useInView(firstFeatureRef, { once: true, amount: 0.3 });
+  const firstFeatureInView = useInView(firstFeatureRef, {
+    once: true,
+    amount: 0.3,
+  });
 
   // Second Feature
   const secondFeatureRef = useRef(null);
-  const secondFeatureInView = useInView(secondFeatureRef, { once: true, amount: 0.3 });
+  const secondFeatureInView = useInView(secondFeatureRef, {
+    once: true,
+    amount: 0.3,
+  });
 
   // Third Feature
   const thirdFeatureRef = useRef(null);
-  const thirdFeatureInView = useInView(thirdFeatureRef, { once: true, amount: 0.3 });
+  const thirdFeatureInView = useInView(thirdFeatureRef, {
+    once: true,
+    amount: 0.3,
+  });
 
   // Fourth Feature
   const fourthFeatureRef = useRef(null);
-  const fourthFeatureInView = useInView(fourthFeatureRef, { once: true, amount: 0.3 });
+  const fourthFeatureInView = useInView(fourthFeatureRef, {
+    once: true,
+    amount: 0.3,
+  });
 
   // CTA
   const ctaRef = useRef(null);
@@ -215,7 +227,7 @@ const Features = () => {
       {/* First Section Ends */}
 
       {/* Second Section Starts */}
-      <section className="w-full bg-gray-100 py-30">
+      <section className="w-full bg-gray-50 py-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto flex-row-reverse">
           {/* Left Content */}
 
@@ -380,7 +392,7 @@ const Features = () => {
       {/* Third Section Ends */}
 
       {/* Fourth Section Starts */}
-      <section className="w-full bg-gray-100 py-30">
+      <section className="w-full bg-gray-50 py-30">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto flex-row-reverse">
           {/* Left Content */}
 
@@ -446,7 +458,7 @@ const Features = () => {
       {/* Fourth Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="flex items-center justify-center w-full py-30 bg-white">
+      <section className="flex items-center justify-center w-full bg-white py-30">
         <motion.div
           ref={ctaRef}
           initial={{ opacity: 0 }}
@@ -492,6 +504,6 @@ const Features = () => {
       {/* CTA Section Ends */}
     </>
   );
-};;;;;
+};
 
 export default Features;

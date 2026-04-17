@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 motion;
-import { IoCheckmark } from "react-icons/io5";
+import { IoCheckmark, IoClose } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa6";
 
 // Mapped Elements Animation
@@ -128,29 +128,47 @@ const faqs = [
   },
 ];
 
+const tableColumn = ["Feature", "Free", "Pro", "Teams"]
+
+const tableRow = [
+  { id: 1, feature: "Daily lessons", free: "5", pro: "Unlimited", teams: "Unlimited" },
+  { id: 2, feature: "Languages", free: "1", pro: "All 20+", teams: "All 20+" },
+  { id: 3, feature: "Offline access", free: false, pro: true, teams: true },
+  { id: 4, feature: "AI conversation practice", free: false, pro: true, teams: true },
+  { id: 5, feature: "Advanced analytics", free: false, pro: true, teams: true },
+  { id: 6, feature: "Progress tracking", free: true, pro: true, teams: true },
+  { id: 7, feature: "Team dashboard", free: false, pro: false, teams: true },
+  { id: 8, feature: "Priority support", free: false, pro: true, teams: true },
+  { id: 9, feature: "Dedicated account manager", free: false, pro: false, teams: true },
+];
+
 const Pricing = () => {
-  // Heading
+  // Heading Section
   const headingRef = useRef(null);
   const headingInView = useInView(headingRef, {
     once: true,
     amount: 0.3,
   });
 
-  // Plans
+  // Plans Section
   const plansRef = useRef(null);
   const plansInView = useInView(plansRef, { once: true, amount: 0.3 });
 
   // Yearly Tab State
   const [isYearly, setIsYearly] = useState(false);
 
-  // FAQS
+  // FAQ Section
   const faqsRef = useRef(null);
   const faqsInView = useInView(faqsRef, { once: true, amount: 0.3 });
 
   // FAQ State
   const [openId, setOpenId] = useState(null);
 
-  // CTA
+  // Compare Table Section
+  const tableRef = useRef(null);
+  const tableInView = useInView(tableRef, { once: true, amount: 0.3 });
+
+  // CTA Section
   const ctaRef = useRef(null);
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
 
@@ -202,7 +220,7 @@ const Pricing = () => {
 
           <button
             onClick={() => setIsYearly(false)}
-            className={`relative hover:cursor-pointer z-10 w-1/2 py-2 px-5 rounded-full flex items-center justify-center ${
+            className={`relative hover:cursor-pointer z-10 w-1/2 py-2 px-5 rounded-full flex items-center justify-center hover:text-slate-950 transition duration-300 ease-in-out ${
               !isYearly ? "text-slate-950" : "text-gray-500"
             }`}
           >
@@ -215,7 +233,7 @@ const Pricing = () => {
 
           <button
             onClick={() => setIsYearly(true)}
-            className={`relative hover:cursor-pointer z-10 w-1/2 py-2 px-5 rounded-full flex gap-2 items-center justify-center ${
+            className={`relative hover:cursor-pointer z-10 w-1/2 py-2 px-5 rounded-full flex gap-2 items-center justify-center hover:text-slate-950 transition duration-300 ease-in-out ${
               isYearly ? "text-slate-950" : "text-gray-500"
             }`}
           >
@@ -300,6 +318,116 @@ const Pricing = () => {
       </section>
       {/* Plans Section Ends */}
 
+      {/* Compare Plans Table Section Starts */}
+      <section className="w-full py-20 bg-gray-50">
+        {/* Section Heading */}
+        <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
+          <motion.h1
+            ref={tableRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={tableInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
+            className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
+          >
+            Compare All Plans
+          </motion.h1>
+          <motion.p
+            ref={tableRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={tableInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
+            className="text-base text-center text-gray-600 sora-regular text-balance"
+          >
+            Find the perfect plan for your learning goals
+          </motion.p>
+        </div>
+
+        {/* Plans Table Container */}
+        <motion.div
+          ref={tableRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={tableInView ? "visible" : "hidden"}
+          className="w-[80%] mx-auto flex flex-col gap-4"
+        >
+          <table className="w-full table-auto">
+            <thead className="py-10 mx-auto border-b border-gray-200">
+              <tr>
+                {tableColumn.map((col) => (
+                  <th
+                    key={col}
+                    className={`py-4 text-green-500 sora-regular ${col === "Feature" ? "w-1/2 text-left" : "w-1/6"}`}
+                  >
+                    {col}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {tableRow.map((row) => (
+                <tr
+                  key={row.id}
+                  className={`${row.id === 9 ? "" : "border-b"} border-gray-200 hover:border-green-500 transition duration-300 ease-in-out`}
+                >
+                  <td className="w-1/2 py-4 text-sm text-gray-600 sora-regular">
+                    {row.feature}
+                  </td>
+                  <td className="w-1/6 text-center">
+                    {typeof row.free === "boolean" ? (
+                      row.free ? (
+                        <IoCheckmark
+                          size={25}
+                          className="mx-auto text-green-600"
+                        />
+                      ) : (
+                        <IoClose size={25} className="mx-auto text-red-600" />
+                      )
+                    ) : (
+                      <span className="block text-sm text-gray-600 sora-regular">
+                        {row.free}
+                      </span>
+                    )}
+                  </td>
+                  <td className="w-1/6 text-sm text-center text-gray-600 sora-regular">
+                    {typeof row.pro === "boolean" ? (
+                      row.pro ? (
+                        <IoCheckmark
+                          size={25}
+                          className="mx-auto text-green-600"
+                        />
+                      ) : (
+                        <IoClose size={25} className="mx-auto text-red-600" />
+                      )
+                    ) : (
+                      <span className="block text-sm text-gray-600 sora-regular">
+                        {row.pro}
+                      </span>
+                    )}
+                  </td>
+                  <td className="w-1/6 px-4 text-sm text-center text-gray-600 sora-regular">
+                    {typeof row.teams === "boolean" ? (
+                      row.teams ? (
+                        <IoCheckmark
+                          size={25}
+                          className="mx-auto text-green-600"
+                        />
+                      ) : (
+                        <IoClose size={25} className="mx-auto text-red-600" />
+                      )
+                    ) : (
+                      <span className="block text-sm text-gray-600 sora-regular">
+                        {row.teams}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
+      </section>
+      {/* FAQS Section Ends */}
+
       {/* FAQS Section Starts */}
       <section className="w-full py-20 bg-white">
         {/* Section Heading */}
@@ -368,7 +496,7 @@ const Pricing = () => {
       {/* FAQS Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="flex items-center bg-gray-100 justify-center w-full py-30">
+      <section className="flex items-center justify-center w-full bg-gray-50 py-30">
         <motion.div
           ref={ctaRef}
           initial={{ opacity: 0 }}
@@ -414,6 +542,6 @@ const Pricing = () => {
       {/* CTA Section Ends */}
     </>
   );
-};;;;
+};;;;;
 
 export default Pricing;
