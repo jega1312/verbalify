@@ -345,9 +345,9 @@ const Pricing = () => {
         {/* Plans Table Container */}
         <motion.div
           ref={tableRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate={tableInView ? "visible" : "hidden"}
+          initial={{ opacity: 0 }}
+          animate={tableInView ? { opacity: 1 } : {}}
+          transition={{ duration: 1.5, ease: "easeOut" }}
           className="w-[80%] mx-auto flex flex-col gap-4"
         >
           <table className="w-full table-auto">
@@ -369,7 +369,7 @@ const Pricing = () => {
                   key={row.id}
                   className={`${row.id === 9 ? "" : "border-b"} border-gray-200 hover:border-green-500 transition duration-300 ease-in-out`}
                 >
-                  <td className="w-1/2 py-4 text-sm text-gray-600 sora-regular">
+                  <td className="w-1/2 py-4 text-xs sm:text-sm text-gray-600 sora-regular">
                     {row.feature}
                   </td>
                   <td className="w-1/6 text-center">
@@ -383,12 +383,12 @@ const Pricing = () => {
                         <IoClose size={25} className="mx-auto text-red-600" />
                       )
                     ) : (
-                      <span className="block text-sm text-gray-600 sora-regular">
+                      <span className="block text-xs sm:text-sm text-gray-600 sora-regular">
                         {row.free}
                       </span>
                     )}
                   </td>
-                  <td className="w-1/6 text-sm text-center text-gray-600 sora-regular">
+                  <td className="w-1/6 text-xs sm:text-sm text-center text-gray-600 sora-regular">
                     {typeof row.pro === "boolean" ? (
                       row.pro ? (
                         <IoCheckmark
@@ -399,12 +399,12 @@ const Pricing = () => {
                         <IoClose size={25} className="mx-auto text-red-600" />
                       )
                     ) : (
-                      <span className="block text-sm text-gray-600 sora-regular">
+                      <span className="block text-xs sm:text-sm text-gray-600 sora-regular">
                         {row.pro}
                       </span>
                     )}
                   </td>
-                  <td className="w-1/6 px-4 text-sm text-center text-gray-600 sora-regular">
+                  <td className="w-1/6 px-4 text-xs sm:text-sm text-center text-gray-600 sora-regular">
                     {typeof row.teams === "boolean" ? (
                       row.teams ? (
                         <IoCheckmark
@@ -415,7 +415,7 @@ const Pricing = () => {
                         <IoClose size={25} className="mx-auto text-red-600" />
                       )
                     ) : (
-                      <span className="block text-sm text-gray-600 sora-regular">
+                      <span className="block text-xs sm:text-sm text-gray-600 sora-regular">
                         {row.teams}
                       </span>
                     )}

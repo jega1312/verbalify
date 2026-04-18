@@ -348,7 +348,7 @@ const Home = () => {
             >
               <div className="flex flex-col w-full h-auto gap-5 p-5 bg-white rounded-2xl">
                 {/* Daily Lesson */}
-                <div className="flex items-start px-3 py-2 text-sm bg-green-300 rounded-full shadow dm-semibold w-fit">
+                <div className="flex items-start px-3 py-2 text-xs bg-green-300 rounded-full shadow dm-semibold w-fit">
                   <h2>Daily Lesson</h2>
                 </div>
 
