@@ -355,13 +355,13 @@ const Home = () => {
                 <div className="flex flex-col gap-32">
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl dm-extrabold ">¿Cómo estás?</h3>
-                    <p className="text-gray-600 dm-regular">How are you?</p>
+                    <p className="text-gray-600 sora-regular text-base">How are you?</p>
                   </div>
                   <ul className="flex flex-col w-full gap-4">
                     {chatMessages.map((chat) => (
                       <li
                         key={chat.id}
-                        className="p-3 text-base transition duration-300 ease-in-out bg-gray-200 rounded shadow dm-semibold hover:bg-green-200"
+                        className="p-3 text-sm transition duration-300 ease-in-out bg-gray-200 rounded shadow sora-semibold hover:bg-green-200"
                       >
                         {chat.message}
                       </li>
