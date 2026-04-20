@@ -494,7 +494,7 @@ const Features = () => {
               initial={{ opacity: 0 }}
               animate={ctaInView ? { opacity: 1 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-              className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 hover:shadow-2xl hover:scale-105"
+              className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
             >
               Get Started for Free
             </motion.button>

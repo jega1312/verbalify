@@ -50,7 +50,7 @@ const cardContents = [
     bgcolor: "bg-green-500",
     headingcolor: "text-white",
     descriptioncolor: "text-white",
-    bordercolor: "border-transparent hover:border-black",
+    bordercolor: "border-transparent hover:border-slate-950",
     heading: "Conversations that feel real",
     description:
       "Skip the robotic drills. Practice with AI tutors that understand context, correct you naturally, and adapt to your interests, from ordering coffee to discussing philosophy.",
@@ -88,7 +88,7 @@ const cardContents = [
   {
     id: 4,
     colspan: "col-span-1 lg:col-span-2",
-    bgcolor: "bg-black",
+    bgcolor: "bg-slate-950",
     headingcolor: "text-green-500",
     descriptioncolor: "text-green-500",
     bordercolor: "border-transparent hover:border-green-500",
@@ -288,9 +288,10 @@ const Home = () => {
   const ctaRef = useRef(null);
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
 
-  const [users, setUsers] = useState([]);
-
+  
   const [activeIndex, setActiveIndex] = useState(0);
+  
+  const [users, setUsers] = useState([]);
 
   // API for Users Profile Picture
   useEffect(() => {
@@ -355,7 +356,9 @@ const Home = () => {
                 <div className="flex flex-col gap-32">
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl dm-extrabold ">¿Cómo estás?</h3>
-                    <p className="text-gray-600 sora-regular text-base">How are you?</p>
+                    <p className="text-gray-600 sora-regular text-base">
+                      How are you?
+                    </p>
                   </div>
                   <ul className="flex flex-col w-full gap-4">
                     {chatMessages.map((chat) => (
@@ -788,7 +791,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={ctaInView ? { opacity: 1 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 hover:shadow-2xl hover:scale-105"
+            className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
           >
             Get Started for Free
           </motion.button>

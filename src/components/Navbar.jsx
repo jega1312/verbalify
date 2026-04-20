@@ -104,7 +104,7 @@ const Navbar = () => {
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
-                    `sora-regular text-3xl relative hover:text-green-500 transition duration-300 ease-in-out ${isActive ? "text-green-500" : "text-slate-950"}`
+                    `sora-regular text-2xl relative hover:text-green-500 transition duration-300 ease-in-out ${isActive ? "text-green-500" : "text-slate-950"}`
                   }
                 >
                   {link.label}
@@ -139,7 +139,7 @@ const Navbar = () => {
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  `sora-regular text-lg relative hover:text-green-500 transition duration-300 ease-in-out ${isActive ? "text-green-500" : "text-slate-950"}`
+                  `sora-regular text-base relative hover:text-green-500 transition duration-300 ease-in-out ${isActive ? "text-green-500" : "text-slate-950"}`
                 }
               >
                 {link.label}

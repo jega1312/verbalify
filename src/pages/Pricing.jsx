@@ -128,18 +128,36 @@ const faqs = [
   },
 ];
 
-const tableColumn = ["Feature", "Free", "Pro", "Teams"]
+const tableColumn = ["Feature", "Free", "Pro", "Teams"];
 
 const tableRow = [
-  { id: 1, feature: "Daily lessons", free: "5", pro: "Unlimited", teams: "Unlimited" },
+  {
+    id: 1,
+    feature: "Daily lessons",
+    free: "5",
+    pro: "Unlimited",
+    teams: "Unlimited",
+  },
   { id: 2, feature: "Languages", free: "1", pro: "All 20+", teams: "All 20+" },
   { id: 3, feature: "Offline access", free: false, pro: true, teams: true },
-  { id: 4, feature: "AI conversation practice", free: false, pro: true, teams: true },
+  {
+    id: 4,
+    feature: "AI conversation practice",
+    free: false,
+    pro: true,
+    teams: true,
+  },
   { id: 5, feature: "Advanced analytics", free: false, pro: true, teams: true },
   { id: 6, feature: "Progress tracking", free: true, pro: true, teams: true },
   { id: 7, feature: "Team dashboard", free: false, pro: false, teams: true },
   { id: 8, feature: "Priority support", free: false, pro: true, teams: true },
-  { id: 9, feature: "Dedicated account manager", free: false, pro: false, teams: true },
+  {
+    id: 9,
+    feature: "Dedicated account manager",
+    free: false,
+    pro: false,
+    teams: true,
+  },
 ];
 
 const Pricing = () => {
@@ -329,7 +347,7 @@ const Pricing = () => {
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
-            Compare All Plans
+            Compare all plans
           </motion.h1>
           <motion.p
             ref={tableRef}
@@ -532,7 +550,7 @@ const Pricing = () => {
               initial={{ opacity: 0 }}
               animate={ctaInView ? { opacity: 1 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-              className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-black hover:text-green-500 hover:shadow-2xl hover:scale-105"
+              className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
             >
               Get Started
             </motion.button>
@@ -542,6 +560,6 @@ const Pricing = () => {
       {/* CTA Section Ends */}
     </>
   );
-};;;;;
+};
 
 export default Pricing;
