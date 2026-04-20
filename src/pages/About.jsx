@@ -230,10 +230,10 @@ const About = () => {
               {heroContents.map((hero) => (
                 <div
                   key={hero.id}
-                  className="flex flex-col gap-4 items-center text-center"
+                  className="flex flex-col items-center gap-4 text-center"
                 >
                   {hero.icon}
-                  <div className="flex flex-col gap-1 items-center">
+                  <div className="flex flex-col items-center gap-1">
                     <h2 className="text-3xl text-white sora-bold">
                       {hero.stat}
                     </h2>
