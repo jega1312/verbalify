@@ -680,10 +680,7 @@ const Home = () => {
                 activeIndex={activeIndex}
                 total={testimonials.length}
               />
-              <CarouselNavButtons
-                activeIndex={activeIndex}
-                total={testimonials.length}
-              />
+              <CarouselNavButtons />
             </div>
           </Swiper>
         </motion.div>
