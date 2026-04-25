@@ -7,6 +7,7 @@ import { FaChevronUp } from "react-icons/fa6";
 // Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 import Home from "./pages/Home";
@@ -41,6 +42,7 @@ const App = () => {
     <>
       <div className="relative overflow-hidden">
         <Navbar />
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/features" element={<Features />} />
