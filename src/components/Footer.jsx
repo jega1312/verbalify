@@ -41,6 +41,8 @@ const socialLinks = [
     id: 4,
     href: "mailto:jegathiaghu@gmail.com?subject=Hello%20from%20ResumeIQ",
     icon: <SlEnvolope size={20} />,
+    target: "_blank",
+    rel: "noopener noreferrer",
   },
 ];
 
@@ -50,7 +52,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -68,7 +70,7 @@ const socialContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -84,13 +86,16 @@ const socialItemVariants = {
 const Footer = () => {
   // Start Animation When Visible
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <footer className="relative z-40 flex flex-col items-center w-full gap-10 bg-white border-t border-gray-200">
+    <footer className="relative z-40 flex flex-col items-center w-full gap-10 bg-white border-t border-slate-200">
       <div className="w-[90%] mx-auto py-3">
         {/* Link Container */}
-        <div className="grid grid-cols-1 py-12 gap-7 lg:gap-0 lg:grid-cols-4 place-items-start">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 py-12 gap-7 lg:gap-0 lg:grid-cols-4 place-items-start"
+        >
           {/* Logo Container */}
           <div className="flex flex-col items-start gap-3">
             <NavLink
@@ -98,7 +103,6 @@ const Footer = () => {
               to="/"
             >
               <motion.span
-                ref={ref}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
@@ -118,14 +122,12 @@ const Footer = () => {
           </div>
           {/* Product Links Container */}
           <motion.div
-            ref={ref}
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             className="flex flex-col items-start gap-3"
           >
             <motion.h3
-              ref={ref}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
@@ -143,7 +145,7 @@ const Footer = () => {
                   <NavLink
                     to={product.to}
                     className={({ isActive }) =>
-                      `text-sm sora-regular hover:text-green-500 transition duration-300 ease-in-out hover:cursor-pointer ${isActive ? "text-green-500" : "text-gray-500"}`
+                      `text-sm sora-regular hover:text-green-500 transition duration-300 ease-in-out hover:cursor-pointer ${isActive ? "text-green-500" : "text-slate-500"}`
                     }
                   >
                     {product.label}
@@ -155,14 +157,12 @@ const Footer = () => {
 
           {/* Company Links Container */}
           <motion.div
-            ref={ref}
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             className="flex flex-col items-start gap-3"
           >
             <motion.h3
-              ref={ref}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
@@ -180,7 +180,7 @@ const Footer = () => {
                   <NavLink
                     to={company.to}
                     className={({ isActive }) =>
-                      `text-sm sora-regular hover:text-green-500 transition duration-300 ease-in-out hover:cursor-pointer ${isActive ? "text-green-500" : "text-gray-500"}`
+                      `text-sm sora-regular hover:text-green-500 transition duration-300 ease-in-out hover:cursor-pointer ${isActive ? "text-green-500" : "text-slate-500"}`
                     }
                   >
                     {company.label}
@@ -193,7 +193,6 @@ const Footer = () => {
           {/* Social Buttons */}
           <div className="flex flex-col items-start gap-3">
             <motion.h3
-              ref={ref}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
@@ -202,7 +201,6 @@ const Footer = () => {
               Follow Us
             </motion.h3>
             <motion.div
-              ref={ref}
               variants={socialContainerVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -227,7 +225,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Below */}
-        <div className="flex flex-col items-center justify-center w-full py-10 border-t border-gray-200 gap-7 lg:gap-0 lg:flex-row">
+        <div className="flex flex-col items-center justify-center w-full py-10 border-t border-slate-200 gap-7 lg:gap-0 lg:flex-row">
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}

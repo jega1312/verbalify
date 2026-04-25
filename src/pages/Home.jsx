@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { motion, useInView } from "motion/react";
 motion;
 import { IoCheckmark } from "react-icons/io5";
@@ -64,8 +64,8 @@ const cardContents = [
     colspan: "col-span-1",
     bgcolor: "bg-white",
     headingcolor: "text-slate-950",
-    descriptioncolor: "text-gray-600",
-    bordercolor: "border-gray-200 hover:border-green-500",
+    descriptioncolor: "text-slate-600",
+    bordercolor: "border-slate-200 hover:border-green-500",
     heading: "5-minute daily habits",
     description:
       "Micro-lessons designed for busy lives. Build consistency without the pressure of hour-long study sessions.",
@@ -77,8 +77,8 @@ const cardContents = [
     colspan: "col-span-1",
     bgcolor: "bg-white",
     headingcolor: "text-slate-950",
-    descriptioncolor: "text-gray-600",
-    bordercolor: "border-gray-200 hover:border-green-500",
+    descriptioncolor: "text-slate-600",
+    bordercolor: "border-slate-200 hover:border-green-500",
     heading: "Built on memory science",
     description:
       "Spaced repetition algorithms that predict exactly when you'll forget and review before you do.",
@@ -184,7 +184,7 @@ const plans = [
   {
     id: 1,
     showBadge: false,
-    cardbordercolor: "border-gray-300 hover:border-green-500",
+    cardbordercolor: "border-slate-300 hover:border-green-500",
     buttonbgcolor: "bg-white hover:bg-green-500",
     buttontextcolor: "text-green-500 hover:text-white",
     buttonbordercolor: "border-green-500",
@@ -213,7 +213,7 @@ const plans = [
   {
     id: 3,
     showBadge: false,
-    cardbordercolor: "border-gray-300 hover:border-green-500",
+    cardbordercolor: "border-slate-300 hover:border-green-500",
     buttonbgcolor: "bg-white hover:bg-green-500",
     buttontextcolor: "text-green-500 hover:text-white",
     buttonbordercolor: "border-green-500",
@@ -262,35 +262,106 @@ const Home = () => {
 
   // Animation when visible
   // About
+  const aboutBadgeRef = useRef(null);
+  const aboutBadgeInView = useInView(aboutBadgeRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const aboutHeadingRef = useRef(null);
+  const aboutHeadingInView = useInView(aboutHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
   const aboutRef = useRef(null);
-  const aboutInView = useInView(aboutRef, { once: true, amount: 0.3 });
+  const aboutInView = useInView(aboutRef, { once: true, amount: 0.1 });
 
   // Steps
+  const stepsHeadingRef = useRef(null);
+  const stepsHeadingInView = useInView(stepsHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const stepsSubHeadingRef = useRef(null);
+  const stepsSubHeadingInView = useInView(stepsSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
   const stepsRef = useRef(null);
-  const stepsInView = useInView(stepsRef, { once: true, amount: 0.3 });
+  const stepsInView = useInView(stepsRef, { once: true, amount: 0.1 });
 
   // Testimonials
+  const testimonialsHeadingRef = useRef(null);
+  const testimonialsHeadingInView = useInView(testimonialsHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const testimonialsSubHeadingRef = useRef(null);
+  const testimonialsSubHeadingInView = useInView(testimonialsSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
   const testimonialsRef = useRef(null);
   const testimonialsInView = useInView(testimonialsRef, {
     once: true,
-    amount: 0.3,
+    amount: 0.1,
   });
 
   // Plans
+  const plansHeadingRef = useRef(null);
+  const plansHeadingInView = useInView(plansHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const plansSubHeadingRef = useRef(null);
+  const plansSubHeadingInView = useInView(plansSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
   const plansRef = useRef(null);
-  const plansInView = useInView(plansRef, { once: true, amount: 0.3 });
+  const plansInView = useInView(plansRef, { once: true, amount: 0.1 });
 
   // FAQS
+  const faqsHeadingRef = useRef(null);
+  const faqsHeadingInView = useInView(faqsHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const faqsSubHeadingRef = useRef(null);
+  const faqsSubHeadingInView = useInView(faqsSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
   const faqsRef = useRef(null);
-  const faqsInView = useInView(faqsRef, { once: true, amount: 0.3 });
+  const faqsInView = useInView(faqsRef, { once: true, amount: 0.1 });
 
   // CTA
-  const ctaRef = useRef(null);
-  const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
+  const ctaHeadingRef = useRef(null);
+  const ctaHeadingInView = useInView(ctaHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
 
-  
+  const ctaSubHeadingRef = useRef(null);
+  const ctaSubHeadingInView = useInView(ctaSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaButtonRef = useRef(null);
+  const ctaButtonInView = useInView(ctaButtonRef, { once: true, amount: 0.1 });
+
   const [activeIndex, setActiveIndex] = useState(0);
-  
+
   const [users, setUsers] = useState([]);
 
   // API for Users Profile Picture
@@ -320,22 +391,24 @@ const Home = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-gray-600 sora-regular text-balance"
+              className="text-base text-slate-600 sora-regular text-balance"
             >
               Master any language with AI-powered lessons, interactive
               exercises, and real-world conversations. Start your journey today.
             </motion.p>
 
             {/* Get Started Button */}
-            <motion.div
-              type="button"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.0, ease: "easeOut" }}
-              className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm shadow-xl dm-medium  hover:text-slate-950 hover:cursor-pointer"
-            >
-              <NavLink to="/contact">Get Started</NavLink>
-            </motion.div>
+            <Link to="/contact">
+              <motion.div
+                type="button"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
+                className="relative px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm shadow-xl dm-medium  hover:text-slate-950 hover:cursor-pointer"
+              >
+                Get Started
+              </motion.div>
+            </Link>
           </div>
 
           {/* Right Content */}
@@ -356,7 +429,7 @@ const Home = () => {
                 <div className="flex flex-col gap-32">
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl dm-extrabold ">¿Cómo estás?</h3>
-                    <p className="text-gray-600 sora-regular text-base">
+                    <p className="text-slate-600 sora-regular text-base">
                       How are you?
                     </p>
                   </div>
@@ -364,7 +437,7 @@ const Home = () => {
                     {chatMessages.map((chat) => (
                       <li
                         key={chat.id}
-                        className="p-3 text-sm transition duration-300 ease-in-out bg-gray-200 rounded shadow sora-semibold hover:bg-green-200"
+                        className="p-3 text-sm transition duration-300 ease-in-out bg-slate-200 rounded shadow sora-semibold hover:bg-green-200"
                       >
                         {chat.message}
                       </li>
@@ -384,9 +457,9 @@ const Home = () => {
         <div className="flex flex-col mx-auto gap-5 w-[90%] ">
           {/* Why Verbalify */}
           <motion.div
-            ref={aboutRef}
+            ref={aboutBadgeRef}
             initial={{ opacity: 0 }}
-            animate={aboutInView ? { opacity: 1 } : {}}
+            animate={aboutBadgeInView ? { opacity: 1 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="px-4 py-2 transition duration-300 ease-in-out bg-transparent border border-green-500 rounded-full hover:bg-green-500 hover:shadow-lg w-fit group hover:scale-105"
           >
@@ -397,9 +470,9 @@ const Home = () => {
 
           {/* Section Description */}
           <motion.h2
-            ref={aboutRef}
+            ref={aboutHeadingRef}
             initial={{ opacity: 0 }}
-            animate={aboutInView ? { opacity: 1 } : {}}
+            animate={aboutHeadingInView ? { opacity: 1 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="mb-10 text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
@@ -455,24 +528,24 @@ const Home = () => {
       {/* About Section Ends */}
 
       {/* Steps Section Starts */}
-      <section className="w-full py-20 bg-gray-50">
+      <section className="w-full py-20 bg-slate-50">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
-            ref={stepsRef}
+            ref={stepsHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={stepsInView ? { opacity: 1, y: 0 } : {}}
+            animate={stepsHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Steps
           </motion.h1>
           <motion.p
-            ref={stepsRef}
+            ref={stepsSubHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={stepsInView ? { opacity: 1, y: 0 } : {}}
+            animate={stepsSubHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="text-base text-center text-gray-600 sora-regular text-balance"
+            className="text-base text-center text-slate-600 sora-regular text-balance"
           >
             Start speaking a new language in just three simple steps
           </motion.p>
@@ -489,6 +562,7 @@ const Home = () => {
           {/* Content Mapping */}
           {stepContents.map((step) => (
             <motion.div
+              key={step.id}
               variants={itemVariants}
               className="flex flex-col items-center gap-5"
             >
@@ -504,7 +578,7 @@ const Home = () => {
                 <h3 className="text-xl text-center text-slate-950 dm-bold">
                   {step.heading}
                 </h3>
-                <p className="text-base text-center text-gray-600 sora-regular w-[80%] mx-auto">
+                <p className="text-base text-center text-slate-600 sora-regular w-[80%] mx-auto">
                   {step.description}
                 </p>
               </div>
@@ -519,20 +593,20 @@ const Home = () => {
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
-            ref={testimonialsRef}
+            ref={testimonialsHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
+            animate={testimonialsHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Testimonials
           </motion.h1>
           <motion.p
-            ref={testimonialsRef}
+            ref={testimonialsSubHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
+            animate={testimonialsSubHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="text-base text-center text-gray-600 sora-regular text-balance"
+            className="text-base text-center text-slate-600 sora-regular text-balance"
           >
             Loved by learners worldwide
           </motion.p>
@@ -606,7 +680,10 @@ const Home = () => {
                 activeIndex={activeIndex}
                 total={testimonials.length}
               />
-              <CarouselNavButtons />
+              <CarouselNavButtons
+                activeIndex={activeIndex}
+                total={testimonials.length}
+              />
             </div>
           </Swiper>
         </motion.div>
@@ -614,24 +691,24 @@ const Home = () => {
       {/* Testimonials Section Ends */}
 
       {/* Plans Section Starts */}
-      <section className="w-full py-20 bg-gray-50">
+      <section className="w-full py-20 bg-slate-50">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
-            ref={plansRef}
+            ref={plansHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={plansInView ? { opacity: 1, y: 0 } : {}}
+            animate={plansHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Choose your plan
           </motion.h1>
           <motion.p
-            ref={plansRef}
+            ref={plansSubHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={plansInView ? { opacity: 1, y: 0 } : {}}
+            animate={plansSubHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="text-base text-center text-gray-600 sora-regular text-balance"
+            className="text-base text-center text-slate-600 sora-regular text-balance"
           >
             Start free, upgrade when you're ready
           </motion.p>
@@ -648,7 +725,7 @@ const Home = () => {
           {plans.map((plan) => (
             <motion.div
               key={plan.id}
-              variants={containerVariants}
+              variants={itemVariants}
               className={`relative p-10 bg-white border-2 ${plan.cardbordercolor}  h-full rounded-2xl shadow flex flex-col gap-10 hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out hover:cursor-pointer`}
             >
               {/* Badge Container */}
@@ -666,7 +743,7 @@ const Home = () => {
                 </div>
                 <div className="text-3xl text-slate-950 sora-bold text-balance">
                   {plan.price}
-                  <span className="text-base text-gray-600 sora-regular">
+                  <span className="text-base text-slate-600 sora-regular">
                     /month
                   </span>
                 </div>
@@ -676,18 +753,20 @@ const Home = () => {
                 {plan.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <IoCheckmark size={25} className="text-green-600" />
-                    <h3 className="text-base text-gray-600 sora-regular ">
+                    <h3 className="text-base text-slate-600 sora-regular ">
                       {benefit}
                     </h3>
                   </div>
                 ))}
               </div>
 
-              <button
-                className={`relative w-full border-2 ${plan.buttonbgcolor} border-green-500 rounded-lg ${plan.buttontextcolor} ${plan.buttonbordercolor} dm-bold py-3 transition duration-300 ease-in-out hover:cursor-pointer shadow-md`}
-              >
-                {plan.buttontext}
-              </button>
+              <Link to="/contact">
+                <button
+                  className={`relative w-full border-2 ${plan.buttonbgcolor} border-green-500 rounded-lg ${plan.buttontextcolor} ${plan.buttonbordercolor} dm-bold py-3 transition duration-300 ease-in-out hover:cursor-pointer shadow-md`}
+                >
+                  {plan.buttontext}
+                </button>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -699,20 +778,20 @@ const Home = () => {
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
-            ref={faqsRef}
+            ref={faqsHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={faqsInView ? { opacity: 1, y: 0 } : {}}
+            animate={faqsHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
+            className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance w-[90%] md:w-full mx-auto"
           >
             Frequently asked questions
           </motion.h1>
           <motion.p
-            ref={faqsRef}
+            ref={faqsSubHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={faqsInView ? { opacity: 1, y: 0 } : {}}
+            animate={faqsSubHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="text-base text-center text-gray-600 sora-regular text-balance"
+            className="text-base text-center text-slate-600 sora-regular text-balance"
           >
             Everything you need to know about Verbalify, answered.
           </motion.p>
@@ -732,7 +811,7 @@ const Home = () => {
               variants={itemVariants}
               onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
               className={`border-2 rounded-xl p-7 flex flex-col cursor-pointer transition group duration-300 ease-in-out hover:border-green-500 shadow
-            ${openId === faq.id ? "border-green-500 bg-green-500" : "border-gray-300 bg-white"}`}
+            ${openId === faq.id ? "border-green-500 bg-green-500" : "border-slate-300 bg-white"}`}
             >
               <div className="flex items-center justify-between w-full">
                 <h3
@@ -762,23 +841,23 @@ const Home = () => {
       {/* FAQS Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="w-full bg-green-500 py-30">
+      <section className="w-full bg-green-500 py-32">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
           <div className="flex flex-col gap-5">
             <motion.h1
-              ref={ctaRef}
+              ref={ctaHeadingRef}
               initial={{ opacity: 0, y: 40 }}
-              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+              animate={ctaHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
               className="text-3xl text-center text-white md:text-4xl lg:text-5xl dm-bold text-balance"
             >
               Start your language journey today
             </motion.h1>
             <motion.p
-              ref={ctaRef}
+              ref={ctaSubHeadingRef}
               initial={{ opacity: 0, y: 40 }}
-              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+              animate={ctaSubHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
               className="text-base text-center text-white sora-regular text-balance"
             >
@@ -786,15 +865,17 @@ const Home = () => {
             </motion.p>
           </div>
 
-          <motion.button
-            ref={ctaRef}
-            initial={{ opacity: 0 }}
-            animate={ctaInView ? { opacity: 1 } : {}}
-            transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
-          >
-            Get Started for Free
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              ref={ctaButtonRef}
+              initial={{ opacity: 0 }}
+              animate={ctaButtonInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
+              className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
+            >
+              Get Started for Free
+            </motion.button>
+          </Link>
         </div>
       </section>
       {/* CTA Section Ends */}

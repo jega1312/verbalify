@@ -3,6 +3,7 @@ import { motion, useInView } from "motion/react";
 motion;
 import { IoCheckmark, IoClose } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 // Mapped Elements Animation
 const containerVariants = {
@@ -29,7 +30,7 @@ const plans = [
     id: 1,
     showBadge: false,
     showBilling: false,
-    cardbordercolor: "border-gray-300 hover:border-green-500",
+    cardbordercolor: "border-slate-300 hover:border-green-500",
     buttonbgcolor: "bg-white hover:bg-green-500",
     buttontextcolor: "text-green-500 hover:text-white",
     buttonbordercolor: "border-green-500",
@@ -73,7 +74,7 @@ const plans = [
     id: 3,
     showBadge: false,
     showBilling: true,
-    cardbordercolor: "border-gray-300 hover:border-green-500",
+    cardbordercolor: "border-slate-300 hover:border-green-500",
     buttonbgcolor: "bg-white hover:bg-green-500",
     buttontextcolor: "text-green-500 hover:text-white",
     buttonbordercolor: "border-green-500",
@@ -165,30 +166,83 @@ const Pricing = () => {
   const headingRef = useRef(null);
   const headingInView = useInView(headingRef, {
     once: true,
-    amount: 0.3,
+    amount: 0.1,
   });
 
-  // Plans Section
-  const plansRef = useRef(null);
-  const plansInView = useInView(plansRef, { once: true, amount: 0.3 });
+  // Sub-Heading Animation
+  const subHeadingRef = useRef(null);
+  const subHeadingInView = useInView(subHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
 
   // Yearly Tab State
   const [isYearly, setIsYearly] = useState(false);
 
+  // Plans Section
+  const plansTabRef = useRef(null);
+  const plansTabInView = useInView(plansTabRef, { once: true, amount: 0.1 });
+
+  // Plans Section
+  const plansCardRef = useRef(null);
+  const plansCardInView = useInView(plansCardRef, { once: true, amount: 0.1 });
+
   // FAQ Section
+  const faqsHeadingRef = useRef(null);
+  const faqsHeadingInView = useInView(faqsHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const faqsSubHeadingRef = useRef(null);
+  const faqsSubHeadingInView = useInView(faqsSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
   const faqsRef = useRef(null);
-  const faqsInView = useInView(faqsRef, { once: true, amount: 0.3 });
+  const faqsInView = useInView(faqsRef, { once: true, amount: 0.1 });
 
   // FAQ State
   const [openId, setOpenId] = useState(null);
 
   // Compare Table Section
-  const tableRef = useRef(null);
-  const tableInView = useInView(tableRef, { once: true, amount: 0.3 });
+  const tableHeadingRef = useRef(null);
+  const tableHeadingInView = useInView(tableHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
 
-  // CTA Section
-  const ctaRef = useRef(null);
-  const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
+  const tableSubHeadingRef = useRef(null);
+  const tableSubHeadingInView = useInView(tableSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const tableRef = useRef(null);
+  const tableInView = useInView(tableRef, { once: true, amount: 0.1 });
+
+  // CTA
+  const ctaContainerRef = useRef(null);
+  const ctaContainerInView = useInView(ctaContainerRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaHeadingRef = useRef(null);
+  const ctaHeadingInView = useInView(ctaHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaSubHeadingRef = useRef(null);
+  const ctaSubHeadingInView = useInView(ctaSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaButtonRef = useRef(null);
+  const ctaButtonInView = useInView(ctaButtonRef, { once: true, amount: 0.1 });
 
   return (
     <>
@@ -207,11 +261,11 @@ const Pricing = () => {
               Simple, transparent pricing
             </motion.h1>
             <motion.p
-              ref={headingRef}
+              ref={subHeadingRef}
               initial={{ opacity: 0 }}
-              animate={headingInView ? { opacity: 1 } : {}}
+              animate={subHeadingInView ? { opacity: 1 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
-              className="text-base text-center text-gray-600 sora-regular text-balance"
+              className="text-base text-center text-slate-600 sora-regular text-balance"
             >
               Choose the perfect plan for your language learning journey
             </motion.p>
@@ -224,11 +278,11 @@ const Pricing = () => {
       <section className="w-full py-20 bg-white">
         {/* Yearly Tab Switch */}
         <motion.div
-          ref={plansRef}
+          ref={plansTabRef}
           initial={{ opacity: 0 }}
-          animate={plansInView ? { opacity: 1 } : {}}
+          animate={plansTabInView ? { opacity: 1 } : {}}
           transition={{ duration: 1.0, ease: "easeOut" }}
-          className="relative flex items-center w-[90%] sm:max-w-xs mx-auto mb-12 md:mb-14 rounded-full bg-gray-200 p-1"
+          className="relative flex items-center w-[90%] sm:max-w-xs mx-auto mb-12 md:mb-14 rounded-full bg-slate-200 p-1"
         >
           <div
             className={`absolute top-1 left-1 h-[calc(100%-8px)] w-[calc(50%-4px)] rounded-full bg-white shadow
@@ -239,7 +293,7 @@ const Pricing = () => {
           <button
             onClick={() => setIsYearly(false)}
             className={`relative hover:cursor-pointer z-10 w-1/2 py-2 px-5 rounded-full flex items-center justify-center hover:text-slate-950 transition duration-300 ease-in-out ${
-              !isYearly ? "text-slate-950" : "text-gray-500"
+              !isYearly ? "text-slate-950" : "text-slate-500"
             }`}
           >
             <p
@@ -252,7 +306,7 @@ const Pricing = () => {
           <button
             onClick={() => setIsYearly(true)}
             className={`relative hover:cursor-pointer z-10 w-1/2 py-2 px-5 rounded-full flex gap-2 items-center justify-center hover:text-slate-950 transition duration-300 ease-in-out ${
-              isYearly ? "text-slate-950" : "text-gray-500"
+              isYearly ? "text-slate-950" : "text-slate-500"
             }`}
           >
             <p
@@ -273,10 +327,10 @@ const Pricing = () => {
 
         {/* Plans Card Container */}
         <motion.div
-          ref={plansRef}
+          ref={plansCardRef}
           variants={containerVariants}
           initial="hidden"
-          animate={plansInView ? "visible" : "hidden"}
+          animate={plansCardInView ? "visible" : "hidden"}
           className="grid grid-cols-1 lg:grid-cols-3 gap-10 w-[90%] mx-auto"
         >
           {plans.map((plan) => (
@@ -300,16 +354,16 @@ const Pricing = () => {
                 </h1>
                 <p className="text-3xl text-slate-950 sora-bold text-balance">
                   {isYearly ? plan.yearlyDisplay : plan.price}
-                  <span className="text-base text-gray-600 sora-regular">
+                  <span className="text-base text-slate-600 sora-regular">
                     /month
                   </span>
                 </p>
                 {isYearly && plan.showBilling && (
-                  <p className="text-sm text-gray-600 sora-regular">
+                  <p className="text-sm text-slate-600 sora-regular">
                     Billed annually (RM {plan.yearlyPrice * 12}/year)
                   </p>
                 )}
-                <p className="text-xs text-gray-600 sora-regular text-balance">
+                <p className="text-xs text-slate-600 sora-regular text-balance">
                   {plan.plandescription}
                 </p>
               </div>
@@ -318,18 +372,20 @@ const Pricing = () => {
                 {plan.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <IoCheckmark size={25} className="text-green-600" />
-                    <h3 className="text-base text-gray-600 sora-regular ">
+                    <h3 className="text-base text-slate-600 sora-regular ">
                       {benefit}
                     </h3>
                   </div>
                 ))}
               </div>
 
-              <button
-                className={`relative w-full border-2 ${plan.buttonbgcolor} border-green-500 rounded-lg ${plan.buttontextcolor} ${plan.buttonbordercolor} dm-bold py-3 transition duration-300 ease-in-out hover:cursor-pointer shadow-md`}
-              >
-                {plan.buttontext}
-              </button>
+              <Link to="/contact">
+                <button
+                  className={`relative w-full border-2 ${plan.buttonbgcolor} border-green-500 rounded-lg ${plan.buttontextcolor} ${plan.buttonbordercolor} dm-bold py-3 transition duration-300 ease-in-out hover:cursor-pointer shadow-md`}
+                >
+                  {plan.buttontext}
+                </button>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -337,24 +393,24 @@ const Pricing = () => {
       {/* Plans Section Ends */}
 
       {/* Compare Plans Table Section Starts */}
-      <section className="w-full py-20 bg-gray-50">
+      <section className="w-full py-20 bg-slate-50">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
-            ref={tableRef}
+            ref={tableHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={tableInView ? { opacity: 1, y: 0 } : {}}
+            animate={tableHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Compare all plans
           </motion.h1>
           <motion.p
-            ref={tableRef}
+            ref={tableSubHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={tableInView ? { opacity: 1, y: 0 } : {}}
+            animate={tableSubHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="text-base text-center text-gray-600 sora-regular text-balance"
+            className="text-base text-center text-slate-600 sora-regular text-balance"
           >
             Find the perfect plan for your learning goals
           </motion.p>
@@ -369,7 +425,7 @@ const Pricing = () => {
           className="w-[80%] mx-auto flex flex-col gap-4"
         >
           <table className="w-full table-auto">
-            <thead className="py-10 mx-auto border-b border-gray-200">
+            <thead className="py-10 mx-auto border-b border-slate-200">
               <tr>
                 {tableColumn.map((col) => (
                   <th
@@ -385,9 +441,9 @@ const Pricing = () => {
               {tableRow.map((row) => (
                 <tr
                   key={row.id}
-                  className={`${row.id === 9 ? "" : "border-b"} border-gray-200 hover:border-green-500 transition duration-300 ease-in-out`}
+                  className={`${row.id === 9 ? "" : "border-b"} border-slate-200 hover:border-green-500 transition duration-300 ease-in-out`}
                 >
-                  <td className="w-1/2 py-4 text-xs sm:text-sm text-gray-600 sora-regular">
+                  <td className="w-1/2 py-4 text-xs sm:text-sm text-slate-600 sora-regular">
                     {row.feature}
                   </td>
                   <td className="w-1/6 text-center">
@@ -401,12 +457,12 @@ const Pricing = () => {
                         <IoClose size={25} className="mx-auto text-red-600" />
                       )
                     ) : (
-                      <span className="block text-xs sm:text-sm text-gray-600 sora-regular">
+                      <span className="block text-xs sm:text-sm text-slate-600 sora-regular">
                         {row.free}
                       </span>
                     )}
                   </td>
-                  <td className="w-1/6 text-xs sm:text-sm text-center text-gray-600 sora-regular">
+                  <td className="w-1/6 text-xs sm:text-sm text-center text-slate-600 sora-regular">
                     {typeof row.pro === "boolean" ? (
                       row.pro ? (
                         <IoCheckmark
@@ -417,12 +473,12 @@ const Pricing = () => {
                         <IoClose size={25} className="mx-auto text-red-600" />
                       )
                     ) : (
-                      <span className="block text-xs sm:text-sm text-gray-600 sora-regular">
+                      <span className="block text-xs sm:text-sm text-slate-600 sora-regular">
                         {row.pro}
                       </span>
                     )}
                   </td>
-                  <td className="w-1/6 px-4 text-xs sm:text-sm text-center text-gray-600 sora-regular">
+                  <td className="w-1/6 px-4 text-xs sm:text-sm text-center text-slate-600 sora-regular">
                     {typeof row.teams === "boolean" ? (
                       row.teams ? (
                         <IoCheckmark
@@ -433,7 +489,7 @@ const Pricing = () => {
                         <IoClose size={25} className="mx-auto text-red-600" />
                       )
                     ) : (
-                      <span className="block text-xs sm:text-sm text-gray-600 sora-regular">
+                      <span className="block text-xs sm:text-sm text-slate-600 sora-regular">
                         {row.teams}
                       </span>
                     )}
@@ -451,20 +507,20 @@ const Pricing = () => {
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
-            ref={faqsRef}
+            ref={faqsHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={faqsInView ? { opacity: 1, y: 0 } : {}}
+            animate={faqsHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
-            className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
+            className="text-3xl text-center text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance w-[90%] md:w-full mx-auto"
           >
             Frequently asked questions
           </motion.h1>
           <motion.p
-            ref={faqsRef}
+            ref={faqsSubHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={faqsInView ? { opacity: 1, y: 0 } : {}}
+            animate={faqsSubHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="text-base text-center text-gray-600 sora-regular text-balance"
+            className="text-base text-center text-slate-600 sora-regular w-[90%] mx-auto sm:w-full text-balance"
           >
             Transparent pricing. No hidden details.
           </motion.p>
@@ -484,7 +540,7 @@ const Pricing = () => {
               variants={itemVariants}
               onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
               className={`border-2 rounded-xl p-7 flex flex-col cursor-pointer transition group duration-300 ease-in-out hover:border-green-500 shadow
-                  ${openId === faq.id ? "border-green-500 bg-green-500" : "border-gray-300 bg-white"}`}
+                  ${openId === faq.id ? "border-green-500 bg-green-500" : "border-slate-300 bg-white"}`}
             >
               <div className="flex items-center justify-between w-full">
                 <h3
@@ -514,11 +570,11 @@ const Pricing = () => {
       {/* FAQS Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="flex items-center justify-center w-full bg-gray-50 py-30">
+      <section className="flex items-center justify-center w-full bg-slate-50 py-32">
         <motion.div
-          ref={ctaRef}
+          ref={ctaContainerRef}
           initial={{ opacity: 0 }}
-          animate={ctaInView ? { opacity: 1 } : {}}
+          animate={ctaContainerInView ? { opacity: 1 } : {}}
           transition={{ duration: 1.0, ease: "easeOut" }}
           className="rounded-2xl w-[90%] md:w-[80%]  lg:w-[70%] bg-green-500 py-14 mx-auto shadow-lg"
         >
@@ -526,18 +582,18 @@ const Pricing = () => {
           <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
             <div className="flex flex-col gap-5">
               <motion.h1
-                ref={ctaRef}
+                ref={ctaHeadingRef}
                 initial={{ opacity: 0, y: 40 }}
-                animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+                animate={ctaHeadingInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
                 className="text-2xl text-center text-white md:text-4xl xl:text-5xl dm-bold text-balance"
               >
                 Start your free trial today
               </motion.h1>
               <motion.p
-                ref={ctaRef}
+                ref={ctaSubHeadingRef}
                 initial={{ opacity: 0, y: 40 }}
-                animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+                animate={ctaSubHeadingInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
                 className="text-base text-center text-white sora-regular text-balance"
               >
@@ -545,15 +601,17 @@ const Pricing = () => {
               </motion.p>
             </div>
 
-            <motion.button
-              ref={ctaRef}
-              initial={{ opacity: 0 }}
-              animate={ctaInView ? { opacity: 1 } : {}}
-              transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-              className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
-            >
-              Get Started
-            </motion.button>
+            <Link to="/contact">
+              <motion.button
+                ref={ctaButtonRef}
+                initial={{ opacity: 0 }}
+                animate={ctaButtonInView ? { opacity: 1 } : {}}
+                transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
+                className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
+              >
+                Get Started
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </section>

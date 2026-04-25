@@ -4,6 +4,7 @@ motion;
 import { IoLanguage } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa6";
 import { RiRobot2Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const aiFeature = [
   {
@@ -55,23 +56,23 @@ const languages = [
     language: "Spanish",
   },
   {
-    id: 1,
+    id: 2,
     language: "French",
   },
   {
-    id: 1,
+    id: 3,
     language: "German",
   },
   {
-    id: 1,
+    id: 4,
     language: "Japanese",
   },
   {
-    id: 1,
+    id: 5,
     language: "Korean",
   },
   {
-    id: 1,
+    id: 6,
     language: "Italian",
   },
 ];
@@ -81,40 +82,113 @@ const Features = () => {
   const headingRef = useRef(null);
   const headingInView = useInView(headingRef, {
     once: true,
-    amount: 0.3,
+    amount: 0.1,
+  });
+
+  // Sub-Heading Animation
+  const subHeadingRef = useRef(null);
+  const subHeadingInView = useInView(subHeadingRef, {
+    once: true,
+    amount: 0.1,
   });
 
   // First Feature
-  const firstFeatureRef = useRef(null);
-  const firstFeatureInView = useInView(firstFeatureRef, {
+  const firstFeatureHeadingRef = useRef(null);
+  const firstFeatureHeadingInView = useInView(firstFeatureHeadingRef, {
     once: true,
-    amount: 0.3,
+    amount: 0.1,
+  });
+
+  const firstFeatureSubHeadingRef = useRef(null);
+  const firstFeatureSubHeadingInView = useInView(firstFeatureSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const firstFeatureContainerRef = useRef(null);
+  const firstFeatureContainerInView = useInView(firstFeatureContainerRef, {
+    once: true,
+    amount: 0.1,
   });
 
   // Second Feature
-  const secondFeatureRef = useRef(null);
-  const secondFeatureInView = useInView(secondFeatureRef, {
+  const secondFeatureHeadingRef = useRef(null);
+  const secondFeatureHeadingInView = useInView(secondFeatureHeadingRef, {
     once: true,
-    amount: 0.3,
+    amount: 0.1,
+  });
+
+  const secondFeatureSubHeadingRef = useRef(null);
+  const secondFeatureSubHeadingInView = useInView(secondFeatureSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const secondFeatureContainerRef = useRef(null);
+  const secondFeatureContainerInView = useInView(secondFeatureContainerRef, {
+    once: true,
+    amount: 0.1,
   });
 
   // Third Feature
-  const thirdFeatureRef = useRef(null);
-  const thirdFeatureInView = useInView(thirdFeatureRef, {
+  const thirdFeatureHeadingRef = useRef(null);
+  const thirdFeatureHeadingInView = useInView(thirdFeatureHeadingRef, {
     once: true,
-    amount: 0.3,
+    amount: 0.1,
+  });
+
+  const thirdFeatureSubHeadingRef = useRef(null);
+  const thirdFeatureSubHeadingInView = useInView(thirdFeatureSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const thirdFeatureContainerRef = useRef(null);
+  const thirdFeatureContainerInView = useInView(thirdFeatureContainerRef, {
+    once: true,
+    amount: 0.1,
   });
 
   // Fourth Feature
-  const fourthFeatureRef = useRef(null);
-  const fourthFeatureInView = useInView(fourthFeatureRef, {
+  const fourthFeatureHeadingRef = useRef(null);
+  const fourthFeatureHeadingInView = useInView(fourthFeatureHeadingRef, {
     once: true,
-    amount: 0.3,
+    amount: 0.1,
+  });
+
+  const fourthFeatureSubHeadingRef = useRef(null);
+  const fourthFeatureSubHeadingInView = useInView(fourthFeatureSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const fourthFeatureContainerRef = useRef(null);
+  const fourthFeatureContainerInView = useInView(fourthFeatureContainerRef, {
+    once: true,
+    amount: 0.1,
   });
 
   // CTA
-  const ctaRef = useRef(null);
-  const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
+  const ctaContainerRef = useRef(null);
+  const ctaContainerInView = useInView(ctaContainerRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaHeadingRef = useRef(null);
+  const ctaHeadingInView = useInView(ctaHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaSubHeadingRef = useRef(null);
+  const ctaSubHeadingInView = useInView(ctaSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaButtonRef = useRef(null);
+  const ctaButtonInView = useInView(ctaButtonRef, { once: true, amount: 0.1 });
 
   return (
     <>
@@ -133,11 +207,11 @@ const Features = () => {
               Powerful features for effective learning
             </motion.h1>
             <motion.p
-              ref={headingRef}
+              ref={subHeadingRef}
               initial={{ opacity: 0 }}
-              animate={headingInView ? { opacity: 1 } : {}}
+              animate={subHeadingInView ? { opacity: 1 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
-              className="text-base text-center text-gray-600 sora-regular text-balance"
+              className="text-base text-center text-slate-600 sora-regular text-balance"
             >
               Everything you need to master a new language, all in one beautiful
               platform
@@ -148,14 +222,14 @@ const Features = () => {
       {/* Header Section Ends */}
 
       {/* First Section Starts */}
-      <section className="w-full bg-white py-30">
+      <section className="w-full bg-white py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto">
           {/* Left Content */}
           <div className="flex flex-col items-start justify-center gap-5 lg:order-first">
             <motion.h1
-              ref={firstFeatureRef}
+              ref={firstFeatureHeadingRef}
               initial={{ opacity: 0, y: -30 }}
-              animate={firstFeatureInView ? { opacity: 1, y: 0 } : {}}
+              animate={firstFeatureHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
@@ -163,11 +237,11 @@ const Features = () => {
             </motion.h1>
 
             <motion.p
-              ref={firstFeatureRef}
+              ref={firstFeatureSubHeadingRef}
               initial={{ opacity: 0 }}
-              animate={firstFeatureInView ? { opacity: 1 } : {}}
+              animate={firstFeatureSubHeadingInView ? { opacity: 1 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-justify text-gray-600 sora-regular"
+              className="text-base text-justify text-slate-600 sora-regular"
             >
               Our advanced AI learns your strengths and weaknesses, creating a
               personalized curriculum that adapts in real-time. Focus on what
@@ -182,9 +256,9 @@ const Features = () => {
           <div className="flex items-center lg:order-last">
             {/* Container */}
             <motion.div
-              ref={firstFeatureRef}
-              initial={{ opacity: 0, x: 40 }}
-              animate={firstFeatureInView ? { opacity: 1, x: 0 } : {}}
+              ref={firstFeatureContainerRef}
+              initial={{ opacity: 0, x: 20 }}
+              animate={firstFeatureContainerInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
@@ -198,7 +272,7 @@ const Features = () => {
                     <p className="text-sm text-green-500 sora-semibold">78%</p>
                   </div>
 
-                  <div className="w-full h-3 overflow-hidden bg-gray-200 rounded-full">
+                  <div className="w-full h-3 overflow-hidden bg-slate-200 rounded-full">
                     <div className="h-full bg-green-500 w-[78%] rounded-full"></div>
                   </div>
                 </div>
@@ -208,12 +282,12 @@ const Features = () => {
                   {aiFeature.map((ai) => (
                     <div
                       key={ai.id}
-                      className="flex flex-col flex-1 gap-1 p-5 transition duration-300 ease-in-out bg-gray-200 shadow hover:bg-green-200 rounded-2xl"
+                      className="flex flex-col flex-1 gap-1 p-5 transition duration-300 ease-in-out bg-slate-200 shadow hover:bg-green-200 rounded-2xl"
                     >
                       <p className="text-2xl text-slate-950 sora-bold">
                         {ai.stats}
                       </p>
-                      <p className="text-sm text-gray-600 sora-regular">
+                      <p className="text-sm text-slate-600 sora-regular">
                         {ai.description}
                       </p>
                     </div>
@@ -227,15 +301,14 @@ const Features = () => {
       {/* First Section Ends */}
 
       {/* Second Section Starts */}
-      <section className="w-full bg-gray-50 py-30">
+      <section className="w-full bg-slate-50 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto flex-row-reverse">
           {/* Left Content */}
-
           <div className="flex flex-col items-start justify-center gap-5 lg:order-last">
             <motion.h1
-              ref={secondFeatureRef}
+              ref={secondFeatureHeadingRef}
               initial={{ opacity: 0, y: -30 }}
-              animate={secondFeatureInView ? { opacity: 1, y: 0 } : {}}
+              animate={secondFeatureHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
@@ -243,11 +316,11 @@ const Features = () => {
             </motion.h1>
 
             <motion.p
-              ref={secondFeatureRef}
+              ref={secondFeatureSubHeadingRef}
               initial={{ opacity: 0 }}
-              animate={secondFeatureInView ? { opacity: 1 } : {}}
+              animate={secondFeatureSubHeadingInView ? { opacity: 1 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-justify text-gray-600 sora-regular"
+              className="text-base text-justify text-slate-600 sora-regular"
             >
               Practice speaking with AI conversation partners that respond
               naturally and provide instant feedback. Build confidence before
@@ -262,9 +335,9 @@ const Features = () => {
           <div className="flex items-center lg:order-first">
             {/* Container */}
             <motion.div
-              ref={secondFeatureRef}
-              initial={{ opacity: 0, x: -40 }}
-              animate={secondFeatureInView ? { opacity: 1, x: 0 } : {}}
+              ref={secondFeatureContainerRef}
+              initial={{ opacity: 0, x: -20 }}
+              animate={secondFeatureContainerInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
@@ -272,11 +345,11 @@ const Features = () => {
                 {/* First Row Container */}
                 <div className="flex flex-col w-full gap-5">
                   <div className="flex items-center w-full gap-4">
-                    <div className="flex items-center justify-center bg-gray-200 rounded-full size-12 shrink-0">
+                    <div className="flex items-center justify-center bg-slate-200 rounded-full size-12 shrink-0">
                       <FaRegUser size={22} className="text-slate-950" />
                     </div>
 
-                    <div className="bg-gray-200 p-2.5 w-full rounded-e-xl rounded-bl-xl">
+                    <div className="bg-slate-200 p-2.5 w-full rounded-e-xl rounded-bl-xl">
                       <p className="text-sm text-slate-950 dm-medium">
                         Hello! How are you today?
                       </p>
@@ -301,9 +374,9 @@ const Features = () => {
                   {chatMessages.map((chat) => (
                     <div
                       key={chat.id}
-                      className="flex flex-col gap-2 px-4 py-3 transition duration-300 ease-in-out bg-gray-200 shadow group hover:bg-green-200 rounded-2xl"
+                      className="flex flex-col gap-2 px-4 py-3 transition duration-300 ease-in-out bg-slate-200 shadow group hover:bg-green-200 rounded-2xl"
                     >
-                      <p className="text-sm text-gray-600 transition duration-300 ease-in-out group-hover:text-slate-950 sora-medium">
+                      <p className="text-sm text-slate-600 transition duration-300 ease-in-out group-hover:text-slate-950 sora-medium">
                         {chat.message}
                       </p>
                     </div>
@@ -317,15 +390,15 @@ const Features = () => {
       {/* Second Section Ends */}
 
       {/* Third Section Starts */}
-      <section className="w-full bg-white py-30">
+      <section className="w-full bg-white py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto">
           {/* Left Content */}
 
           <div className="flex flex-col items-start justify-center gap-5 lg:order-first">
             <motion.h1
-              ref={thirdFeatureRef}
+              ref={thirdFeatureHeadingRef}
               initial={{ opacity: 0, y: -30 }}
-              animate={thirdFeatureInView ? { opacity: 1, y: 0 } : {}}
+              animate={thirdFeatureHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
@@ -333,11 +406,11 @@ const Features = () => {
             </motion.h1>
 
             <motion.p
-              ref={thirdFeatureRef}
+              ref={thirdFeatureSubHeadingRef}
               initial={{ opacity: 0 }}
-              animate={thirdFeatureInView ? { opacity: 1 } : {}}
+              animate={thirdFeatureSubHeadingInView ? { opacity: 1 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-justify text-gray-600 sora-regular"
+              className="text-base text-justify text-slate-600 sora-regular"
             >
               See your improvement with detailed analytics and insights.
               Understand exactly where you're excelling and where you need more
@@ -352,9 +425,9 @@ const Features = () => {
           <div className="flex items-center lg:order-last">
             {/* Container */}
             <motion.div
-              ref={thirdFeatureRef}
-              initial={{ opacity: 0, x: 40 }}
-              animate={thirdFeatureInView ? { opacity: 1, x: 0 } : {}}
+              ref={thirdFeatureContainerRef}
+              initial={{ opacity: 0, x: 20 }}
+              animate={thirdFeatureContainerInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
@@ -363,8 +436,8 @@ const Features = () => {
 
                 <div className="flex flex-col gap-4">
                   {progressContent.map((progress) => (
-                    <div className="flex items-center justify-between w-full">
-                      <p className="text-xs text-gray-600 sora-medium sm:text-sm">
+                    <div key={progress.id} className="flex items-center justify-between w-full">
+                      <p className="text-xs text-slate-600 sora-medium sm:text-sm">
                         {progress.goal}
                       </p>
                       <p className="text-xs text-green-500 sora-medium sm:text-sm">
@@ -379,7 +452,7 @@ const Features = () => {
                     <div
                       key={index}
                       className={`size-15 rounded flex-1 hover:scale-105 transition duration-300 ease-in-out shadow ${
-                        index === 2 ? "bg-gray-200" : "bg-green-500"
+                        index === 2 ? "bg-slate-200" : "bg-green-500"
                       }`}
                     ></div>
                   ))}
@@ -392,15 +465,15 @@ const Features = () => {
       {/* Third Section Ends */}
 
       {/* Fourth Section Starts */}
-      <section className="w-full bg-gray-50 py-30">
+      <section className="w-full bg-slate-50 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 h-full w-[90%] mx-auto flex-row-reverse">
           {/* Left Content */}
 
           <div className="flex flex-col items-start justify-center gap-5 lg:order-last">
             <motion.h1
-              ref={fourthFeatureRef}
+              ref={fourthFeatureHeadingRef}
               initial={{ opacity: 0, y: -30 }}
-              animate={fourthFeatureInView ? { opacity: 1, y: 0 } : {}}
+              animate={fourthFeatureHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl md:text-4xl lg:text-4xl dm-bold text-slate-950 text-balance"
             >
@@ -408,11 +481,11 @@ const Features = () => {
             </motion.h1>
 
             <motion.p
-              ref={fourthFeatureRef}
+              ref={fourthFeatureSubHeadingRef}
               initial={{ opacity: 0 }}
-              animate={fourthFeatureInView ? { opacity: 1 } : {}}
+              animate={fourthFeatureSubHeadingInView ? { opacity: 1 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-justify text-gray-600 sora-regular"
+              className="text-base text-justify text-slate-600 sora-regular"
             >
               Learn Spanish, French, German, Japanese, Korean, and many more.
               Each course is built by native speakers and language experts.
@@ -427,16 +500,16 @@ const Features = () => {
           <div className="flex items-center lg:order-first">
             {/* Container */}
             <motion.div
-              ref={fourthFeatureRef}
-              initial={{ opacity: 0, x: -40 }}
-              animate={fourthFeatureInView ? { opacity: 1, x: 0 } : {}}
+              ref={fourthFeatureContainerRef}
+              initial={{ opacity: 0, x: -20 }}
+              animate={fourthFeatureContainerInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="w-[95%] md:w-[90%] mx-auto h-auto p-5 md:p-8 bg-green-500 rounded-2xl shadow-2xl"
             >
               <div className="flex flex-col w-full h-auto gap-8 p-5 bg-white rounded-2xl">
                 <div className="grid grid-cols-3 gap-5">
                   {languages.map((lang) => (
-                    <div className="flex flex-col items-center gap-2 p-3 transition duration-300 ease-in-out bg-gray-200 rounded shadow hover:bg-green-200 sm:py-3 sm:px-0">
+                    <div key={lang.id} className="flex flex-col items-center gap-2 p-3 transition duration-300 ease-in-out bg-slate-200 rounded shadow hover:bg-green-200 sm:py-3 sm:px-0">
                       <IoLanguage size={30} className="text-green-500" />
                       <p className="text-slate-950 text-[10px] sm:text-sm sora-medium">
                         {lang.language}
@@ -458,11 +531,11 @@ const Features = () => {
       {/* Fourth Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="flex items-center justify-center w-full bg-white py-30">
+      <section className="flex items-center justify-center w-full bg-white py-32">
         <motion.div
-          ref={ctaRef}
+          ref={ctaContainerRef}
           initial={{ opacity: 0 }}
-          animate={ctaInView ? { opacity: 1 } : {}}
+          animate={ctaContainerInView ? { opacity: 1 } : {}}
           transition={{ duration: 1.0, ease: "easeOut" }}
           className="rounded-2xl w-[90%] md:w-[80%]  lg:w-[70%] bg-green-500 py-14 mx-auto shadow-lg"
         >
@@ -470,18 +543,18 @@ const Features = () => {
           <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
             <div className="flex flex-col gap-5">
               <motion.h1
-                ref={ctaRef}
+                ref={ctaHeadingRef}
                 initial={{ opacity: 0, y: 40 }}
-                animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+                animate={ctaHeadingInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
                 className="text-2xl text-center text-white md:text-4xl xl:text-5xl dm-bold text-balance"
               >
                 Ready to start learning?
               </motion.h1>
               <motion.p
-                ref={ctaRef}
+                ref={ctaSubHeadingRef}
                 initial={{ opacity: 0, y: 40 }}
-                animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+                animate={ctaSubHeadingInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
                 className="text-base text-center text-white sora-regular text-balance"
               >
@@ -489,15 +562,17 @@ const Features = () => {
               </motion.p>
             </div>
 
-            <motion.button
-              ref={ctaRef}
-              initial={{ opacity: 0 }}
-              animate={ctaInView ? { opacity: 1 } : {}}
-              transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-              className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
-            >
-              Get Started for Free
-            </motion.button>
+            <Link to="/contact">
+              <motion.button
+                ref={ctaButtonRef}
+                initial={{ opacity: 0 }}
+                animate={ctaButtonInView ? { opacity: 1 } : {}}
+                transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
+                className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
+              >
+                Get Started for Free
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </section>

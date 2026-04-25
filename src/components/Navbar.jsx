@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 motion;
 
 const navLinks = [
@@ -57,7 +57,7 @@ const Navbar = () => {
     <nav className="fixed top-0 z-50 flex flex-wrap items-center justify-between w-full px-8 py-6 transition duration-300 ease-in-out bg-white shadow lg:px-10">
       {/* Logo Container */}
       <motion.div
-        initial={{ opacity: 0, x: -30 }}
+        initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.0, ease: "easeOut", delay: 0.2 }}
       >
@@ -72,21 +72,24 @@ const Navbar = () => {
       </motion.div>
 
       {/* Hamburger Menu */}
-      <button
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
         type="button"
         onClick={toggleOpen}
         className="relative flex flex-col items-center w-8 h-5 gap-2 lg:hidden"
       >
         <span
-          className={`absolute h-0.75 w-8 bg-green-500 rounded-full transition duration-300 ease-in-out  ${menuOpen ? "rotate-45 top-2" : "top-0"}`}
+          className={`absolute h-[3px] w-8 bg-green-500 rounded-full transition duration-300 ease-in-out  ${menuOpen ? "rotate-45 top-2" : "top-0"}`}
         ></span>
         <span
-          className={`absolute top-2 h-0.75 w-8 bg-green-500 rounded-full transition duration-300 ease-in-out  ${menuOpen ? "opacity-0" : ""}`}
+          className={`absolute top-2 h-[3px] w-8 bg-green-500 rounded-full transition duration-300 ease-in-out  ${menuOpen ? "opacity-0" : ""}`}
         ></span>
         <span
-          className={`absolute h-0.75 w-8 bg-green-500 rounded-full  transition duration-300 ease-in-out ${menuOpen ? "-rotate-45 top-2" : "top-4"}`}
+          className={`absolute h-[3px] w-8 bg-green-500 rounded-full  transition duration-300 ease-in-out ${menuOpen ? "-rotate-45 top-2" : "top-4"}`}
         ></span>
-      </button>
+      </motion.button>
 
       {/* Menu Mobile Dropdown */}
       <div
@@ -115,16 +118,18 @@ const Navbar = () => {
         </ul>
 
         {/* Get Started Mobile Button */}
-        <motion.div
-          type="button"
-          initial={{ opacity: 0, y: 20 }}
-          animate={hasOpened ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
-          onClick={() => setMenuOpen(false)}
-          className="py-2.5 px-4 dm-medium bg-green-500 text-white text-lg rounded-sm transition duration-300 ease-in-out relative  hover:text-slate-950 hover:shadow-md hover:cursor-pointer"
-        >
-          <NavLink to="/contact">Get Started</NavLink>
-        </motion.div>
+        <Link to="/contact">
+          <motion.button
+            type="button"
+            initial={{ opacity: 0, y: 20 }}
+            animate={hasOpened ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
+            onClick={() => setMenuOpen(false)}
+            className="py-2.5 px-4 dm-medium bg-green-500 text-white text-lg rounded-sm transition-colors duration-300 relative hover:text-slate-950 hover:shadow-md hover:cursor-pointer"
+          >
+            Get Started
+          </motion.button>
+        </Link>
       </div>
 
       {/* Desktop Links */}
@@ -150,15 +155,17 @@ const Navbar = () => {
       </ul>
 
       {/* Get Started Desktop Button */}
-      <motion.div
-        type="button"
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.0, ease: "easeOut" }}
-        className="relative hidden px-4 py-2 text-white transition duration-300 ease-in-out bg-green-500 rounded-sm lg:block dm-medium  hover:text-slate-950 hover:shadow-md hover:cursor-pointer"
-      >
-        <NavLink to="/contact">Get Started</NavLink>
-      </motion.div>
+      <Link to="/contact" className="hidden lg:block">
+        <motion.button
+          type="button"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.0, ease: "easeOut" }}
+          className="relative  px-4 py-2 text-white transition-colors duration-300 bg-green-500 rounded-sm  dm-medium hover:text-slate-950 hover:shadow-md hover:cursor-pointer"
+        >
+          Get Started
+        </motion.button>
+      </Link>
     </nav>
   );
 };

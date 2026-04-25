@@ -1,8 +1,7 @@
 import { useSwiper } from "swiper/react";
 
-const CarouselPaginationDots = ( {total, activeIndex} ) => {
+const CarouselPaginationDots = ({ total, activeIndex }) => {
   const swiper = useSwiper();
-  
 
   const slideNumber = (index) => {
     swiper.slideTo(index);
@@ -15,7 +14,7 @@ const CarouselPaginationDots = ( {total, activeIndex} ) => {
           key={index}
           onClick={() => slideNumber(index)}
           className={`size-3 rounded-full transition duration-300 ease-in-out cursor-pointer ${
-            activeIndex === index ? "bg-green-500" : "bg-gray-300"
+            activeIndex === index ? "bg-green-500" : "bg-slate-300"
           }`}
         ></button>
       ))}

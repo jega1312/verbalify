@@ -9,6 +9,7 @@ import { IoLanguage, IoStar } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { RiSpeakLine, RiRobot2Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 // Mapped Elements Animation
 const containerVariants = {
@@ -64,7 +65,7 @@ const statContents = [
     icon: <LuNotebookPen size={50} className="text-green-500" />,
     count: "500K",
     heading: "Hours of Practice",
-    description: "Logged by learners by every week",
+    description: "Logged by learners every week",
   },
   {
     id: 2,
@@ -111,48 +112,44 @@ const cardContents = [
     icon: <FiGlobe size={30} className="text-slate-950" />,
     bgcolor: "bg-white",
     headingcolor: "text-slate-950",
-    descriptioncolor: "text-gray-600",
-    bordercolor: "border-gray-200 hover:border-green-500",
+    descriptioncolor: "text-slate-600",
+    bordercolor: "border-slate-200 hover:border-green-500",
     heading: "Accessibility",
     description:
       "Language learning should be available to everyone, regardless of their background or resources. Breaking barriers starts here.",
   },
   {
     id: 4,
-    icon: <FaRegHeart size={30} className="textslate-950" />,
+    icon: <FaRegHeart size={30} className="text-slate-950" />,
     bgcolor: "bg-white",
     headingcolor: "text-slate-950",
-    descriptioncolor: "text-gray-600",
-    bordercolor: "border-gray-200 hover:border-green-500",
+    descriptioncolor: "text-slate-600",
+    bordercolor: "border-slate-200 hover:border-green-500",
     heading: "Community",
     description:
       "We're building more than an app, we're creating a global community of passionate language learners who support each other's journey.",
   },
 ];
 
-// How It Works Content
+// Team Section Content
 const teamContents = [
   {
     id: 1,
-    heading: "Choose Your Languages",
     position: "CEO & Co-Founder",
     description: "Former Google, EdTech veteran with 15+ years experience",
   },
   {
     id: 2,
-    heading: "Learn Every Day",
     position: "CTO & Co-Founder",
     description: "AI researcher, previously at DeepMind and Stanford NLP",
   },
   {
     id: 3,
-    heading: "Track Your Progress",
     position: "Head of Pedagogy",
     description: "Linguist with PhD in Applied Linguistics from Cambridge",
   },
   {
     id: 4,
-    heading: "Track Your Progress",
     position: "VP of Product",
     description:
       "Product leader from Spotify and Duolingo with a passion for UX",
@@ -162,19 +159,55 @@ const teamContents = [
 const About = () => {
   // Stat
   const statRef = useRef(null);
-  const statInView = useInView(statRef, { once: true, amount: 0.3 });
+  const statInView = useInView(statRef, { once: true, amount: 0.1 });
 
   // About
+  const aboutHeadingRef = useRef(null);
+  const aboutHeadingInView = useInView(aboutHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const aboutSubHeadingRef = useRef(null);
+  const aboutSubHeadingInView = useInView(aboutSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
   const aboutRef = useRef(null);
-  const aboutInView = useInView(aboutRef, { once: true, amount: 0.3 });
+  const aboutInView = useInView(aboutRef, { once: true, amount: 0.1 });
 
   // Teams
-  const teamsRef = useRef(null);
-  const teamsInView = useInView(teamsRef, { once: true, amount: 0.3 });
+  const teamsHeadingRef = useRef(null);
+  const teamsHeadingInView = useInView(teamsHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
 
-  // About
-  const ctaRef = useRef(null);
-  const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
+  const teamsSubHeadingRef = useRef(null);
+  const teamsSubHeadingInView = useInView(teamsSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const teamsRef = useRef(null);
+  const teamsInView = useInView(teamsRef, { once: true, amount: 0.1 });
+
+  // CTA
+  const ctaHeadingRef = useRef(null);
+  const ctaHeadingInView = useInView(ctaHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaSubHeadingRef = useRef(null);
+  const ctaSubHeadingInView = useInView(ctaSubHeadingRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const ctaButtonRef = useRef(null);
+  const ctaButtonInView = useInView(ctaButtonRef, { once: true, amount: 0.1 });
 
   const [users, setUsers] = useState([]);
 
@@ -208,7 +241,7 @@ const About = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.3 }}
-              className="text-base text-gray-600 sora-regular text-balance w-[90%]"
+              className="text-base text-slate-600 sora-regular text-balance w-[90%]"
             >
               We’re on a mission to connect the world through language. Built on
               the belief that everyone deserves world-class learning, Verbalify
@@ -234,7 +267,7 @@ const About = () => {
                 >
                   {hero.icon}
                   <div className="flex flex-col items-center gap-1">
-                    <h2 className="text-3xl text-white sora-bold">
+                    <h2 className="text-2xl text-white sora-bold">
                       {hero.stat}
                     </h2>
                     <p className="text-base text-white dm-semibold">
@@ -249,7 +282,7 @@ const About = () => {
       </section>
       {/* Hero Section Ends */}
 
-      {/* Teams Section Starts */}
+      {/* Features Section Starts */}
       <section className="w-full py-20 bg-white">
         {/* Grid Section */}
         <motion.div
@@ -276,7 +309,7 @@ const About = () => {
                   <p className="text-lg text-center text-slate-950 dm-semibold">
                     {stat.heading}
                   </p>
-                  <p className="text-xs text-center text-gray-600 sora-regular w-[80%] mx-auto">
+                  <p className="text-xs text-center text-slate-600 sora-regular w-[80%] mx-auto">
                     {stat.description}
                   </p>
                 </div>
@@ -285,29 +318,29 @@ const About = () => {
           ))}
         </motion.div>
       </section>
-      {/* Teams Section Ends */}
+      {/* Features Section Ends */}
 
       {/* About Section Starts */}
-      <section className="w-full py-20 bg-gray-50">
+      <section className="w-full py-20 bg-slate-50">
         {/* Description Section */}
         <div className="flex flex-col mx-auto gap-5 w-[90%] ">
           {/* Section Description */}
           <div className="flex flex-col items-center w-full gap-5 mb-12">
             <motion.h1
-              ref={aboutRef}
+              ref={aboutHeadingRef}
               initial={{ opacity: 0, y: 40 }}
-              animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+              animate={aboutHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
               className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
             >
               Our mission
             </motion.h1>
             <motion.p
-              ref={aboutRef}
+              ref={aboutSubHeadingRef}
               initial={{ opacity: 0, y: 40 }}
-              animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+              animate={aboutSubHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-              className="text-base text-center text-gray-600 sora-regular text-balance"
+              className="text-base text-center text-slate-600 sora-regular text-balance"
             >
               The values that guide everything we do
             </motion.p>
@@ -355,20 +388,20 @@ const About = () => {
         {/* Section Heading */}
         <div className="flex flex-col items-center w-full gap-5 mb-12 md:mb-14">
           <motion.h1
-            ref={teamsRef}
+            ref={teamsHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={teamsInView ? { opacity: 1, y: 0 } : {}}
+            animate={teamsHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
             className="text-3xl text-slate-950 md:text-4xl lg:text-5xl dm-bold text-balance"
           >
             Our team
           </motion.h1>
           <motion.p
-            ref={teamsRef}
+            ref={teamsSubHeadingRef}
             initial={{ opacity: 0, y: 40 }}
-            animate={teamsInView ? { opacity: 1, y: 0 } : {}}
+            animate={teamsSubHeadingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="text-base text-center text-gray-600 sora-regular text-balance"
+            className="text-base text-center text-slate-600 sora-regular text-balance"
           >
             Passionate experts dedicated to transforming education
           </motion.p>
@@ -389,22 +422,25 @@ const About = () => {
               variants={itemVariants}
               className="flex flex-col items-center gap-5"
             >
-              {/* User Profile Container */}
-              <img
-                src={users[index]?.picture.large}
-                alt="Profile Picture"
-                className="flex items-center justify-center rounded-full shadow-lg group size-25"
-              />
+              {users[index] ? (
+                <img
+                  src={users[index]?.picture?.large}
+                  alt="Profile Picture"
+                  className="flex items-center justify-center rounded-full shadow-lg size-25"
+                />
+              ) : (
+                <div className="size-25 rounded-full bg-green-500 flex items-center justify-center  shadow-lg"></div>
+              )}
 
               {/* Heading Title */}
               <div className="flex flex-col items-center gap-2">
                 <h3 className="text-xl text-center text-slate-950 dm-bold">
-                  {users[index]?.name.first} {users[index]?.name.last}
+                  {users[index]?.name?.first} {users[index]?.name?.last}
                 </h3>
                 <p className="text-sm text-center text-green-500 sora-medium">
                   {team.position}
                 </p>
-                <p className="text-xs text-center text-gray-600 sora-regular w-[80%] mx-auto">
+                <p className="text-xs text-center text-slate-600 sora-regular w-[80%] mx-auto">
                   {team.description}
                 </p>
               </div>
@@ -415,23 +451,23 @@ const About = () => {
       {/* Teams Section Ends */}
 
       {/* CTA Section Starts */}
-      <section className="w-full bg-green-500 py-30">
+      <section className="w-full bg-green-500 py-32">
         {/* Section Heading */}
         <div className="flex flex-col items-center w-[90%] md:w-full mx-auto gap-10">
           <div className="flex flex-col gap-5">
             <motion.h1
-              ref={ctaRef}
+              ref={ctaHeadingRef}
               initial={{ opacity: 0, y: 40 }}
-              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+              animate={ctaHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.1 }}
               className="text-3xl text-center text-white md:text-4xl lg:text-5xl dm-bold text-balance"
             >
               Join us on our mission
             </motion.h1>
             <motion.p
-              ref={ctaRef}
+              ref={ctaSubHeadingRef}
               initial={{ opacity: 0, y: 40 }}
-              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+              animate={ctaSubHeadingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
               className="text-base text-center text-white sora-regular text-balance"
             >
@@ -440,15 +476,17 @@ const About = () => {
             </motion.p>
           </div>
 
-          <motion.button
-            ref={ctaRef}
-            initial={{ opacity: 0 }}
-            animate={ctaInView ? { opacity: 1 } : {}}
-            transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
-            className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
-          >
-            Contact Us
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              ref={ctaButtonRef}
+              initial={{ opacity: 0 }}
+              animate={ctaButtonInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
+              className="p-4 text-green-500 transition duration-300 ease-in-out bg-white rounded-lg shadow-md dm-bold hover:cursor-pointer hover:bg-slate-950 hover:text-green-500 hover:shadow-2xl hover:scale-105"
+            >
+              Contact Us
+            </motion.button>
+          </Link>
         </div>
       </section>
       {/* CTA Section Ends */}
