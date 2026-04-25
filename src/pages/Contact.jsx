@@ -197,7 +197,7 @@ const Contact = () => {
             <div className="flex items-center justify-center w-[90%] md:w-full h-full md:p-10 mx-auto">
               {/* Registration Form */}
               {isSubmitted ? (
-                <div className="flex flex-col items-center justify-center w-full h-full px-5 py-10 bg-white border border-green-500 shadow-xl sm:px-10 rounded-2xl min-h-100 gap-5">
+                <div className="flex flex-col items-center justify-center w-full h-full px-5 py-10 bg-white border-2 border-green-500 shadow-xl sm:px-10 rounded-2xl min-h-100 gap-5">
                   <IoCheckmarkCircle size={60} className="text-green-500" />
                   <h3 className="text-2xl text-center text-green-500 sora-bold">
                     We’ve got your message!
@@ -234,7 +234,7 @@ const Contact = () => {
                       }
                     },
                   )}
-                  className="flex flex-col items-center justify-between w-full h-full gap-8 px-5 py-10 bg-white border border-green-500 shadow-2xl sm:px-10 rounded-2xl"
+                  className="flex flex-col items-center justify-between w-full h-full gap-8 px-5 py-10 bg-white border-2 border-green-500 shadow-2xl sm:px-10 rounded-2xl"
                 >
                   {/* Name Input */}
                   <div className="relative w-full">
