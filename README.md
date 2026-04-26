@@ -73,7 +73,7 @@ Verbalify is a **fictional language learning SaaS microsite** designed to mirror
 ## 🧠 React Concepts Demonstrated
 
 | Concept | Where Used |
-|---|---|---|
+|---|---|
 | `useState` | All components |
 | `useEffect` | API fetch for team profiles, Swiper initialization |
 | `useRef` + `useInView` | Scroll-triggered animations |
@@ -86,6 +86,7 @@ Verbalify is a **fictional language learning SaaS microsite** designed to mirror
 | Responsive Design | Mobile-first Tailwind classes |
 | Custom Font Integration | DM Sans, Sora fonts |
 | Route-based Scroll Reset | ScrollToTop component pattern |
+
 ---
 
 ## 📁 Project Structure
