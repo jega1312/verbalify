@@ -4,6 +4,8 @@
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat&logo=tailwindcss)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-EF008F?style=flat&logo=framer)
+![React Router](https://img.shields.io/badge/React_Router-6-CA4245?style=flat&logo=reactrouter)
+![React Hook Form](https://img.shields.io/badge/React_Hook_Form-7-EC5990?style=flat&logo=reacthookform)
 
 > A conceptual SaaS product multi-page microsite for an AI-powered language learning platform. Built as a frontend portfolio project to demonstrate real-world React skills, modern UI/UX patterns, and production-level component architecture.
 
@@ -73,7 +75,7 @@ Verbalify is a **fictional language learning SaaS microsite** designed to mirror
 ## 🧠 React Concepts Demonstrated
 
 | Concept | Where Used |
-|---|---|---|
+|---|---|
 | `useState` | All components |
 | `useEffect` | API fetch for team profiles, Swiper initialization |
 | `useRef` + `useInView` | Scroll-triggered animations |
@@ -86,6 +88,7 @@ Verbalify is a **fictional language learning SaaS microsite** designed to mirror
 | Responsive Design | Mobile-first Tailwind classes |
 | Custom Font Integration | DM Sans, Sora fonts |
 | Route-based Scroll Reset | ScrollToTop component pattern |
+
 ---
 
 ## 📁 Project Structure
