@@ -278,7 +278,7 @@ const Features = () => {
                 </div>
 
                 {/* Second Row Container */}
-                <div className="flex items-center w-full gap-5">
+                <div className="flex items-stretch w-full gap-5">
                   {aiFeature.map((ai) => (
                     <div
                       key={ai.id}
