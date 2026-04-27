@@ -4,6 +4,7 @@ motion;
 import { IoCheckmark, IoClose } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 // Mapped Elements Animation
 const containerVariants = {
@@ -24,7 +25,7 @@ const itemVariants = {
   },
 };
 
-// Pricing Card Content
+// Plans Card Content
 const plans = [
   {
     id: 1,
@@ -161,7 +162,7 @@ const tableRow = [
   },
 ];
 
-const Pricing = () => {
+const Plans = () => {
   // Heading Section
   const headingRef = useRef(null);
   const headingInView = useInView(headingRef, {
@@ -246,6 +247,17 @@ const Pricing = () => {
 
   return (
     <>
+      {/* Page Title Helmet Starts */}
+      <Helmet>
+        <title>Plans - Verbalify</title>
+        <meta
+          name="description"
+          content="Simple, transparent plans.
+Choose the perfect plan for your language learning journey."
+        />
+      </Helmet>
+      {/* Page Title Helmet Ends */}
+
       {/* Header Section Starts */}
       <section className="w-full pb-20 bg-green-200 pt-44">
         {/* Section Heading */}
@@ -258,7 +270,7 @@ const Pricing = () => {
               transition={{ duration: 1.0, ease: "easeOut" }}
               className="text-3xl text-center text-slate-950 mx-auto w-[90%] md:text-4xl lg:text-5xl dm-bold text-balance"
             >
-              Simple, transparent pricing
+              Simple, transparent plans
             </motion.h1>
             <motion.p
               ref={subHeadingRef}
@@ -522,7 +534,7 @@ const Pricing = () => {
             transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
             className="text-base text-center text-slate-600 sora-regular w-[90%] mx-auto sm:w-full text-balance"
           >
-            Transparent pricing. No hidden details.
+            Transparent plans. No hidden details.
           </motion.p>
         </div>
 
@@ -620,4 +632,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default Plans;

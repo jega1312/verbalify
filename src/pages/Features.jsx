@@ -5,6 +5,7 @@ import { IoLanguage } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa6";
 import { RiRobot2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const aiFeature = [
   {
@@ -192,6 +193,17 @@ const Features = () => {
 
   return (
     <>
+      {/* Page Title Helmet Starts */}
+      <Helmet>
+        <title>Features - Verbalify</title>
+        <meta
+          name="description"
+          content="Powerful features for effective learning.
+Everything you need to master a new language, all in one beautiful platform."
+        />
+      </Helmet>
+      {/* Page Title Helmet Ends */}
+
       {/* Header Section Starts */}
       <section className="w-full pb-20 bg-green-200 pt-44">
         {/* Section Heading */}
@@ -436,7 +448,10 @@ const Features = () => {
 
                 <div className="flex flex-col gap-4">
                   {progressContent.map((progress) => (
-                    <div key={progress.id} className="flex items-center justify-between w-full">
+                    <div
+                      key={progress.id}
+                      className="flex items-center justify-between w-full"
+                    >
                       <p className="text-xs text-slate-600 sora-medium sm:text-sm">
                         {progress.goal}
                       </p>
@@ -509,7 +524,10 @@ const Features = () => {
               <div className="flex flex-col w-full h-auto gap-8 p-5 bg-white rounded-2xl">
                 <div className="grid grid-cols-3 gap-5">
                   {languages.map((lang) => (
-                    <div key={lang.id} className="flex flex-col items-center gap-2 p-3 transition duration-300 ease-in-out bg-slate-200 rounded shadow hover:bg-green-200 sm:py-3 sm:px-0">
+                    <div
+                      key={lang.id}
+                      className="flex flex-col items-center gap-2 p-3 transition duration-300 ease-in-out bg-slate-200 rounded shadow hover:bg-green-200 sm:py-3 sm:px-0"
+                    >
                       <IoLanguage size={30} className="text-green-500" />
                       <p className="text-slate-950 text-[10px] sm:text-sm sora-medium">
                         {lang.language}

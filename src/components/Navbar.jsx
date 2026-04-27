@@ -16,8 +16,8 @@ const navLinks = [
   },
   {
     id: 3,
-    label: "Pricing",
-    to: "/pricing",
+    label: "Plans",
+    to: "/plans",
   },
   {
     id: 4,

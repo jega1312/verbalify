@@ -10,6 +10,7 @@ import "swiper/css";
 import "/src/index.css";
 import CarouselNavButtons from "../components/CarouselNavButtons";
 import CarouselPaginationDots from "../components/CarouselPaginationDots";
+import { Helmet } from "react-helmet-async";
 
 // Mapped Elements Animation
 const containerVariants = {
@@ -179,7 +180,7 @@ const testimonials = [
   },
 ];
 
-// Pricing Card Content
+// Plans Card Content
 const plans = [
   {
     id: 1,
@@ -374,6 +375,16 @@ const Home = () => {
 
   return (
     <>
+      {/* Page Title Helmet Starts */}
+      <Helmet>
+        <title>Verbalify - Language Learning, Beautifully Simplified</title>
+        <meta
+          name="description"
+          content="Master any language with AI-powered lessons, interactive exercises, and real-world conversations. Start your journey today."
+        />
+      </Helmet>
+      {/* Page Title Helmet Ends */}
+
       {/* Hero Section Starts */}
       <section className="w-full min-h-screen pb-16 bg-green-200 lg:pb-0 lg:h-screen pt-36 lg:pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-0 h-full w-[90%] mx-auto">

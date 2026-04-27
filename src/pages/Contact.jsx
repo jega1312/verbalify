@@ -9,6 +9,8 @@ import { SlSocialLinkedin, SlEnvolope, SlGlobe } from "react-icons/sl";
 import { FiGithub } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 
 const Contact = () => {
   const {
@@ -159,6 +161,17 @@ const Contact = () => {
 
   return (
     <>
+      {/* Page Title Helmet Starts */}
+      <Helmet>
+        <title>Contact - Verbalify</title>
+        <meta
+          name="description"
+          content="Get in touch.
+Have a question or feedback? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+        />
+      </Helmet>
+      {/* Page Title Helmet Ends */}
+
       {/* Header Section Starts */}
       <section className="w-full pb-20 bg-green-200 pt-44">
         {/* Section Heading */}
@@ -222,9 +235,9 @@ const Contact = () => {
 
                       setIsSubmitted(true);
 
-                       reset();
-                       setPhone("");
-                       setPhoneError("");
+                      reset();
+                      setPhone("");
+                      setPhoneError("");
 
                       console.log({ ...data, phone });
                     },

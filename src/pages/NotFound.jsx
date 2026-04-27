@@ -1,10 +1,24 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 motion;
 
 const NotFound = () => {
   return (
     <>
+      {/* Page Title Helmet Starts */}
+      <Helmet>
+        <title>Page Not Found - Verbalify</title>
+        <meta
+          name="description"
+          content="
+Looks like this page took a wrong turn. Don't worry, we'll help you find your way back."
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+      {/* Page Title Helmet Ends */}
+
+      {/* Not Found Page Content Starts */}
       <section className="bg-green-500 min-h-screen flex justify-center items-center pt-24 overflow-hidden">
         <div className="flex flex-col items-center gap-5">
           {/* Text Container */}
@@ -46,6 +60,7 @@ const NotFound = () => {
           </Link>
         </div>
       </section>
+      {/* Not Found Page Content Ends */}
     </>
   );
 };

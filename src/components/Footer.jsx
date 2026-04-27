@@ -7,7 +7,7 @@ motion;
 
 const productLinks = [
   { id: 1, label: "Features", to: "/features" },
-  { id: 2, label: "Pricing", to: "/pricing" },
+  { id: 2, label: "Plans", to: "/plans" },
 ];
 
 const companyLinks = [

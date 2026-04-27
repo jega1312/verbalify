@@ -10,6 +10,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { RiSpeakLine, RiRobot2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 // Mapped Elements Animation
 const containerVariants = {
@@ -221,6 +222,18 @@ const About = () => {
 
   return (
     <>
+      {/* Page Title Helmet Starts */}
+      <Helmet>
+        <title>About - Verbalify</title>
+        <meta
+          name="description"
+          content="Breaking language
+barriers, one conversation
+at a time."
+        />
+      </Helmet>
+      {/* Page Title Helmet Ends */}
+
       {/* Hero Section Starts */}
       <section className="w-full min-h-screen pb-16 bg-green-200 lg:pb-0 lg:h-screen pt-36 lg:pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-0 h-full w-[90%] mx-auto">

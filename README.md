@@ -20,20 +20,23 @@
 ## 📸 Preview
 
 ### Desktop View 🖥
+
 ![Homepage](./screenshots/home.png)
 ![Features Page](./screenshots/features.png)
 ![Contact Page](./screenshots/contact.png)
 
 ### Mobile View 📱
+
 ![Mobile View](./screenshots/mobile.png)
 
 ---
 
 ## 💡 About The Project
- 
+
 Verbalify is a **fictional language learning SaaS microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
- 
+
 **Brand Identity:**
+
 - **Tagline:** "Language learning, beautifully simplified"
 - **Mission:** Breaking language barriers, one conversation at a time
 
@@ -41,23 +44,23 @@ Verbalify is a **fictional language learning SaaS microsite** designed to mirror
 
 ## ⚙️ Tech Stack
 
-| Technology | Version | Purpose |
-|---|---|---|
-| React | 19 | Component-based UI |
-| Vite | 6 | Build tool & dev server |
-| Tailwind CSS | 4 | Utility-first styling |
-| Framer Motion | 12 | Scroll & entrance animations |
-| React Router DOM | 6 | Multi-page routing |
-| React Hook Form | 7 | Form state & validation |
-| Swiper.js | 11 | Testimonials carousel |
-| Random User API | — | Testimonial and teams profile pictures |
-| React International Phone | 3 | Phone input with dial codes |
-| React Icons | 5 | Icon library |
+| Technology                | Version | Purpose                                |
+| ------------------------- | ------- | -------------------------------------- |
+| React                     | 19      | Component-based UI                     |
+| Vite                      | 6       | Build tool & dev server                |
+| Tailwind CSS              | 4       | Utility-first styling                  |
+| Framer Motion             | 12      | Scroll & entrance animations           |
+| React Router DOM          | 6       | Multi-page routing                     |
+| React Hook Form           | 7       | Form state & validation                |
+| Swiper.js                 | 11      | Testimonials carousel                  |
+| Random User API           | —       | Testimonial and teams profile pictures |
+| React International Phone | 3       | Phone input with dial codes            |
+| React Icons               | 5       | Icon library                           |
 
 ---
 
 ## ✨ Key Features
- 
+
 - **Multi-Page Architecture** — 6 full pages with React Router DOM navigation (including 404)
 - **Scroll-Triggered Animations** — Entrance animations on scroll using Framer Motion's `useInView`
 - **Fully Responsive** — Mobile-first design across all screen sizes
@@ -74,20 +77,20 @@ Verbalify is a **fictional language learning SaaS microsite** designed to mirror
 
 ## 🧠 React Concepts Demonstrated
 
-| Concept | Where Used |
-|---|---|
-| `useState` | All components |
-| `useEffect` | API fetch for team profiles, Swiper initialization |
-| `useRef` + `useInView` | Scroll-triggered animations |
-| React Router DOM | Multi-page navigation |
-| `useLocation` | Active nav state detection |
-| `useNavigate` | Programmatic navigation (404 redirect) |
-| Container/Item Variants | Stagger animations pattern |
-| Third-Party Integration | Swiper.js, Random User API |
-| Component Reusability | Custom carousel controls, mapped content arrays |
-| Responsive Design | Mobile-first Tailwind classes |
-| Custom Font Integration | DM Sans, Sora fonts |
-| Route-based Scroll Reset | ScrollToTop component pattern |
+| Concept                  | Where Used                                         |
+| ------------------------ | -------------------------------------------------- |
+| `useState`               | All components                                     |
+| `useEffect`              | API fetch for team profiles, Swiper initialization |
+| `useRef` + `useInView`   | Scroll-triggered animations                        |
+| React Router DOM         | Multi-page navigation                              |
+| `useLocation`            | Active nav state detection                         |
+| `useNavigate`            | Programmatic navigation (404 redirect)             |
+| Container/Item Variants  | Stagger animations pattern                         |
+| Third-Party Integration  | Swiper.js, Random User API                         |
+| Component Reusability    | Custom carousel controls, mapped content arrays    |
+| Responsive Design        | Mobile-first Tailwind classes                      |
+| Custom Font Integration  | DM Sans, Sora fonts                                |
+| Route-based Scroll Reset | ScrollToTop component pattern                      |
 
 ---
 
@@ -106,7 +109,7 @@ src/
 │   ├── Home.jsx                  # Landing page with hero section
 │   ├── About.jsx                 # Mission, values, team section
 │   ├── Features.jsx              # Product features showcase
-│   ├── Pricing.jsx               # Pricing plans
+│   ├── Plans.jsx               # Plans plans
 │   ├── Contact.jsx               # Contact form
 │   └── NotFound.jsx              # 404 error page
 ├── App.jsx                        # Route configuration
@@ -126,6 +129,7 @@ vercel.json                        # Vercel deployment config
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js v18+
 - npm
 
@@ -164,37 +168,48 @@ npm install react-international-phone
 npm install react-icons
 npm install motion
 ```
+
 > **Note:** React, ReactDOM, and Vite are scaffolded automatically via `npm create vite@latest` and do not require separate installation.
+
 ---
 
 ## 🎨 Design Decisions
 
 ### Color Palette
+
 - **Primary:** Green-based gradient (`green-200`, `green-500` accents)
 - **Backgrounds:** White, `slate-50`, `slate-950` for depth
 - **Text:** `slate-950` (headings), `slate-600` (body), white on dark sections
+
 ### Typography
+
 - **DM Sans** — Bold, semibold weights for headings
 - **Sora** — Regular, medium, bold weights for body text and UI elements
+
 ### Animation Strategy
+
 - **Stagger Animations** — Cards appear sequentially with 0.4s delay between items
 - **Scroll Triggers** — Animations fire once when element enters viewport (`once: true`)
 - **Consistent Timing** — 1.0s duration with `easeOut` easing across all animations
+
 ### Layout Patterns
+
 - **Grid-Based Sections** — Responsive grids (1 col mobile → 2-4 cols desktop)
 - **Fixed Navbar** — Persistent navigation with active state indication
 - **Section Spacing** — Consistent `py-20` vertical padding for all sections
 
 ---
- 
+
 ## 🎯 Pages Overview
- 
+
 ### 1. Home (`/`)
+
 - Hero section with brand messaging
 - Key statistics and features
 - CTA buttons for navigation
 
 ### 2. About (`/about`)
+
 - **Mission Statement** — Core values and principles
 - **Statistics Section** — Practice hours, fluency rates, AI support
 - **Our Mission Cards** — 4 value propositions with hover effects
@@ -202,29 +217,34 @@ npm install motion
 - **CTA Section** — Call-to-action linking to Contact page
 
 ### 3. Features (`/features`)
+
 - Comprehensive feature showcase
 - Interactive feature cards
 - Use case demonstrations
 
-### 4. Pricing (`/pricing`)
-- Pricing tiers and plans
+### 4. Plans (`/plans`)
+
+- Plans tiers and plans
 - Feature comparison
 - Plan selection flow
 
 ### 5. Contact (`/contact`)
+
 - Contact form
 - Support information
 - Social links
 
 ### 6. Not Found (`*`)
+
 - 404 error page
 - Navigation back to home
 
 ---
- 
+
 ## 🔄 Animation Implementation
- 
+
 ### Container/Item Pattern
+
 ```javascript
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -235,7 +255,7 @@ const containerVariants = {
     },
   },
 };
- 
+
 const itemVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -244,12 +264,13 @@ const itemVariants = {
   },
 };
 ```
- 
+
 ### Scroll-Triggered Animation
+
 ```javascript
 const ref = useRef(null);
 const inView = useInView(ref, { once: true, amount: 0.1 });
- 
+
 <motion.div
   ref={ref}
   variants={containerVariants}
@@ -257,14 +278,15 @@ const inView = useInView(ref, { once: true, amount: 0.1 });
   animate={inView ? "visible" : "hidden"}
 >
   {/* Content */}
-</motion.div>
+</motion.div>;
 ```
- 
+
 ---
- 
+
 ## 🌐 API Integration
- 
+
 ### Random User API
+
 ```javascript
 useEffect(() => {
   fetch("https://randomuser.me/api/?results=4&seed=verbalify")
@@ -273,40 +295,44 @@ useEffect(() => {
     .catch((error) => console.error("Failed to fetch users:", error));
 }, []);
 ```
- 
+
 **Purpose:** Generate consistent team member profile pictures  
 **Seed:** `verbalify` ensures same profiles on every load
- 
+
 ---
- 
+
 ## 🎠 Swiper.js Custom Components
- 
+
 ### Architecture Pattern
+
 Instead of using Swiper's default navigation/pagination, Verbalify implements **custom reusable components** for better design control:
- 
+
 #### CarouselNavButtons.jsx
+
 - Custom prev/next navigation buttons
 - Integrates with Swiper's `useSwiper` hook
 - Styled to match brand design system
+
 #### CarouselPaginationDots.jsx
+
 - Custom pagination indicator
 - Active state synchronization
 - Click-to-slide functionality
-**Benefits:**
+  **Benefits:**
 - Full design control over carousel UI
 - Reusable across different carousel instances
 - Consistent with Verbalify brand aesthetics
 - No default Swiper CSS conflicts
 
 ---
- 
+
 ## 📱 Responsive Breakpoints
- 
-| Breakpoint | Width | Usage |
-|---|---|---|
-| Mobile | < 768px | 1-column layouts |
-| Tablet | 768px - 1024px | 2-column layouts |
-| Desktop | > 1024px | 3-4 column layouts |
+
+| Breakpoint | Width          | Usage              |
+| ---------- | -------------- | ------------------ |
+| Mobile     | < 768px        | 1-column layouts   |
+| Tablet     | 768px - 1024px | 2-column layouts   |
+| Desktop    | > 1024px       | 3-4 column layouts |
 
 ---
 
