@@ -31,7 +31,7 @@
 
 ## 💡 About The Project
  
-Verbalify is a **fictional language learning SaaS microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
+Verbalify is a **fictional AI-powered language learning SaaS product microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
  
 **Brand Identity:**
 - **Tagline:** "Language learning, beautifully simplified"
@@ -219,85 +219,7 @@ npm install motion
 ### 6. Not Found (`*`)
 - 404 error page
 - Navigation back to home
-
----
  
-## 🔄 Animation Implementation
- 
-### Container/Item Pattern
-```javascript
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.4,
-    },
-  },
-};
- 
-const itemVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 1.0, ease: "easeOut" },
-  },
-};
-```
- 
-### Scroll-Triggered Animation
-```javascript
-const ref = useRef(null);
-const inView = useInView(ref, { once: true, amount: 0.1 });
- 
-<motion.div
-  ref={ref}
-  variants={containerVariants}
-  initial="hidden"
-  animate={inView ? "visible" : "hidden"}
->
-  {/* Content */}
-</motion.div>
-```
- 
----
- 
-## 🌐 API Integration
- 
-### Random User API
-```javascript
-useEffect(() => {
-  fetch("https://randomuser.me/api/?results=4&seed=verbalify")
-    .then((response) => response.json())
-    .then((data) => setUsers(data.results))
-    .catch((error) => console.error("Failed to fetch users:", error));
-}, []);
-```
- 
-**Purpose:** Generate consistent team member profile pictures  
-**Seed:** `verbalify` ensures same profiles on every load
- 
----
- 
-## 🎠 Swiper.js Custom Components
- 
-### Architecture Pattern
-Instead of using Swiper's default navigation/pagination, Verbalify implements **custom reusable components** for better design control:
- 
-#### CarouselNavButtons.jsx
-- Custom prev/next navigation buttons
-- Integrates with Swiper's `useSwiper` hook
-- Styled to match brand design system
-#### CarouselPaginationDots.jsx
-- Custom pagination indicator
-- Active state synchronization
-- Click-to-slide functionality
-**Benefits:**
-- Full design control over carousel UI
-- Reusable across different carousel instances
-- Consistent with Verbalify brand aesthetics
-- No default Swiper CSS conflicts
-
 ---
  
 ## 📱 Responsive Breakpoints
@@ -306,7 +228,7 @@ Instead of using Swiper's default navigation/pagination, Verbalify implements **
 |---|---|---|
 | Mobile | < 768px | 1-column layouts |
 | Tablet | 768px - 1024px | 2-column layouts |
-| Desktop | > 1024px | 3-4 column layouts |
+| Desktop | > 1024px | 3-column layouts |
 
 ---
 
