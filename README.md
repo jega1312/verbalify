@@ -1,4 +1,4 @@
-# Verbalify — Conceptual AI Language Learning Product SaaS Microsite 🌎🗣
+# Verbalify — Conceptual AI Language Learning Product SaaS Microsite 🌎💬
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
@@ -32,9 +32,15 @@
 ---
 
 ## 💡 About The Project
+<<<<<<< HEAD
 
 Verbalify is a **fictional language learning SaaS microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
 
+=======
+ 
+Verbalify is a **fictional AI-powered language learning product SaaS microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
+ 
+>>>>>>> 02930b5490f4e0202a99bef2f05ec8e9ec915cd6
 **Brand Identity:**
 
 - **Tagline:** "Language learning, beautifully simplified"
@@ -238,6 +244,7 @@ npm install motion
 
 - 404 error page
 - Navigation back to home
+<<<<<<< HEAD
 
 ---
 
@@ -324,15 +331,27 @@ Instead of using Swiper's default navigation/pagination, Verbalify implements **
 - Consistent with Verbalify brand aesthetics
 - No default Swiper CSS conflicts
 
+=======
+ 
+>>>>>>> 02930b5490f4e0202a99bef2f05ec8e9ec915cd6
 ---
 
 ## 📱 Responsive Breakpoints
+<<<<<<< HEAD
 
 | Breakpoint | Width          | Usage              |
 | ---------- | -------------- | ------------------ |
 | Mobile     | < 768px        | 1-column layouts   |
 | Tablet     | 768px - 1024px | 2-column layouts   |
 | Desktop    | > 1024px       | 3-4 column layouts |
+=======
+ 
+| Breakpoint | Width | Usage |
+|---|---|---|
+| Mobile | < 768px | 1-column layouts |
+| Tablet | 768px - 1024px | 2-column layouts |
+| Desktop | > 1024px | 3-column layouts |
+>>>>>>> 02930b5490f4e0202a99bef2f05ec8e9ec915cd6
 
 ---
 
