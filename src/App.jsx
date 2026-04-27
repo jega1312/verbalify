@@ -42,7 +42,7 @@ const App = () => {
     <>
       <div className="relative overflow-hidden">
         <Navbar />
-        <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/features" element={<Features />} />
@@ -63,17 +63,17 @@ const App = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed z-50 flex items-center justify-center w-10 h-10 transition-colors duration-300 border border-green-500 shadow-2xl bottom-4 right-4 rounded-full bg-white hover:bg-green-500 hover:cursor-pointer group"
+            className="fixed z-50 flex items-center justify-center w-10 h-10 transition-colors duration-300 shadow-2xl bottom-4 right-4 rounded-full bg-green-500 hover:bg-slate-950 hover:cursor-pointer group"
           >
             <FaChevronUp
-              size={12}
-              className="text-green-500 transition-colors duration-300 group-hover:text-white"
+              size={15}
+              className="text-white transition-colors duration-300 group-hover:text-green-500"
             />
           </motion.button>
         )}
       </AnimatePresence>
     </>
   );
-};;
+};
 
 export default App;
