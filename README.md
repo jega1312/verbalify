@@ -5,6 +5,7 @@
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat&logo=tailwindcss)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-EF008F?style=flat&logo=framer)
 ![React Router](https://img.shields.io/badge/React_Router-6-CA4245?style=flat&logo=reactrouter)
+![React Helmet Async](https://img.shields.io/badge/React%20Helmet%20Async-2-00ADEF?style=flat&logo=react)
 ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-7-EC5990?style=flat&logo=reacthookform)
 
 > A conceptual SaaS product multi-page microsite for an AI-powered language learning platform. Built as a frontend portfolio project to demonstrate real-world React skills, modern UI/UX patterns, and production-level component architecture.
@@ -32,15 +33,9 @@
 ---
 
 ## 💡 About The Project
-<<<<<<< HEAD
 
-Verbalify is a **fictional language learning SaaS microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
+Verbalify is a **fictional language learning product SaaS microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
 
-=======
- 
-Verbalify is a **fictional AI-powered language learning product SaaS microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
- 
->>>>>>> 02930b5490f4e0202a99bef2f05ec8e9ec915cd6
 **Brand Identity:**
 
 - **Tagline:** "Language learning, beautifully simplified"
@@ -57,6 +52,7 @@ Verbalify is a **fictional AI-powered language learning product SaaS microsite**
 | Tailwind CSS              | 4       | Utility-first styling                  |
 | Framer Motion             | 12      | Scroll & entrance animations           |
 | React Router DOM          | 6       | Multi-page routing                     |
+| React Helmet Async       | 2       | Manage page titles & meta tags (SEO)   |
 | React Hook Form           | 7       | Form state & validation                |
 | Swiper.js                 | 11      | Testimonials carousel                  |
 | Random User API           | —       | Testimonial and teams profile pictures |
@@ -68,6 +64,7 @@ Verbalify is a **fictional AI-powered language learning product SaaS microsite**
 ## ✨ Key Features
 
 - **Multi-Page Architecture** — 6 full pages with React Router DOM navigation (including 404)
+- **Dynamic Page Metadata** — SEO-friendly titles & meta descriptions using React Helmet Async
 - **Scroll-Triggered Animations** — Entrance animations on scroll using Framer Motion's `useInView`
 - **Fully Responsive** — Mobile-first design across all screen sizes
 - **Active Navigation State** — Navbar highlights current page using React Router's `useLocation`
@@ -89,6 +86,7 @@ Verbalify is a **fictional AI-powered language learning product SaaS microsite**
 | `useEffect`              | API fetch for team profiles, Swiper initialization |
 | `useRef` + `useInView`   | Scroll-triggered animations                        |
 | React Router DOM         | Multi-page navigation                              |
+| React Helmet Async       | Dynamic document title & meta tag management       |
 | `useLocation`            | Active nav state detection                         |
 | `useNavigate`            | Programmatic navigation (404 redirect)             |
 | Container/Item Variants  | Stagger animations pattern                         |
@@ -168,6 +166,7 @@ npm run build
 ```bash
 npm install tailwindcss @tailwindcss/vite
 npm install react-router-dom
+npm install react-helmet-async
 npm install react-hook-form
 npm install swiper
 npm install react-international-phone
@@ -244,114 +243,16 @@ npm install motion
 
 - 404 error page
 - Navigation back to home
-<<<<<<< HEAD
 
----
-
-## 🔄 Animation Implementation
-
-### Container/Item Pattern
-
-```javascript
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.4,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 1.0, ease: "easeOut" },
-  },
-};
-```
-
-### Scroll-Triggered Animation
-
-```javascript
-const ref = useRef(null);
-const inView = useInView(ref, { once: true, amount: 0.1 });
-
-<motion.div
-  ref={ref}
-  variants={containerVariants}
-  initial="hidden"
-  animate={inView ? "visible" : "hidden"}
->
-  {/* Content */}
-</motion.div>;
-```
-
----
-
-## 🌐 API Integration
-
-### Random User API
-
-```javascript
-useEffect(() => {
-  fetch("https://randomuser.me/api/?results=4&seed=verbalify")
-    .then((response) => response.json())
-    .then((data) => setUsers(data.results))
-    .catch((error) => console.error("Failed to fetch users:", error));
-}, []);
-```
-
-**Purpose:** Generate consistent team member profile pictures  
-**Seed:** `verbalify` ensures same profiles on every load
-
----
-
-## 🎠 Swiper.js Custom Components
-
-### Architecture Pattern
-
-Instead of using Swiper's default navigation/pagination, Verbalify implements **custom reusable components** for better design control:
-
-#### CarouselNavButtons.jsx
-
-- Custom prev/next navigation buttons
-- Integrates with Swiper's `useSwiper` hook
-- Styled to match brand design system
-
-#### CarouselPaginationDots.jsx
-
-- Custom pagination indicator
-- Active state synchronization
-- Click-to-slide functionality
-  **Benefits:**
-- Full design control over carousel UI
-- Reusable across different carousel instances
-- Consistent with Verbalify brand aesthetics
-- No default Swiper CSS conflicts
-
-=======
- 
->>>>>>> 02930b5490f4e0202a99bef2f05ec8e9ec915cd6
 ---
 
 ## 📱 Responsive Breakpoints
-<<<<<<< HEAD
 
 | Breakpoint | Width          | Usage              |
 | ---------- | -------------- | ------------------ |
 | Mobile     | < 768px        | 1-column layouts   |
 | Tablet     | 768px - 1024px | 2-column layouts   |
 | Desktop    | > 1024px       | 3-4 column layouts |
-=======
- 
-| Breakpoint | Width | Usage |
-|---|---|---|
-| Mobile | < 768px | 1-column layouts |
-| Tablet | 768px - 1024px | 2-column layouts |
-| Desktop | > 1024px | 3-column layouts |
->>>>>>> 02930b5490f4e0202a99bef2f05ec8e9ec915cd6
 
 ---
 
