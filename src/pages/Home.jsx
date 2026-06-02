@@ -313,6 +313,19 @@ const Home = () => {
     amount: 0.1,
   });
 
+  const swiperRef = useRef(null)
+
+  useEffect(() => {
+    if (!swiperRef.current) return;
+
+    if (testimonialsInView) {
+      swiperRef.current.autoplay.start();
+    } else {
+      swiperRef.current.autoplay.stop();
+    }
+
+  }, [testimonialsInView]);
+
   // Plans
   const plansHeadingRef = useRef(null);
   const plansHeadingInView = useInView(plansHeadingRef, {
@@ -643,7 +656,8 @@ const Home = () => {
             loop={true}
             navigation={false}
             pagination={false}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           >
             {/* Content Mapping */}
