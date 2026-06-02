@@ -1,4 +1,4 @@
-# Verbalify — Conceptual AI Language Learning Product SaaS Microsite 🌎💬
+# Verbalify — Conceptual AI Language Learning SaaS Product Microsite 🌎💬
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
