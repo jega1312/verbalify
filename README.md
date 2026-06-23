@@ -1,4 +1,4 @@
-# Verbalify — Conceptual AI Language Learning SaaS Product Microsite 🌎💬
+# Verbalify — Fictional AI Language Learning Platform Marketing Multi-Page Website 🌎💬
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
@@ -8,7 +8,7 @@
 ![React Helmet Async](https://img.shields.io/badge/React%20Helmet%20Async-2-00ADEF?style=flat&logo=react)
 ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-7-EC5990?style=flat&logo=reacthookform)
 
-> A conceptual SaaS product multi-page microsite for an AI-powered language learning platform. Built as a frontend portfolio project to demonstrate real-world React skills, modern UI/UX patterns, and production-level component architecture.
+> A fictional SaaS multi-page website for an AI-powered language learning platform. Built as a frontend portfolio project to demonstrate real-world React skills, modern UI/UX patterns, and production-level component architecture.
 
 ---
 
@@ -34,7 +34,7 @@
 
 ## 💡 About The Project
 
-Verbalify is a **fictional language learning product SaaS microsite** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
+Verbalify is a **fictional AI language learning platform SaaS marketing website** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
 
 **Brand Identity:**
 
