@@ -34,7 +34,7 @@
 
 ## 💡 About The Project
 
-Verbalify is a **fictional AI language learning platform SaaS marketing website** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
+Verbalify is a **fictional language learning platform SaaS marketing website** designed to mirror the quality and structure of real-world product marketing sites. The project showcases a complete multi-page experience with seamless navigation, scroll-triggered animations, and responsive design across all device sizes.
 
 **Brand Identity:**
 
