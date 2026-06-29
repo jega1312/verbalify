@@ -1,4 +1,4 @@
-# Verbalify — Fictional AI Language Learning Platform Marketing Multi-Page Website 🌎💬
+# Verbalify — Fictional Language Learning Platform Marketing Multi-Page Website 🌎💬
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite)
